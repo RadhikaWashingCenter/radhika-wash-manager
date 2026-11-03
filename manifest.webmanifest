@@ -1,0 +1,24 @@
+{
+  "name": "Radhika Wash Manager - Google Drive",
+  "short_name": "Radhika Wash",
+  "description": "Offline-first Radhika Washing Center app with Drive backup",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fa",
+  "theme_color": "#ffd21a",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+RADHIKA WASH MANAGER v2.0 — FREE GOOGLE DRIVE BACKUP
+=====================================================
+
+WHAT IS INCLUDED
+- Mobile-friendly offline washing records, customers, receipt numbers and PNG WhatsApp receipts.
+- Staff attendance, daily incentive register, monthly payroll and CSV/JSON exports.
+- Automatic Google Drive backup when online, app OPEN and Google session ACTIVE.
+- Auto-restore from Drive on a new/empty device/origin, with conflict warning when both copies differ.
+- A visible My Drive file: Radhika_Washing_Center_Live_Data.json
+- One dated recovery snapshot before the first update to the Drive file per day.
+
+IMPORTANT: GOOGLE DRIVE IS NOT READY SIMPLY BY DOWNLOADING THE HTML.
+Google OAuth WILL NOT work with file:// HTML from Downloads. The page must have an HTTPS URL.
+The local app works offline while you perform setup. There is no preconfigured Google Client ID.
+
+SETUP (FREE)
+1. Export JSON BACKUP from the OLD v1.2 app. Do not delete it.
+2. Upload all files from this ZIP to ONE free HTTPS static-hosting website (GitHub Pages, for example).
+   If using GitHub Pages, the site is typically https://YOURUSER.github.io/YOURREPO/
+   Note the origin is https://YOURUSER.github.io (no extra path).
+3. Visit https://console.cloud.google.com/ and create/select a Google Cloud project.
+4. APIs & Services > Library > Google Drive API > Enable.
+5. Google Auth Platform / OAuth consent screen: external; create branding, choose Testing if appropriate,
+   add YOUR GMAIL ADDRESS as a test user. Google may ask you to reauthorize periodically.
+6. Clients > Create client > Web application; add the exact HTTPS ORIGIN to Authorized JavaScript origins.
+   Example: https://YOURUSER.github.io (NOT /YOURREPO/index.html).
+7. Copy the OAuth Client ID (ends with .apps.googleusercontent.com), NOT the client secret.
+8. Open your HTTPS app > Drive & Settings > paste Client ID > Save Client ID > Connect Google Drive.
+9. Approve the Drive request in your Google Account. It uses the narrower drive.file scope.
+10. Verify that the status reads 'Drive synced' and you can see the backup in My Drive.
+11. In Drive & Settings choose Restore Backup to import your old v1.2 JSON first, then Sync Now.
+   If a conflict is found, choose the correct data copy.
+12. Chrome menu > Add to Home screen / Install app to use it as a phone app.
+
+LIMITATIONS
+- A static HTML/PWA cannot run unattended backups while the browser/app is completely closed.
+- OAuth tokens expire. You may have to tap Connect Google Drive again after expiry or page restart.
+- If Internet drops, local entries are retained and sync retries while the app remains open and signed in.
+- A Google account has free storage within Google's limits. Cloud API quota or OAuth access policies may apply.
+- App updates: replace the website's HTML files on the SAME domain/origin; stored data remains in IndexedDB.
+  Changing the origin changes the local data bucket; Google Drive can restore from previous backup.
+- Google sign-in in embedded Android WebViews is not supported. Use Chrome/PWA.
+- Do not share the JSON backups with customers because they may contain personal information.
+- No Google password, refresh token or client secret is stored by this app.
+- On a major app upgrade, export manual JSON, upgrade the hosted files, reload, verify data and Drive sync.
+
+Official docs:
+https://support.google.com/cloud/answer/15549257?hl=en
+https://developers.google.com/identity/oauth2/web/reference/js-reference
+https://developers.google.com/workspace/drive/api/guides/manage-uploads
