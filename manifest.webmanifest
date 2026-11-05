@@ -1,7 +1,7 @@
 {
-  "name": "Radhika Wash Manager v2.1",
+  "name": "Radhika Wash Manager v2.2",
   "short_name": "Radhika Wash",
-  "description": "Offline-first Radhika Washing Center app with Drive backup",
+  "description": "Offline car wash manager with Google Drive backup, attendance-based assignments and editable incentives",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
