@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffd21a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Offline-first car wash, staff and salary manager with optional Google Drive sync for Radhika Washing Center"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="icon-192.png">
-<title>Radhika Washing Center | Business Manager v2.2 · Google Drive</title>
+<title>Radhika Washing Center | Business Manager v3.0 · Google Drive</title>
 <style>
 :root{--yellow:#ffd21a;--ink:#171b23;--muted:#707888;--border:#e6e9ee;--bg:#f6f7fa;--surface:#fff;--green:#168554;--red:#c53f41;--blue:#386fd5;--radius:16px;--shadow:0 8px 28px #1c273009}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}a{color:inherit;text-decoration:none}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #e2aa00;outline-offset:2px}
 .app{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--border);position:sticky;top:0;height:100vh;padding:24px 14px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;gap:10px;align-items:center;padding:0 10px}.brand-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:var(--yellow);font-size:27px;font-weight:900;letter-spacing:-2px}.brand-name{font-weight:900;font-size:16px;letter-spacing:-.5px;line-height:1.13}.brand-name span{display:block;color:#d52c25;font-size:12px;letter-spacing:.8px;margin-top:4px}.small-label{font-size:10px;font-weight:800;color:#9ba1ab;letter-spacing:1.6px;text-transform:uppercase;padding:0 12px}.nav-group{display:grid;gap:4px}.nav-button{background:transparent;border:0;text-align:left;padding:11px 13px;display:flex;align-items:center;gap:12px;color:#4c5564;border-radius:10px;font-weight:650}.nav-button:hover{background:#f6f7fa}.nav-button.active{background:#fff0a5;color:#111827}.nav-icon{font-size:19px;width:23px;text-align:center}.side-bottom{margin-top:auto;border-radius:14px;background:#fff9db;padding:14px;color:#6b5b24;font-size:12px}.side-bottom strong{display:block;color:#343023;font-size:13px;margin-bottom:4px}
@@ -21,22 +21,1274 @@
 .inc-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}.inc-summary>div{background:#fafbfc;border:1px solid #eef0f3;border-radius:10px;padding:12px;min-width:0}.inc-summary small{display:block;font-size:11px;color:#77818e}.inc-summary strong{display:block;font-size:19px;margin-top:4px;font-variant-numeric:tabular-nums}.incentive-table th,.incentive-table td{min-width:76px}.incentive-table td.num,.incentive-table th.num{text-align:right;font-variant-numeric:tabular-nums}.incentive-table .inc-date{position:sticky;left:0;background:#fff;z-index:1;min-width:110px}.incentive-table .inc-grand td{background:#fff7c6!important;font-weight:800}.incentive-table th:last-child,.incentive-table td:last-child{position:static;background:transparent;box-shadow:none}.incentive-table .inc-total{font-weight:800;background:#fffdf1}.inc-auto{display:block;font-size:10px;color:#9b7428;white-space:nowrap}.inc-edited{display:block;font-size:10px;color:#805d00}.inc-history{margin-top:18px;border-top:1px solid #eceef1;padding-top:11px;font-size:12px}.inc-history summary{cursor:pointer;font-weight:750}.inc-history-row{padding:9px 3px;border-bottom:1px solid #f0f0f0}.inc-history-row span{display:block;font-size:11px}
 .inc-edit-grid{max-height:42vh;overflow:auto}.inc-edit-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #eef0f2}.inc-edit-row b{display:block;font-size:13px}.inc-edit-row small{display:block;font-size:11px;color:#737b89}.inc-edit-actions{display:flex;align-items:center;gap:5px}.inc-edit-actions input{width:102px;min-height:41px;border:1px solid #dce1e8;border-radius:9px;padding:7px;font-size:16px}.inc-edit-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:20px}.inc-edit-footer strong{font-size:20px}
 @media(max-width:700px){.inc-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.inc-summary strong{font-size:17px}.incentive-table td,.incentive-table th{padding:9px 8px;font-size:11px}.inc-edit-row{align-items:flex-start;flex-direction:column;gap:6px}.inc-edit-actions{width:100%}.inc-edit-actions input{flex:1}.inc-edit-footer{align-items:stretch}.inc-edit-footer>div{display:flex;flex-wrap:wrap;gap:7px}.inc-edit-footer>div .btn{flex:1}}
+
+.sidebar{overflow-y:auto}.v3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}.v3-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,185px),1fr));gap:12px;align-items:end}.v3-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px}.v3-card h3{margin:0 0 8px;font-size:15px}.v3-card p{margin:4px 0}.v3-kpi{font-weight:850;font-size:24px}.v3-muted{color:var(--muted);font-size:12px}.v3-tag{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;background:#fff2c1;font-weight:750}.v3-actions{display:flex;gap:7px;flex-wrap:wrap}.v3-item{padding:12px 0;border-bottom:1px solid var(--border)}.v3-item:last-child{border-bottom:0}.v3-compact{font-size:12px}.v3-warn{background:#fff2f0;border:1px solid #ffc5c2;padding:10px;border-radius:10px}.v3-okay{background:#edf9f2;border:1px solid #bfead0;padding:10px;border-radius:10px}.v3-progress{height:10px;border-radius:99px;background:#e6e9ee;overflow:hidden}.v3-progress>span{display:block;height:100%;background:#e2b100}.v3-field label{display:block;font-size:12px;color:#687386;font-weight:700;margin-bottom:5px}.v3-field input,.v3-field select,.v3-field textarea{width:100%;border:1px solid #dce0e6;padding:10px;border-radius:9px;background:#fff;min-height:40px}.v3-list{display:grid;gap:10px}.v3-feature-link{background:white;border:1px solid #e1e5ec;border-radius:12px;padding:14px;text-align:left;font-weight:750;cursor:pointer}.v3-feature-link:hover{background:#fff5c6}.v3-badge-danger{color:#a33b3b}.v3-badge-good{color:#127649}.v3-print-only{display:none}.v3-tbl td,.v3-tbl th{padding:9px 7px;font-size:12px}.v3-tbl{width:100%;border-collapse:collapse;white-space:nowrap}.v3-tbl tr{border-bottom:1px solid #edf0f4}.v3-tbl th{text-align:left;color:#687386}.v3-pill{border-radius:9px;background:#fff4bb;padding:3px 8px}.v3-filter{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0}.v3-filter input{padding:9px;border:1px solid #dce0e6;border-radius:8px;min-width:135px}.v3-icon{display:inline-block;width:28px;text-align:center}
+@media(max-width:720px){.v3-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v3-kpi{font-size:19px}.v3-card{padding:12px}.v3-form{grid-template-columns:1fr}.v3-form .span-2{grid-column:1/-1}}
+@media print{.v3-print-only{display:block}.sidebar,.mobile-nav,.topbar,.btn,.v3-actions{display:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
 <aside class="sidebar"><div class="brand"><div class="brand-mark">R</div><div class="brand-name">Radhika<span>WASHING CENTER</span></div></div><div><div class="small-label">OPERATIONS</div><nav class="nav-group" id="sideNav"></nav></div><div class="side-bottom"><strong>📍 Murlipur, Garh Road</strong>Meerut, Uttar Pradesh<br><br>Offline local app. Records stay on this phone. Export a backup regularly.</div></aside>
-<section class="workspace"><header class="topbar"><div><div class="top-title">Radhika <span style="color:#d52c25">Washing Center</span></div><div class="top-sub">Business Manager v2.2 · Meerut</div></div><div class="top-actions"><button class="pill" id="cloudPill" data-nav="settings" type="button">● PHONE STORAGE</button><button class="btn btn-primary" data-nav="wash">＋ New Wash</button><button class="btn mobile-only" data-action="more">☰</button></div></header><main class="main" id="view"></main></section>
+<section class="workspace"><header class="topbar"><div><div class="top-title">Radhika <span style="color:#d52c25">Washing Center</span></div><div class="top-sub">Business Manager v3.0 · Meerut</div></div><div class="top-actions"><button class="pill" id="cloudPill" data-nav="settings" type="button">● PHONE STORAGE</button><button class="btn btn-primary" data-nav="wash">＋ New Wash</button><button class="btn mobile-only" data-action="more">☰</button></div></header><main class="main" id="view"></main></section>
 </div><nav class="mobile-nav" id="mobileNav"></nav><div id="modalRoot"></div><div id="toastRoot"></div><div id="receiptPrint" class="receipt"></div>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
+// QRCode (MIT): Kazuhiko Arase, bundled offline for receipt-text QR images.
+const QRCode=(function(){const mods={'QR8bitByte':function(require,module,exports){
+var QRMode = require('./QRMode');
+
+function QR8bitByte(data) {
+	this.mode = QRMode.MODE_8BIT_BYTE;
+	this.data = data;
+}
+
+QR8bitByte.prototype = {
+
+	getLength : function() {
+		return this.data.length;
+	},
+	
+	write : function(buffer) {
+		for (var i = 0; i < this.data.length; i++) {
+			// not JIS ...
+			buffer.put(this.data.charCodeAt(i), 8);
+		}
+	}
+};
+
+module.exports = QR8bitByte;
+
+},'QRBitBuffer':function(require,module,exports){
+function QRBitBuffer() {
+	this.buffer = [];
+	this.length = 0;
+}
+
+QRBitBuffer.prototype = {
+
+	get : function(index) {
+		var bufIndex = Math.floor(index / 8);
+		return ( (this.buffer[bufIndex] >>> (7 - index % 8) ) & 1) == 1;
+	},
+	
+	put : function(num, length) {
+		for (var i = 0; i < length; i++) {
+			this.putBit( ( (num >>> (length - i - 1) ) & 1) == 1);
+		}
+	},
+	
+	getLengthInBits : function() {
+		return this.length;
+	},
+	
+	putBit : function(bit) {
+	
+		var bufIndex = Math.floor(this.length / 8);
+		if (this.buffer.length <= bufIndex) {
+			this.buffer.push(0);
+		}
+	
+		if (bit) {
+			this.buffer[bufIndex] |= (0x80 >>> (this.length % 8) );
+		}
+	
+		this.length++;
+	}
+};
+
+module.exports = QRBitBuffer;
+
+},'QRErrorCorrectLevel':function(require,module,exports){
+module.exports = {
+	L : 1,
+	M : 0,
+	Q : 3,
+	H : 2
+};
+
+
+},'QRMaskPattern':function(require,module,exports){
+module.exports = {
+	PATTERN000 : 0,
+	PATTERN001 : 1,
+	PATTERN010 : 2,
+	PATTERN011 : 3,
+	PATTERN100 : 4,
+	PATTERN101 : 5,
+	PATTERN110 : 6,
+	PATTERN111 : 7
+};
+
+},'QRMath':function(require,module,exports){
+var QRMath = {
+
+	glog : function(n) {
+	
+		if (n < 1) {
+			throw new Error("glog(" + n + ")");
+		}
+		
+		return QRMath.LOG_TABLE[n];
+	},
+	
+	gexp : function(n) {
+	
+		while (n < 0) {
+			n += 255;
+		}
+	
+		while (n >= 256) {
+			n -= 255;
+		}
+	
+		return QRMath.EXP_TABLE[n];
+	},
+	
+	EXP_TABLE : new Array(256),
+	
+	LOG_TABLE : new Array(256)
+
+};
+	
+for (var i = 0; i < 8; i++) {
+	QRMath.EXP_TABLE[i] = 1 << i;
+}
+for (var i = 8; i < 256; i++) {
+	QRMath.EXP_TABLE[i] = QRMath.EXP_TABLE[i - 4]
+		^ QRMath.EXP_TABLE[i - 5]
+		^ QRMath.EXP_TABLE[i - 6]
+		^ QRMath.EXP_TABLE[i - 8];
+}
+for (var i = 0; i < 255; i++) {
+	QRMath.LOG_TABLE[QRMath.EXP_TABLE[i] ] = i;
+}
+
+module.exports = QRMath;
+
+},'QRMode':function(require,module,exports){
+module.exports = {
+    MODE_NUMBER :       1 << 0,
+    MODE_ALPHA_NUM :    1 << 1,
+    MODE_8BIT_BYTE :    1 << 2,
+    MODE_KANJI :        1 << 3
+};
+
+},'QRPolynomial':function(require,module,exports){
+var QRMath = require('./QRMath');
+
+function QRPolynomial(num, shift) {
+	if (num.length === undefined) {
+		throw new Error(num.length + "/" + shift);
+	}
+
+	var offset = 0;
+
+	while (offset < num.length && num[offset] === 0) {
+		offset++;
+	}
+
+	this.num = new Array(num.length - offset + shift);
+	for (var i = 0; i < num.length - offset; i++) {
+		this.num[i] = num[i + offset];
+	}
+}
+
+QRPolynomial.prototype = {
+
+	get : function(index) {
+		return this.num[index];
+	},
+	
+	getLength : function() {
+		return this.num.length;
+	},
+	
+	multiply : function(e) {
+	
+		var num = new Array(this.getLength() + e.getLength() - 1);
+	
+		for (var i = 0; i < this.getLength(); i++) {
+			for (var j = 0; j < e.getLength(); j++) {
+				num[i + j] ^= QRMath.gexp(QRMath.glog(this.get(i) ) + QRMath.glog(e.get(j) ) );
+			}
+		}
+	
+		return new QRPolynomial(num, 0);
+	},
+	
+	mod : function(e) {
+	
+		if (this.getLength() - e.getLength() < 0) {
+			return this;
+		}
+	
+		var ratio = QRMath.glog(this.get(0) ) - QRMath.glog(e.get(0) );
+	
+		var num = new Array(this.getLength() );
+		
+		for (var i = 0; i < this.getLength(); i++) {
+			num[i] = this.get(i);
+		}
+		
+		for (var x = 0; x < e.getLength(); x++) {
+			num[x] ^= QRMath.gexp(QRMath.glog(e.get(x) ) + ratio);
+		}
+	
+		// recursive call
+		return new QRPolynomial(num, 0).mod(e);
+	}
+};
+
+module.exports = QRPolynomial;
+
+},'QRRSBlock':function(require,module,exports){
+var QRErrorCorrectLevel = require('./QRErrorCorrectLevel');
+
+function QRRSBlock(totalCount, dataCount) {
+	this.totalCount = totalCount;
+	this.dataCount  = dataCount;
+}
+
+QRRSBlock.RS_BLOCK_TABLE = [
+
+	// L
+	// M
+	// Q
+	// H
+
+	// 1
+	[1, 26, 19],
+	[1, 26, 16],
+	[1, 26, 13],
+	[1, 26, 9],
+	
+	// 2
+	[1, 44, 34],
+	[1, 44, 28],
+	[1, 44, 22],
+	[1, 44, 16],
+
+	// 3
+	[1, 70, 55],
+	[1, 70, 44],
+	[2, 35, 17],
+	[2, 35, 13],
+
+	// 4		
+	[1, 100, 80],
+	[2, 50, 32],
+	[2, 50, 24],
+	[4, 25, 9],
+	
+	// 5
+	[1, 134, 108],
+	[2, 67, 43],
+	[2, 33, 15, 2, 34, 16],
+	[2, 33, 11, 2, 34, 12],
+	
+	// 6
+	[2, 86, 68],
+	[4, 43, 27],
+	[4, 43, 19],
+	[4, 43, 15],
+	
+	// 7		
+	[2, 98, 78],
+	[4, 49, 31],
+	[2, 32, 14, 4, 33, 15],
+	[4, 39, 13, 1, 40, 14],
+	
+	// 8
+	[2, 121, 97],
+	[2, 60, 38, 2, 61, 39],
+	[4, 40, 18, 2, 41, 19],
+	[4, 40, 14, 2, 41, 15],
+	
+	// 9
+	[2, 146, 116],
+	[3, 58, 36, 2, 59, 37],
+	[4, 36, 16, 4, 37, 17],
+	[4, 36, 12, 4, 37, 13],
+	
+	// 10		
+	[2, 86, 68, 2, 87, 69],
+	[4, 69, 43, 1, 70, 44],
+	[6, 43, 19, 2, 44, 20],
+	[6, 43, 15, 2, 44, 16],
+
+	// 11
+	[4, 101, 81],
+	[1, 80, 50, 4, 81, 51],
+	[4, 50, 22, 4, 51, 23],
+	[3, 36, 12, 8, 37, 13],
+
+	// 12
+	[2, 116, 92, 2, 117, 93],
+	[6, 58, 36, 2, 59, 37],
+	[4, 46, 20, 6, 47, 21],
+	[7, 42, 14, 4, 43, 15],
+
+	// 13
+	[4, 133, 107],
+	[8, 59, 37, 1, 60, 38],
+	[8, 44, 20, 4, 45, 21],
+	[12, 33, 11, 4, 34, 12],
+
+	// 14
+	[3, 145, 115, 1, 146, 116],
+	[4, 64, 40, 5, 65, 41],
+	[11, 36, 16, 5, 37, 17],
+	[11, 36, 12, 5, 37, 13],
+
+	// 15
+	[5, 109, 87, 1, 110, 88],
+	[5, 65, 41, 5, 66, 42],
+	[5, 54, 24, 7, 55, 25],
+	[11, 36, 12],
+
+	// 16
+	[5, 122, 98, 1, 123, 99],
+	[7, 73, 45, 3, 74, 46],
+	[15, 43, 19, 2, 44, 20],
+	[3, 45, 15, 13, 46, 16],
+
+	// 17
+	[1, 135, 107, 5, 136, 108],
+	[10, 74, 46, 1, 75, 47],
+	[1, 50, 22, 15, 51, 23],
+	[2, 42, 14, 17, 43, 15],
+
+	// 18
+	[5, 150, 120, 1, 151, 121],
+	[9, 69, 43, 4, 70, 44],
+	[17, 50, 22, 1, 51, 23],
+	[2, 42, 14, 19, 43, 15],
+
+	// 19
+	[3, 141, 113, 4, 142, 114],
+	[3, 70, 44, 11, 71, 45],
+	[17, 47, 21, 4, 48, 22],
+	[9, 39, 13, 16, 40, 14],
+
+	// 20
+	[3, 135, 107, 5, 136, 108],
+	[3, 67, 41, 13, 68, 42],
+	[15, 54, 24, 5, 55, 25],
+	[15, 43, 15, 10, 44, 16],
+
+	// 21
+	[4, 144, 116, 4, 145, 117],
+	[17, 68, 42],
+	[17, 50, 22, 6, 51, 23],
+	[19, 46, 16, 6, 47, 17],
+
+	// 22
+	[2, 139, 111, 7, 140, 112],
+	[17, 74, 46],
+	[7, 54, 24, 16, 55, 25],
+	[34, 37, 13],
+
+	// 23
+	[4, 151, 121, 5, 152, 122],
+	[4, 75, 47, 14, 76, 48],
+	[11, 54, 24, 14, 55, 25],
+	[16, 45, 15, 14, 46, 16],
+
+	// 24
+	[6, 147, 117, 4, 148, 118],
+	[6, 73, 45, 14, 74, 46],
+	[11, 54, 24, 16, 55, 25],
+	[30, 46, 16, 2, 47, 17],
+
+	// 25
+	[8, 132, 106, 4, 133, 107],
+	[8, 75, 47, 13, 76, 48],
+	[7, 54, 24, 22, 55, 25],
+	[22, 45, 15, 13, 46, 16],
+
+	// 26
+	[10, 142, 114, 2, 143, 115],
+	[19, 74, 46, 4, 75, 47],
+	[28, 50, 22, 6, 51, 23],
+	[33, 46, 16, 4, 47, 17],
+
+	// 27
+	[8, 152, 122, 4, 153, 123],
+	[22, 73, 45, 3, 74, 46],
+	[8, 53, 23, 26, 54, 24],
+	[12, 45, 15, 28, 46, 16],
+
+	// 28
+	[3, 147, 117, 10, 148, 118],
+	[3, 73, 45, 23, 74, 46],
+	[4, 54, 24, 31, 55, 25],
+	[11, 45, 15, 31, 46, 16],
+
+	// 29
+	[7, 146, 116, 7, 147, 117],
+	[21, 73, 45, 7, 74, 46],
+	[1, 53, 23, 37, 54, 24],
+	[19, 45, 15, 26, 46, 16],
+
+	// 30
+	[5, 145, 115, 10, 146, 116],
+	[19, 75, 47, 10, 76, 48],
+	[15, 54, 24, 25, 55, 25],
+	[23, 45, 15, 25, 46, 16],
+
+	// 31
+	[13, 145, 115, 3, 146, 116],
+	[2, 74, 46, 29, 75, 47],
+	[42, 54, 24, 1, 55, 25],
+	[23, 45, 15, 28, 46, 16],
+
+	// 32
+	[17, 145, 115],
+	[10, 74, 46, 23, 75, 47],
+	[10, 54, 24, 35, 55, 25],
+	[19, 45, 15, 35, 46, 16],
+
+	// 33
+	[17, 145, 115, 1, 146, 116],
+	[14, 74, 46, 21, 75, 47],
+	[29, 54, 24, 19, 55, 25],
+	[11, 45, 15, 46, 46, 16],
+
+	// 34
+	[13, 145, 115, 6, 146, 116],
+	[14, 74, 46, 23, 75, 47],
+	[44, 54, 24, 7, 55, 25],
+	[59, 46, 16, 1, 47, 17],
+
+	// 35
+	[12, 151, 121, 7, 152, 122],
+	[12, 75, 47, 26, 76, 48],
+	[39, 54, 24, 14, 55, 25],
+	[22, 45, 15, 41, 46, 16],
+
+	// 36
+	[6, 151, 121, 14, 152, 122],
+	[6, 75, 47, 34, 76, 48],
+	[46, 54, 24, 10, 55, 25],
+	[2, 45, 15, 64, 46, 16],
+
+	// 37
+	[17, 152, 122, 4, 153, 123],
+	[29, 74, 46, 14, 75, 47],
+	[49, 54, 24, 10, 55, 25],
+	[24, 45, 15, 46, 46, 16],
+
+	// 38
+	[4, 152, 122, 18, 153, 123],
+	[13, 74, 46, 32, 75, 47],
+	[48, 54, 24, 14, 55, 25],
+	[42, 45, 15, 32, 46, 16],
+
+	// 39
+	[20, 147, 117, 4, 148, 118],
+	[40, 75, 47, 7, 76, 48],
+	[43, 54, 24, 22, 55, 25],
+	[10, 45, 15, 67, 46, 16],
+
+	// 40
+	[19, 148, 118, 6, 149, 119],
+	[18, 75, 47, 31, 76, 48],
+	[34, 54, 24, 34, 55, 25],
+	[20, 45, 15, 61, 46, 16]
+];
+
+QRRSBlock.getRSBlocks = function(typeNumber, errorCorrectLevel) {
+	
+	var rsBlock = QRRSBlock.getRsBlockTable(typeNumber, errorCorrectLevel);
+	
+	if (rsBlock === undefined) {
+		throw new Error("bad rs block @ typeNumber:" + typeNumber + "/errorCorrectLevel:" + errorCorrectLevel);
+	}
+
+	var length = rsBlock.length / 3;
+	
+	var list = [];
+	
+	for (var i = 0; i < length; i++) {
+
+		var count = rsBlock[i * 3 + 0];
+		var totalCount = rsBlock[i * 3 + 1];
+		var dataCount  = rsBlock[i * 3 + 2];
+
+		for (var j = 0; j < count; j++) {
+			list.push(new QRRSBlock(totalCount, dataCount) );	
+		}
+	}
+	
+	return list;
+};
+
+QRRSBlock.getRsBlockTable = function(typeNumber, errorCorrectLevel) {
+
+	switch(errorCorrectLevel) {
+	case QRErrorCorrectLevel.L :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
+	case QRErrorCorrectLevel.M :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
+	case QRErrorCorrectLevel.Q :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
+	case QRErrorCorrectLevel.H :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
+	default :
+		return undefined;
+	}
+};
+
+module.exports = QRRSBlock;
+
+},'QRUtil':function(require,module,exports){
+var QRMode = require('./QRMode');
+var QRPolynomial = require('./QRPolynomial');
+var QRMath = require('./QRMath');
+var QRMaskPattern = require('./QRMaskPattern');
+
+var QRUtil = {
+
+    PATTERN_POSITION_TABLE : [
+        [],
+        [6, 18],
+        [6, 22],
+        [6, 26],
+        [6, 30],
+        [6, 34],
+        [6, 22, 38],
+        [6, 24, 42],
+        [6, 26, 46],
+        [6, 28, 50],
+        [6, 30, 54],        
+        [6, 32, 58],
+        [6, 34, 62],
+        [6, 26, 46, 66],
+        [6, 26, 48, 70],
+        [6, 26, 50, 74],
+        [6, 30, 54, 78],
+        [6, 30, 56, 82],
+        [6, 30, 58, 86],
+        [6, 34, 62, 90],
+        [6, 28, 50, 72, 94],
+        [6, 26, 50, 74, 98],
+        [6, 30, 54, 78, 102],
+        [6, 28, 54, 80, 106],
+        [6, 32, 58, 84, 110],
+        [6, 30, 58, 86, 114],
+        [6, 34, 62, 90, 118],
+        [6, 26, 50, 74, 98, 122],
+        [6, 30, 54, 78, 102, 126],
+        [6, 26, 52, 78, 104, 130],
+        [6, 30, 56, 82, 108, 134],
+        [6, 34, 60, 86, 112, 138],
+        [6, 30, 58, 86, 114, 142],
+        [6, 34, 62, 90, 118, 146],
+        [6, 30, 54, 78, 102, 126, 150],
+        [6, 24, 50, 76, 102, 128, 154],
+        [6, 28, 54, 80, 106, 132, 158],
+        [6, 32, 58, 84, 110, 136, 162],
+        [6, 26, 54, 82, 110, 138, 166],
+        [6, 30, 58, 86, 114, 142, 170]
+    ],
+
+    G15 : (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0),
+    G18 : (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0),
+    G15_MASK : (1 << 14) | (1 << 12) | (1 << 10)    | (1 << 4) | (1 << 1),
+
+    getBCHTypeInfo : function(data) {
+        var d = data << 10;
+        while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15) >= 0) {
+            d ^= (QRUtil.G15 << (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15) ) );    
+        }
+        return ( (data << 10) | d) ^ QRUtil.G15_MASK;
+    },
+
+    getBCHTypeNumber : function(data) {
+        var d = data << 12;
+        while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18) >= 0) {
+            d ^= (QRUtil.G18 << (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18) ) );    
+        }
+        return (data << 12) | d;
+    },
+
+    getBCHDigit : function(data) {
+
+        var digit = 0;
+
+        while (data !== 0) {
+            digit++;
+            data >>>= 1;
+        }
+
+        return digit;
+    },
+
+    getPatternPosition : function(typeNumber) {
+        return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
+    },
+
+    getMask : function(maskPattern, i, j) {
+        
+        switch (maskPattern) {
+            
+        case QRMaskPattern.PATTERN000 : return (i + j) % 2 === 0;
+        case QRMaskPattern.PATTERN001 : return i % 2 === 0;
+        case QRMaskPattern.PATTERN010 : return j % 3 === 0;
+        case QRMaskPattern.PATTERN011 : return (i + j) % 3 === 0;
+        case QRMaskPattern.PATTERN100 : return (Math.floor(i / 2) + Math.floor(j / 3) ) % 2 === 0;
+        case QRMaskPattern.PATTERN101 : return (i * j) % 2 + (i * j) % 3 === 0;
+        case QRMaskPattern.PATTERN110 : return ( (i * j) % 2 + (i * j) % 3) % 2 === 0;
+        case QRMaskPattern.PATTERN111 : return ( (i * j) % 3 + (i + j) % 2) % 2 === 0;
+
+        default :
+            throw new Error("bad maskPattern:" + maskPattern);
+        }
+    },
+
+    getErrorCorrectPolynomial : function(errorCorrectLength) {
+
+        var a = new QRPolynomial([1], 0);
+
+        for (var i = 0; i < errorCorrectLength; i++) {
+            a = a.multiply(new QRPolynomial([1, QRMath.gexp(i)], 0) );
+        }
+
+        return a;
+    },
+
+    getLengthInBits : function(mode, type) {
+
+        if (1 <= type && type < 10) {
+
+            // 1 - 9
+
+            switch(mode) {
+            case QRMode.MODE_NUMBER     : return 10;
+            case QRMode.MODE_ALPHA_NUM  : return 9;
+            case QRMode.MODE_8BIT_BYTE  : return 8;
+            case QRMode.MODE_KANJI      : return 8;
+            default :
+                throw new Error("mode:" + mode);
+            }
+
+        } else if (type < 27) {
+
+            // 10 - 26
+
+            switch(mode) {
+            case QRMode.MODE_NUMBER     : return 12;
+            case QRMode.MODE_ALPHA_NUM  : return 11;
+            case QRMode.MODE_8BIT_BYTE  : return 16;
+            case QRMode.MODE_KANJI      : return 10;
+            default :
+                throw new Error("mode:" + mode);
+            }
+
+        } else if (type < 41) {
+
+            // 27 - 40
+
+            switch(mode) {
+            case QRMode.MODE_NUMBER     : return 14;
+            case QRMode.MODE_ALPHA_NUM  : return 13;
+            case QRMode.MODE_8BIT_BYTE  : return 16;
+            case QRMode.MODE_KANJI      : return 12;
+            default :
+                throw new Error("mode:" + mode);
+            }
+
+        } else {
+            throw new Error("type:" + type);
+        }
+    },
+
+    getLostPoint : function(qrCode) {
+        
+        var moduleCount = qrCode.getModuleCount();
+        var lostPoint = 0;
+        var row = 0; 
+        var col = 0;
+
+        
+        // LEVEL1
+        
+        for (row = 0; row < moduleCount; row++) {
+
+            for (col = 0; col < moduleCount; col++) {
+
+                var sameCount = 0;
+                var dark = qrCode.isDark(row, col);
+
+                for (var r = -1; r <= 1; r++) {
+
+                    if (row + r < 0 || moduleCount <= row + r) {
+                        continue;
+                    }
+
+                    for (var c = -1; c <= 1; c++) {
+
+                        if (col + c < 0 || moduleCount <= col + c) {
+                            continue;
+                        }
+
+                        if (r === 0 && c === 0) {
+                            continue;
+                        }
+
+                        if (dark === qrCode.isDark(row + r, col + c) ) {
+                            sameCount++;
+                        }
+                    }
+                }
+
+                if (sameCount > 5) {
+                    lostPoint += (3 + sameCount - 5);
+                }
+            }
+        }
+
+        // LEVEL2
+
+        for (row = 0; row < moduleCount - 1; row++) {
+            for (col = 0; col < moduleCount - 1; col++) {
+                var count = 0;
+                if (qrCode.isDark(row,     col    ) ) count++;
+                if (qrCode.isDark(row + 1, col    ) ) count++;
+                if (qrCode.isDark(row,     col + 1) ) count++;
+                if (qrCode.isDark(row + 1, col + 1) ) count++;
+                if (count === 0 || count === 4) {
+                    lostPoint += 3;
+                }
+            }
+        }
+
+        // LEVEL3
+
+        for (row = 0; row < moduleCount; row++) {
+            for (col = 0; col < moduleCount - 6; col++) {
+                if (qrCode.isDark(row, col) && 
+                        !qrCode.isDark(row, col + 1) && 
+                         qrCode.isDark(row, col + 2) && 
+                         qrCode.isDark(row, col + 3) && 
+                         qrCode.isDark(row, col + 4) && 
+                        !qrCode.isDark(row, col + 5) && 
+                         qrCode.isDark(row, col + 6) ) {
+                    lostPoint += 40;
+                }
+            }
+        }
+
+        for (col = 0; col < moduleCount; col++) {
+            for (row = 0; row < moduleCount - 6; row++) {
+                if (qrCode.isDark(row, col) &&
+                        !qrCode.isDark(row + 1, col) &&
+                         qrCode.isDark(row + 2, col) &&
+                         qrCode.isDark(row + 3, col) &&
+                         qrCode.isDark(row + 4, col) &&
+                        !qrCode.isDark(row + 5, col) &&
+                         qrCode.isDark(row + 6, col) ) {
+                    lostPoint += 40;
+                }
+            }
+        }
+
+        // LEVEL4
+        
+        var darkCount = 0;
+
+        for (col = 0; col < moduleCount; col++) {
+            for (row = 0; row < moduleCount; row++) {
+                if (qrCode.isDark(row, col) ) {
+                    darkCount++;
+                }
+            }
+        }
+        
+        var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
+        lostPoint += ratio * 10;
+
+        return lostPoint;       
+    }
+
+};
+
+module.exports = QRUtil;
+
+},'index':function(require,module,exports){
+//---------------------------------------------------------------------
+// QRCode for JavaScript
+//
+// Copyright (c) 2009 Kazuhiko Arase
+//
+// URL: http://www.d-project.com/
+//
+// Licensed under the MIT license:
+//   http://www.opensource.org/licenses/mit-license.php
+//
+// The word "QR Code" is registered trademark of 
+// DENSO WAVE INCORPORATED
+//   http://www.denso-wave.com/qrcode/faqpatent-e.html
+//
+//---------------------------------------------------------------------
+// Modified to work in node for this project (and some refactoring)
+//---------------------------------------------------------------------
+
+var QR8bitByte = require('./QR8bitByte');
+var QRUtil = require('./QRUtil');
+var QRPolynomial = require('./QRPolynomial');
+var QRRSBlock = require('./QRRSBlock');
+var QRBitBuffer = require('./QRBitBuffer');
+
+function QRCode(typeNumber, errorCorrectLevel) {
+	this.typeNumber = typeNumber;
+	this.errorCorrectLevel = errorCorrectLevel;
+	this.modules = null;
+	this.moduleCount = 0;
+	this.dataCache = null;
+	this.dataList = [];
+}
+
+QRCode.prototype = {
+	
+	addData : function(data) {
+		var newData = new QR8bitByte(data);
+		this.dataList.push(newData);
+		this.dataCache = null;
+	},
+	
+	isDark : function(row, col) {
+		if (row < 0 || this.moduleCount <= row || col < 0 || this.moduleCount <= col) {
+			throw new Error(row + "," + col);
+		}
+		return this.modules[row][col];
+	},
+
+	getModuleCount : function() {
+		return this.moduleCount;
+	},
+	
+	make : function() {
+		// Calculate automatically typeNumber if provided is < 1
+		if (this.typeNumber < 1 ){
+			var typeNumber = 1;
+			for (typeNumber = 1; typeNumber < 40; typeNumber++) {
+				var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, this.errorCorrectLevel);
+
+				var buffer = new QRBitBuffer();
+				var totalDataCount = 0;
+				for (var i = 0; i < rsBlocks.length; i++) {
+					totalDataCount += rsBlocks[i].dataCount;
+				}
+
+				for (var x = 0; x < this.dataList.length; x++) {
+					var data = this.dataList[x];
+					buffer.put(data.mode, 4);
+					buffer.put(data.getLength(), QRUtil.getLengthInBits(data.mode, typeNumber) );
+					data.write(buffer);
+				}
+				if (buffer.getLengthInBits() <= totalDataCount * 8)
+					break;
+			}
+			this.typeNumber = typeNumber;
+		}
+		this.makeImpl(false, this.getBestMaskPattern() );
+	},
+	
+	makeImpl : function(test, maskPattern) {
+		
+		this.moduleCount = this.typeNumber * 4 + 17;
+		this.modules = new Array(this.moduleCount);
+		
+		for (var row = 0; row < this.moduleCount; row++) {
+			
+			this.modules[row] = new Array(this.moduleCount);
+			
+			for (var col = 0; col < this.moduleCount; col++) {
+				this.modules[row][col] = null;//(col + row) % 3;
+			}
+		}
+	
+		this.setupPositionProbePattern(0, 0);
+		this.setupPositionProbePattern(this.moduleCount - 7, 0);
+		this.setupPositionProbePattern(0, this.moduleCount - 7);
+		this.setupPositionAdjustPattern();
+		this.setupTimingPattern();
+		this.setupTypeInfo(test, maskPattern);
+		
+		if (this.typeNumber >= 7) {
+			this.setupTypeNumber(test);
+		}
+	
+		if (this.dataCache === null) {
+			this.dataCache = QRCode.createData(this.typeNumber, this.errorCorrectLevel, this.dataList);
+		}
+	
+		this.mapData(this.dataCache, maskPattern);
+	},
+
+	setupPositionProbePattern : function(row, col)  {
+		
+		for (var r = -1; r <= 7; r++) {
+			
+			if (row + r <= -1 || this.moduleCount <= row + r) continue;
+			
+			for (var c = -1; c <= 7; c++) {
+				
+				if (col + c <= -1 || this.moduleCount <= col + c) continue;
+				
+				if ( (0 <= r && r <= 6 && (c === 0 || c === 6) ) || 
+                     (0 <= c && c <= 6 && (r === 0 || r === 6) ) || 
+                     (2 <= r && r <= 4 && 2 <= c && c <= 4) ) {
+					this.modules[row + r][col + c] = true;
+				} else {
+					this.modules[row + r][col + c] = false;
+				}
+			}		
+		}		
+	},
+	
+	getBestMaskPattern : function() {
+	
+		var minLostPoint = 0;
+		var pattern = 0;
+	
+		for (var i = 0; i < 8; i++) {
+			
+			this.makeImpl(true, i);
+	
+			var lostPoint = QRUtil.getLostPoint(this);
+	
+			if (i === 0 || minLostPoint >  lostPoint) {
+				minLostPoint = lostPoint;
+				pattern = i;
+			}
+		}
+	
+		return pattern;
+	},
+	
+	createMovieClip : function(target_mc, instance_name, depth) {
+	
+		var qr_mc = target_mc.createEmptyMovieClip(instance_name, depth);
+		var cs = 1;
+	
+		this.make();
+
+		for (var row = 0; row < this.modules.length; row++) {
+			
+			var y = row * cs;
+			
+			for (var col = 0; col < this.modules[row].length; col++) {
+	
+				var x = col * cs;
+				var dark = this.modules[row][col];
+			
+				if (dark) {
+					qr_mc.beginFill(0, 100);
+					qr_mc.moveTo(x, y);
+					qr_mc.lineTo(x + cs, y);
+					qr_mc.lineTo(x + cs, y + cs);
+					qr_mc.lineTo(x, y + cs);
+					qr_mc.endFill();
+				}
+			}
+		}
+		
+		return qr_mc;
+	},
+
+	setupTimingPattern : function() {
+		
+		for (var r = 8; r < this.moduleCount - 8; r++) {
+			if (this.modules[r][6] !== null) {
+				continue;
+			}
+			this.modules[r][6] = (r % 2 === 0);
+		}
+	
+		for (var c = 8; c < this.moduleCount - 8; c++) {
+			if (this.modules[6][c] !== null) {
+				continue;
+			}
+			this.modules[6][c] = (c % 2 === 0);
+		}
+	},
+	
+	setupPositionAdjustPattern : function() {
+	
+		var pos = QRUtil.getPatternPosition(this.typeNumber);
+		
+		for (var i = 0; i < pos.length; i++) {
+		
+			for (var j = 0; j < pos.length; j++) {
+			
+				var row = pos[i];
+				var col = pos[j];
+				
+				if (this.modules[row][col] !== null) {
+					continue;
+				}
+				
+				for (var r = -2; r <= 2; r++) {
+				
+					for (var c = -2; c <= 2; c++) {
+					
+						if (Math.abs(r) === 2 || 
+                            Math.abs(c) === 2 ||
+                            (r === 0 && c === 0) ) {
+							this.modules[row + r][col + c] = true;
+						} else {
+							this.modules[row + r][col + c] = false;
+						}
+					}
+				}
+			}
+		}
+	},
+	
+	setupTypeNumber : function(test) {
+	
+		var bits = QRUtil.getBCHTypeNumber(this.typeNumber);
+        var mod;
+	
+		for (var i = 0; i < 18; i++) {
+			mod = (!test && ( (bits >> i) & 1) === 1);
+			this.modules[Math.floor(i / 3)][i % 3 + this.moduleCount - 8 - 3] = mod;
+		}
+	
+		for (var x = 0; x < 18; x++) {
+			mod = (!test && ( (bits >> x) & 1) === 1);
+			this.modules[x % 3 + this.moduleCount - 8 - 3][Math.floor(x / 3)] = mod;
+		}
+	},
+	
+	setupTypeInfo : function(test, maskPattern) {
+	
+		var data = (this.errorCorrectLevel << 3) | maskPattern;
+		var bits = QRUtil.getBCHTypeInfo(data);
+        var mod;
+	
+		// vertical		
+		for (var v = 0; v < 15; v++) {
+	
+			mod = (!test && ( (bits >> v) & 1) === 1);
+	
+			if (v < 6) {
+				this.modules[v][8] = mod;
+			} else if (v < 8) {
+				this.modules[v + 1][8] = mod;
+			} else {
+				this.modules[this.moduleCount - 15 + v][8] = mod;
+			}
+		}
+	
+		// horizontal
+		for (var h = 0; h < 15; h++) {
+	
+			mod = (!test && ( (bits >> h) & 1) === 1);
+			
+			if (h < 8) {
+				this.modules[8][this.moduleCount - h - 1] = mod;
+			} else if (h < 9) {
+				this.modules[8][15 - h - 1 + 1] = mod;
+			} else {
+				this.modules[8][15 - h - 1] = mod;
+			}
+		}
+	
+		// fixed module
+		this.modules[this.moduleCount - 8][8] = (!test);
+	
+	},
+	
+	mapData : function(data, maskPattern) {
+		
+		var inc = -1;
+		var row = this.moduleCount - 1;
+		var bitIndex = 7;
+		var byteIndex = 0;
+		
+		for (var col = this.moduleCount - 1; col > 0; col -= 2) {
+	
+			if (col === 6) col--;
+	
+			while (true) {
+	
+				for (var c = 0; c < 2; c++) {
+					
+					if (this.modules[row][col - c] === null) {
+						
+						var dark = false;
+	
+						if (byteIndex < data.length) {
+							dark = ( ( (data[byteIndex] >>> bitIndex) & 1) === 1);
+						}
+	
+						var mask = QRUtil.getMask(maskPattern, row, col - c);
+	
+						if (mask) {
+							dark = !dark;
+						}
+						
+						this.modules[row][col - c] = dark;
+						bitIndex--;
+	
+						if (bitIndex === -1) {
+							byteIndex++;
+							bitIndex = 7;
+						}
+					}
+				}
+								
+				row += inc;
+	
+				if (row < 0 || this.moduleCount <= row) {
+					row -= inc;
+					inc = -inc;
+					break;
+				}
+			}
+		}
+		
+	}
+
+};
+
+QRCode.PAD0 = 0xEC;
+QRCode.PAD1 = 0x11;
+
+QRCode.createData = function(typeNumber, errorCorrectLevel, dataList) {
+	
+	var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectLevel);
+	
+	var buffer = new QRBitBuffer();
+	
+	for (var i = 0; i < dataList.length; i++) {
+		var data = dataList[i];
+		buffer.put(data.mode, 4);
+		buffer.put(data.getLength(), QRUtil.getLengthInBits(data.mode, typeNumber) );
+		data.write(buffer);
+	}
+
+	// calc num max data.
+	var totalDataCount = 0;
+	for (var x = 0; x < rsBlocks.length; x++) {
+		totalDataCount += rsBlocks[x].dataCount;
+	}
+
+	if (buffer.getLengthInBits() > totalDataCount * 8) {
+		throw new Error("code length overflow. (" + 
+            buffer.getLengthInBits() + 
+            ">" +  
+            totalDataCount * 8 + 
+            ")");
+	}
+
+	// end code
+	if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) {
+		buffer.put(0, 4);
+	}
+
+	// padding
+	while (buffer.getLengthInBits() % 8 !== 0) {
+		buffer.putBit(false);
+	}
+
+	// padding
+	while (true) {
+		
+		if (buffer.getLengthInBits() >= totalDataCount * 8) {
+			break;
+		}
+		buffer.put(QRCode.PAD0, 8);
+		
+		if (buffer.getLengthInBits() >= totalDataCount * 8) {
+			break;
+		}
+		buffer.put(QRCode.PAD1, 8);
+	}
+
+	return QRCode.createBytes(buffer, rsBlocks);
+};
+
+QRCode.createBytes = function(buffer, rsBlocks) {
+
+	var offset = 0;
+	
+	var maxDcCount = 0;
+	var maxEcCount = 0;
+	
+	var dcdata = new Array(rsBlocks.length);
+	var ecdata = new Array(rsBlocks.length);
+	
+	for (var r = 0; r < rsBlocks.length; r++) {
+
+		var dcCount = rsBlocks[r].dataCount;
+		var ecCount = rsBlocks[r].totalCount - dcCount;
+
+		maxDcCount = Math.max(maxDcCount, dcCount);
+		maxEcCount = Math.max(maxEcCount, ecCount);
+		
+		dcdata[r] = new Array(dcCount);
+		
+		for (var i = 0; i < dcdata[r].length; i++) {
+			dcdata[r][i] = 0xff & buffer.buffer[i + offset];
+		}
+		offset += dcCount;
+		
+		var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+		var rawPoly = new QRPolynomial(dcdata[r], rsPoly.getLength() - 1);
+
+		var modPoly = rawPoly.mod(rsPoly);
+		ecdata[r] = new Array(rsPoly.getLength() - 1);
+		for (var x = 0; x < ecdata[r].length; x++) {
+            var modIndex = x + modPoly.getLength() - ecdata[r].length;
+			ecdata[r][x] = (modIndex >= 0)? modPoly.get(modIndex) : 0;
+		}
+
+	}
+	
+	var totalCodeCount = 0;
+	for (var y = 0; y < rsBlocks.length; y++) {
+		totalCodeCount += rsBlocks[y].totalCount;
+	}
+
+	var data = new Array(totalCodeCount);
+	var index = 0;
+
+	for (var z = 0; z < maxDcCount; z++) {
+		for (var s = 0; s < rsBlocks.length; s++) {
+			if (z < dcdata[s].length) {
+				data[index++] = dcdata[s][z];
+			}
+		}
+	}
+
+	for (var xx = 0; xx < maxEcCount; xx++) {
+		for (var t = 0; t < rsBlocks.length; t++) {
+			if (xx < ecdata[t].length) {
+				data[index++] = ecdata[t][xx];
+			}
+		}
+	}
+
+	return data;
+
+};
+
+module.exports = QRCode;
+
+}};const cache={};function req(path){const id=path.replace(/^\.\//,'');if(cache[id])return cache[id].exports;if(!mods[id])throw new Error('Missing QR module '+id);const m={exports:{}};cache[id]=m;mods[id](req,m,m.exports);return m.exports;}return req('index');})();
+
 (()=>{'use strict';
 const KEY='radhika_manager_offline_v1';
 const OLD_KEY='radhika_manager_preview_v3';
 const PRICES={small:249,medium:299,large:399,custom:null};
 const CATS={small:'Small Car',medium:'Medium Car',large:'Large Car',custom:'Custom Car'};
 const SERVICES=['Complete Car Wash','Exterior Foam Wash','Interior Vacuum & Dashboard','Other Service'];
-const NAV=[['dashboard','▦','Dashboard'],['wash','＋','New Wash'],['records','▤','Wash Records'],['employees','♙','Employees'],['attendance','▣','Attendance'],['payroll','₹','Salary & Incentives'],['business','⌖','Business Info'],['settings','☁','Drive & Settings']];
+const NAV=[['dashboard','▦','Dashboard'],['wash','＋','New Wash'],['records','▤','Wash Records'],['customers','♧','Customers'],['closing','▣','Daily Closing'],['finance','₹','Expenses & Profit'],['employees','♙','Employees'],['attendance','◷','Attendance'],['payroll','₹','Salary & Incentives'],['inventory','▤','Inventory'],['marketing','✦','Marketing & Plans'],['operations','☰','Wash Operations'],['reports','▥','Reports'],['business','⌖','Business Info'],['settings','☁','Drive & Settings']];
 const $=s=>document.querySelector(s);const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateLocal=(d=new Date())=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 const timeLocal=(d=new Date())=>`${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
@@ -51,6 +1303,12 @@ function ensureReceiptNumbers(data){
   data.settings=data.settings||{};
   if(!data.incentiveOverrides||typeof data.incentiveOverrides!=='object'||Array.isArray(data.incentiveOverrides))data.incentiveOverrides={};
   if(!Array.isArray(data.incentiveHistory))data.incentiveHistory=[];
+  // v3 migration: additive fields only; old records, receipts and incentive history remain intact.
+  for(const k of ['expenses','stock','stockMoves','memberships','otherIncome','advances','closings','activityLog','loyaltyClaims'])if(!Array.isArray(data[k]))data[k]=[];
+  if(!data.settings||typeof data.settings!=='object')data.settings={workingDays:26};
+  if(!data.settings.v3MigratedAt)data.settings.v3MigratedAt=new Date().toISOString();
+  for(const r of data.records){if(!r.stage)r.stage='Delivered';if(!Number.isFinite(Number(r.discount)))r.discount=0;if(!Number.isFinite(Number(r.extras)))r.extras=0;}
+
   const seen=new Set();
   const ordered=[...data.records].sort((a,b)=>(Number(a.created)||0)-(Number(b.created)||0)||String(a.date||'').localeCompare(String(b.date||''))||String(a.time||'').localeCompare(String(b.time||''))||String(a.id||'').localeCompare(String(b.id||'')));
   for(const r of ordered){const n=Number(r.receiptNo);if(Number.isSafeInteger(n)&&n>0&&!seen.has(n)){seen.add(n);}else{r.receiptNo=null;}}
@@ -77,7 +1335,7 @@ async function boot(){
   bootDone=true;render();updateCloudBadge();
 }
 
-let db=load(),view='dashboard',draft=null,editingEmployee=null,formError='',filter={search:'',date:'',method:'all'},attDate=dateLocal(),payMonth=dateLocal().slice(0,7),incMonth='',dialog='',lastReceipt=null;
+let db=ensureReceiptNumbers(load()),view='dashboard',draft=null,editingEmployee=null,formError='',filter={search:'',date:'',method:'all'},attDate=dateLocal(),payMonth=dateLocal().slice(0,7),incMonth='',dialog='',lastReceipt=null;
 
 // Google Drive integration: one-phone, offline-first. Google OAuth tokens are kept only in memory.
 // A visible JSON file is created in the user's My Drive with the narrow drive.file OAuth scope.
@@ -102,7 +1360,7 @@ function cloudSettingsPanel(){
   const connected=!!cloud.token&&Date.now()<cloud.expiresAt-10000;
   const recovery=latestSafetyCopy?`<p class="faq"><b>Phone safety copy:</b> ${esc(new Date(latestSafetyCopy.savedAt).toLocaleString('en-IN'))} · ${Number(latestSafetyCopy.recordCount)||0} washes. Kept on this phone before a Drive restore.</p>`:'<p class="faq">Phone safety copy will be created automatically before a Drive restore replaces existing data.</p>';
   return `<section class="panel" style="border-color:#ead37a">
-    <div class="panel-head"><div><h2>☁ Google Drive Backup & Recovery · v2.1</h2><p class="panel-sub" style="margin:5px 0 0">Free · One phone · Records work offline</p></div><span class="tag ${connected?'tag-paid':'tag-pending'}">${connected?'Connected':'Sign-in needed'}</span></div>
+    <div class="panel-head"><div><h2>☁ Google Drive Backup & Recovery · v3.0</h2><p class="panel-sub" style="margin:5px 0 0">Free · One phone · Records work offline</p></div><span class="tag ${connected?'tag-paid':'tag-pending'}">${connected?'Connected':'Sign-in needed'}</span></div>
     <div class="top-kpi" style="display:block"><strong id="driveStatus">${esc(cloudStatusText())}</strong><div class="panel-sub" style="margin-top:5px">Last successful sync: <span id="driveLastSync">${cloudCfg.lastSyncAt?esc(new Date(cloudCfg.lastSyncAt).toLocaleString('en-IN')):'Never'}</span></div></div>
     <p class="faq">New washes, payments, workers, attendance, incentives and receipt numbers save on this phone first. While the app is open, online and signed in, Google Drive is checked and backed up automatically to <b>My Drive / ${CLOUD_DATA_NAME}</b>.</p>
     ${!secure?'<div class="tip" style="margin-bottom:14px"><b>Google Login requires HTTPS.</b> Use the PWA website, not the downloaded HTML file. Phone-only records still work offline.</div>':''}
@@ -125,7 +1383,7 @@ async function driveFind(){const p=new URLSearchParams({q:"name = '"+CLOUD_DATA_
 async function driveRead(id){const res=await driveFetch(DRIVE_API+'/'+encodeURIComponent(id)+'?alt=media');const text=await res.text();if(text.length>25*1024*1024)throw new Error('Cloud data too large for mobile');const obj=JSON.parse(text);const state=obj?.data||obj;if(!isValidState(state))throw new Error('Drive backup has an invalid format. It was not overwritten.');return {data:state,meta:obj,fingerprint:cloudFingerprint(state),raw:text};}
 async function driveCreate(name,content){const boundary='radhika_'+uid();const blob=new Blob(['--'+boundary+'\r\n','Content-Type: application/json; charset=UTF-8\r\n\r\n',JSON.stringify({name,mimeType:'application/json'}),'\r\n--'+boundary+'\r\n','Content-Type: application/json; charset=UTF-8\r\n\r\n',content,'\r\n--'+boundary+'--\r\n'],{type:'multipart/related; boundary='+boundary});const res=await driveFetch(DRIVE_UPLOAD+'?uploadType=multipart&fields=id,name,modifiedTime,version',{method:'POST',headers:{'Content-Type':'multipart/related; boundary='+boundary},body:blob});return await res.json();}
 async function driveUpdate(id,content){const res=await driveFetch(DRIVE_UPLOAD+'/'+encodeURIComponent(id)+'?uploadType=media&fields=id,name,modifiedTime,version',{method:'PATCH',headers:{'Content-Type':'application/json; charset=UTF-8'},body:content});return await res.json();}
-function isEmptyPhoneState(state){return !state.records.length&&!state.employees.length&&!Object.keys(state.attendance).length&&!Object.keys(state.payroll).length&&!Object.keys(state.incentiveOverrides||{}).length;}
+function isEmptyPhoneState(state){return !state.records.length&&!state.employees.length&&!Object.keys(state.attendance).length&&!Object.keys(state.payroll).length&&!Object.keys(state.incentiveOverrides||{}).length&&!['expenses','stock','stockMoves','memberships','otherIncome','advances','closings','loyaltyClaims'].some(k=>Array.isArray(state[k])&&state[k].length);}
 
 // Durable phone-side safety copies. IndexedDB v2 keeps the most recent five
 // copies; localStorage is used only when IndexedDB is unavailable.
@@ -251,7 +1509,7 @@ function toast(s){$('#toastRoot').innerHTML=`<div class="toast">${esc(s)}</div>`
 function attendanceStatus(employeeId,date){return String(db.attendance?.[date]?.[employeeId]||'Not Marked');}
 function isAssignmentAllowed(e,date){return !!e?.active && !['Absent','Paid Leave'].includes(attendanceStatus(e.id,date));}
 function assignedEarlier(e,date,recordId){if(!recordId)return false;const r=db.records.find(r=>r.id===recordId);return !!r&&r.date===date&&(r.staff||[]).includes(e.id);}
-function newDraft(){const date=dateLocal();return{customerName:'',carNo:'',category:'small',service:'Complete Car Wash',price:'249',method:'Cash',status:'Paid',staff:db.employees.filter(e=>isAssignmentAllowed(e,date)).map(e=>e.id),phone:'',notes:'',date,time:timeLocal(),id:null};}
+function newDraft(){const date=dateLocal();return{customerName:'',carNo:'',category:'small',service:'Complete Car Wash',price:'249',extra:'0',discount:'0',stage:'Waiting',membershipId:'',method:'Cash',status:'Paid',staff:db.employees.filter(e=>isAssignmentAllowed(e,date)).map(e=>e.id),phone:'',notes:'',date,time:timeLocal(),id:null};}
 function nav(v){$('#modalRoot').innerHTML='';view=v;formError='';if(v==='wash'&&!draft)draft=newDraft();render();window.scrollTo({top:0,behavior:'instant'});}
 function navButtons(){return NAV.map(([id,icon,label])=>`<button class="nav-button ${view===id?'active':''}" data-nav="${id}"><span class="nav-icon">${icon}</span>${esc(label)}</button>`).join('');}
 function mobileButtons(){return [['dashboard','▦','Home'],['wash','＋','New Wash'],['records','▤','Records'],['employees','♙','Staff'],['payroll','₹','Salary']].map(([id,icon,label])=>`<button class="mobile-tab ${view===id?'active':''}" data-nav="${id}"><span>${icon}</span><span>${label}</span></button>`).join('');}
@@ -266,8 +1524,8 @@ function incentiveWorkers(dates){const workers=[...db.employees];const used=new 
 function incentiveDates(){const dates=new Set(db.records.map(r=>r.date).filter(Boolean));Object.keys(db.incentiveOverrides||{}).forEach(d=>dates.add(d));return[...dates].filter(d=>(!filter.date||d===filter.date)&&(!incMonth||d.startsWith(incMonth))).sort((a,b)=>b.localeCompare(a));}
 function recordRows(records,opts={}){return records.map(r=>`<tr><td><strong>#${esc(r.receiptNo||'—')}</strong></td><td><div class="vehicle-no">${esc(r.carNo)}</div><span class="muted" style="font-size:11px">${esc(r.date)} · ${esc(r.time)}</span></td><td>${esc(r.customerName||'—')}</td><td>${esc(CATS[r.category]||r.category)}${r.demo?' <span class="tag tag-demo">Sample</span>':''}</td><td>${money(r.price)}</td><td>${esc(r.method)}</td><td><span class="tag ${r.status==='Paid'?'tag-paid':'tag-pending'}">${esc(r.status)}</span></td>${opts.noActions?'':`<td><div class="actions"><button class="link-btn" data-action="receipt" data-id="${r.id}">Receipt</button><button class="link-btn" data-action="edit-record" data-id="${r.id}">Edit</button><button class="link-btn danger" data-action="delete-record" data-id="${r.id}">Delete</button></div></td>`}</tr>`).join('');}
 function table(rs,opts={}){return `<div class="table-scroll"><table class="data-table"><thead><tr><th>Receipt No.</th><th>Vehicle / Date</th><th>Customer</th><th>Category</th><th>Amount</th><th>Payment</th><th>Status</th>${opts.noActions?'':'<th>Actions</th>'}</tr></thead><tbody>${recordRows(rs,opts)}</tbody></table></div>`;}
-function dashboard(){const s=stats(dateLocal()),paid=s.cash+s.online,inst=finalDailyIncentives(dateLocal());const week=Array.from({length:7},(_,i)=>{let d=new Date();d.setDate(d.getDate()-(6-i));let key=dateLocal(d);let r=stats(key);return{day:d.toLocaleDateString('en-IN',{weekday:'short'}),value:r.cash+r.online};});const max=Math.max(...week.map(w=>w.value),1);return heading('Business Overview','Your car wash operations at a glance.',`<button class="btn btn-primary" data-nav="wash">＋ Record a Wash</button>`)+`<div class="banner"><div><h2>Run your washing center, simply.</h2><p>Vehicle entries, payments and staff incentives in one place.</p></div><button class="btn btn-primary" data-nav="wash">＋ New Wash</button></div><div class="stats"><div class="stat-card"><div class="stat-head">Today's Washes <span class="stat-icon">🚘</span></div><div class="stat-value">${s.count}</div><div class="stat-foot">All recorded vehicles today</div></div><div class="stat-card"><div class="stat-head">Paid Collection <span class="stat-icon">₹</span></div><div class="stat-value">${money(paid)}</div><div class="stat-foot">Cash + online received</div></div><div class="stat-card"><div class="stat-head">Cash / Online <span class="stat-icon">▥</span></div><div class="stat-value" style="font-size:20px">${money(s.cash)} <span class="muted">/</span> ${money(s.online)}</div><div class="stat-foot">Payment method split</div></div><div class="stat-card"><div class="stat-head">Pending Payment <span class="stat-icon">◷</span></div><div class="stat-value">${money(s.pending)}</div><div class="stat-foot">Not counted as collected</div></div></div><div class="content-grid"><div><section class="panel"><div class="panel-head"><div><h2>Recent wash entries</h2><span class="panel-sub">Latest saved vehicle records</span></div><button class="textlink" data-nav="records">View all →</button></div>${db.records.length?table([...db.records].sort((a,b)=>b.date.localeCompare(a.date)||b.time.localeCompare(a.time)).slice(0,6),{noActions:true}):empty('No washes yet','Add the first record to start tracking.')}</section><section class="panel"><div class="panel-head"><h2>Collections · Last 7 days</h2><span class="panel-sub">Paid amounts only</span></div><div class="bar-chart">${week.map(w=>`<div class="bar-item"><span class="bar-value">${w.value?money(w.value):''}</span><div class="bar-track"><div class="bar-fill" style="height:${Math.max(2,w.value/max*100)}%"></div></div><span class="bar-label">${w.day}</span></div>`).join('')}</div></section></div><div><section class="panel"><div class="panel-head"><h2>Quick actions</h2></div><div class="shortcuts"><button class="shortcut" data-nav="wash">🚘 New wash</button><button class="shortcut" data-nav="attendance">▣ Attendance</button><button class="shortcut" data-nav="payroll">₹ Salary & incentives</button><button class="shortcut" data-nav="business">⌖ Business info</button></div></section><section class="panel"><div class="panel-head"><h2>Staff incentives today</h2><button class="textlink" data-nav="payroll">Full report →</button></div>${db.employees.filter(e=>e.active).map(e=>`<div class="price-row"><div class="service-name">${esc(e.name)}</div><strong>${money(inst.totals[e.id]||0)}</strong></div>`).join('')||empty('No employees','Add workers to track incentives.')}<p class="faq">Rates apply per wash after the first 10 daily washes. Each assigned employee earns the corresponding slab amount.</p></section><section class="tip">☁ <b>Offline-first + Google Drive.</b> Data saves on the phone. Drive backup runs when your Google session is connected and internet is available. Export Full JSON Backup before major upgrades.</section></div></div>`;}
-function wash(){const d=draft||newDraft();const c=PRICES[d.category],custom=d.category==='custom';return heading(d.id?'Edit Wash Record':'New Car Wash Entry','Save vehicle details, assign workers and record payment.')+`<div class="content-grid" style="grid-template-columns:minmax(0,1.6fr) minmax(275px,.85fr)"><div><div class="panel"><div class="panel-head"><h2>1. Vehicle & Service</h2><span class="tag tag-demo">Fast entry</span></div><div class="form-grid"><div class="field span-2"><label for="carNo">Car Registration Number *</label><input id="carNo" data-draft="carNo" value="${esc(d.carNo)}" placeholder="UP15 AB 1234" autocomplete="off" maxlength="16"><span class="field-help">Indian number format, e.g. UP15 AB 1234 or 22 BH 1234 AA.</span></div><div class="span-2"><div class="field-label" style="margin-bottom:9px">Vehicle Category *</div><div class="choice-grid">${Object.keys(CATS).map(k=>`<button class="choice ${d.category===k?'selected':''}" data-action="category" data-val="${k}"><span class="choice-name">${esc(CATS[k])}</span><span class="choice-price">${PRICES[k]==null?'Ask Price':money(PRICES[k])}</span></button>`).join('')}</div></div><div class="field span-2"><label for="service">Service</label><select id="service" data-draft="service">${SERVICES.map(s=>`<option ${d.service===s?'selected':''}>${esc(s)}</option>`).join('')}</select></div><div class="field"><label for="washPrice">Price (₹) *</label><input id="washPrice" data-draft="price" value="${esc(d.price)}" inputmode="decimal" type="number" min="1" step="1" placeholder="${custom?'Enter custom amount':'Price'}"><span class="field-help">${custom?'Custom Car: enter price manually.':'Auto-filled; editable if required.'}</span></div><div class="field"><label for="washDate">Wash Date *</label><input id="washDate" type="date" data-draft="date" value="${esc(d.date)}"></div><div class="field"><label for="washTime">Wash Time *</label><input id="washTime" type="time" data-draft="time" value="${esc(d.time)}"></div><div class="field"><label for="customerName">Customer name (optional)</label><input id="customerName" data-draft="customerName" value="${esc(d.customerName||'')}" maxlength="80" autocomplete="name" placeholder="Enter customer name"></div><div class="field"><label for="phone">Customer mobile (optional)</label><input id="phone" data-draft="phone" value="${esc(d.phone)}" inputmode="tel" placeholder="10 digit number"></div></div></div><div class="panel"><div class="panel-head"><h2>2. Payment Details</h2></div><div class="form-grid"><div class="field span-2"><span class="field-label">Payment Method</span><div class="segmented"><button data-action="method" data-val="Cash" class="segment ${d.method==='Cash'?'active':''}">₹ Cash</button><button data-action="method" data-val="Online" class="segment ${d.method==='Online'?'active':''}">▥ Online / UPI</button></div></div><div class="field span-2"><span class="field-label">Payment Status</span><div class="segmented"><button data-action="status" data-val="Paid" class="segment ${d.status==='Paid'?'active':''}">✓ Paid</button><button data-action="status" data-val="Pending" class="segment ${d.status==='Pending'?'active':''}">◷ Pending</button></div></div></div></div><div class="panel"><div class="panel-head"><h2>3. Employee Assignment</h2><span class="panel-sub">Select everyone who worked on this car</span></div><div class="staff-checks">${db.employees.filter(e=>e.active||(d.staff||[]).includes(e.id)).map(e=>{const selected=(d.staff||[]).includes(e.id),allowed=isAssignmentAllowed(e,d.date),historical=selected&&assignedEarlier(e,d.date,d.id),locked=!allowed;const status=attendanceStatus(e.id,d.date);return `<button type="button" class="staff-chip ${selected?'active':''} ${locked?'staff-chip-disabled':''}" data-action="staff" data-id="${esc(e.id)}" ${locked?'disabled':''} title="${locked?(historical?'Previously assigned; kept for this old record. Change attendance to edit.':status==='Not Marked'?'Not marked':status):status}"><span class="tick">${selected?'✓':''}</span><span>${esc(e.name)}<small class="staff-meta">${locked?(historical?'Earlier assigned · '+esc(status):esc(status)):status==='Half Day'?'Half Day':status==='Not Marked'?'Attendance not marked':'Present'}</small></span></button>`;}).join('')}</div><p class="faq">Absent / Paid Leave workers cannot be newly assigned. Half Day workers can be assigned. Not Marked workers are allowed with a warning. Previously saved assignments are preserved even if attendance changes later.</p>${db.employees.some(e=>e.active&&attendanceStatus(e.id,d.date)==='Not Marked')?'<p class="notice" style="margin-top:8px">Some employees have no attendance marked for this date. Check Attendance before assigning them.</p>':''}<div class="field"><label for="washNotes">Notes (optional)</label><textarea id="washNotes" data-draft="notes" placeholder="Special service, customer request...">${esc(d.notes)}</textarea></div>${formError?`<p class="message" role="alert">${esc(formError)}</p>`:''}<div class="form-actions"><button class="btn" data-action="clear-draft">Clear</button><button class="btn btn-primary" data-action="save-wash">✓ ${d.id?'Update':'Save'} Wash Record</button></div></div></div><div><div class="panel"><h2>Entry Summary</h2><div class="price-row"><span>Vehicle</span><strong style="font-size:14px">${esc(CATS[d.category])}</strong></div><div class="price-row"><span>Customer</span><span style="font-size:12px;font-weight:650">${esc(d.customerName||'Optional')}</span></div><div class="price-row"><span>Service</span><span style="font-size:12px;font-weight:650">${esc(d.service)}</span></div><div class="price-row"><span>Payment</span><span style="font-size:12px;font-weight:700">${esc(d.method)} · ${esc(d.status)}</span></div><div class="price-row"><span>Assigned workers</span><span style="font-weight:800">${d.staff.length}</span></div><div class="top-kpi" style="margin-top:13px"><div><div class="panel-sub">Total price</div><div class="amount">${Number(d.price)>0?money(d.price):'Ask Price'}</div></div></div></div><div class="tip"><b>Pricing set as requested</b><br>Small ₹249 · Medium ₹299 · Large ₹399 · Custom: manual price.<br><br>Cash and online collections are counted only when marked Paid.</div></div></div>`;}
+function dashboardLegacy(){const s=stats(dateLocal()),paid=s.cash+s.online,inst=finalDailyIncentives(dateLocal());const week=Array.from({length:7},(_,i)=>{let d=new Date();d.setDate(d.getDate()-(6-i));let key=dateLocal(d);let r=stats(key);return{day:d.toLocaleDateString('en-IN',{weekday:'short'}),value:r.cash+r.online};});const max=Math.max(...week.map(w=>w.value),1);return heading('Business Overview','Your car wash operations at a glance.',`<button class="btn btn-primary" data-nav="wash">＋ Record a Wash</button>`)+`<div class="banner"><div><h2>Run your washing center, simply.</h2><p>Vehicle entries, payments and staff incentives in one place.</p></div><button class="btn btn-primary" data-nav="wash">＋ New Wash</button></div><div class="stats"><div class="stat-card"><div class="stat-head">Today's Washes <span class="stat-icon">🚘</span></div><div class="stat-value">${s.count}</div><div class="stat-foot">All recorded vehicles today</div></div><div class="stat-card"><div class="stat-head">Paid Collection <span class="stat-icon">₹</span></div><div class="stat-value">${money(paid)}</div><div class="stat-foot">Cash + online received</div></div><div class="stat-card"><div class="stat-head">Cash / Online <span class="stat-icon">▥</span></div><div class="stat-value" style="font-size:20px">${money(s.cash)} <span class="muted">/</span> ${money(s.online)}</div><div class="stat-foot">Payment method split</div></div><div class="stat-card"><div class="stat-head">Pending Payment <span class="stat-icon">◷</span></div><div class="stat-value">${money(s.pending)}</div><div class="stat-foot">Not counted as collected</div></div></div><div class="content-grid"><div><section class="panel"><div class="panel-head"><div><h2>Recent wash entries</h2><span class="panel-sub">Latest saved vehicle records</span></div><button class="textlink" data-nav="records">View all →</button></div>${db.records.length?table([...db.records].sort((a,b)=>b.date.localeCompare(a.date)||b.time.localeCompare(a.time)).slice(0,6),{noActions:true}):empty('No washes yet','Add the first record to start tracking.')}</section><section class="panel"><div class="panel-head"><h2>Collections · Last 7 days</h2><span class="panel-sub">Paid amounts only</span></div><div class="bar-chart">${week.map(w=>`<div class="bar-item"><span class="bar-value">${w.value?money(w.value):''}</span><div class="bar-track"><div class="bar-fill" style="height:${Math.max(2,w.value/max*100)}%"></div></div><span class="bar-label">${w.day}</span></div>`).join('')}</div></section></div><div><section class="panel"><div class="panel-head"><h2>Quick actions</h2></div><div class="shortcuts"><button class="shortcut" data-nav="wash">🚘 New wash</button><button class="shortcut" data-nav="attendance">▣ Attendance</button><button class="shortcut" data-nav="payroll">₹ Salary & incentives</button><button class="shortcut" data-nav="business">⌖ Business info</button></div></section><section class="panel"><div class="panel-head"><h2>Staff incentives today</h2><button class="textlink" data-nav="payroll">Full report →</button></div>${db.employees.filter(e=>e.active).map(e=>`<div class="price-row"><div class="service-name">${esc(e.name)}</div><strong>${money(inst.totals[e.id]||0)}</strong></div>`).join('')||empty('No employees','Add workers to track incentives.')}<p class="faq">Rates apply per wash after the first 10 daily washes. Each assigned employee earns the corresponding slab amount.</p></section><section class="tip">☁ <b>Offline-first + Google Drive.</b> Data saves on the phone. Drive backup runs when your Google session is connected and internet is available. Export Full JSON Backup before major upgrades.</section></div></div>`;}
+function washLegacy(){const d=draft||newDraft();const c=PRICES[d.category],custom=d.category==='custom';return heading(d.id?'Edit Wash Record':'New Car Wash Entry','Save vehicle details, assign workers and record payment.')+`<div class="content-grid" style="grid-template-columns:minmax(0,1.6fr) minmax(275px,.85fr)"><div><div class="panel"><div class="panel-head"><h2>1. Vehicle & Service</h2><span class="tag tag-demo">Fast entry</span></div><div class="form-grid"><div class="field span-2"><label for="carNo">Car Registration Number *</label><input id="carNo" data-draft="carNo" value="${esc(d.carNo)}" placeholder="UP15 AB 1234" autocomplete="off" maxlength="16"><span class="field-help">Indian number format, e.g. UP15 AB 1234 or 22 BH 1234 AA.</span></div><div class="span-2"><div class="field-label" style="margin-bottom:9px">Vehicle Category *</div><div class="choice-grid">${Object.keys(CATS).map(k=>`<button class="choice ${d.category===k?'selected':''}" data-action="category" data-val="${k}"><span class="choice-name">${esc(CATS[k])}</span><span class="choice-price">${PRICES[k]==null?'Ask Price':money(PRICES[k])}</span></button>`).join('')}</div></div><div class="field span-2"><label for="service">Service</label><select id="service" data-draft="service">${SERVICES.map(s=>`<option ${d.service===s?'selected':''}>${esc(s)}</option>`).join('')}</select></div><div class="field"><label for="washPrice">Base Service Price (₹) *</label><input id="washPrice" data-draft="price" value="${esc(d.price)}" inputmode="decimal" type="number" min="1" step="1" placeholder="${custom?'Enter custom amount':'Price'}"><span class="field-help">${custom?'Custom Car: enter price manually.':'Auto-filled; editable if required.'}</span></div><div class="field"><label for="washDate">Wash Date *</label><input id="washDate" type="date" data-draft="date" value="${esc(d.date)}"></div><div class="field"><label for="washTime">Wash Time *</label><input id="washTime" type="time" data-draft="time" value="${esc(d.time)}"></div><div class="field"><label for="customerName">Customer name (optional)</label><input id="customerName" data-draft="customerName" value="${esc(d.customerName||'')}" maxlength="80" autocomplete="name" placeholder="Enter customer name"></div><div class="field"><label for="phone">Customer mobile (optional)</label><input id="phone" data-draft="phone" value="${esc(d.phone)}" inputmode="tel" placeholder="10 digit number"></div><div class="field"><label>Extra Services (₹)</label><input type="number" min="0" step="1" data-draft="extra" value="${esc(d.extra??0)}"></div><div class="field"><label>Discount (₹)</label><input type="number" min="0" step="1" data-draft="discount" value="${esc(d.discount??0)}"></div><div class="field"><label>Wash Stage</label><select data-draft="stage">${['Waiting','Washing','Completed','Delivered'].map(x=>`<option ${d.stage===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label>Membership</label><div class="field-help">${d.membershipId?'Prepaid membership redemption — payable ₹0':'Regular wash'}</div></div></div></div><div class="panel"><div class="panel-head"><h2>2. Payment Details</h2></div><div class="form-grid"><div class="field span-2"><span class="field-label">Payment Method</span><div class="segmented"><button data-action="method" data-val="Cash" class="segment ${d.method==='Cash'?'active':''}">₹ Cash</button><button data-action="method" data-val="Online" class="segment ${d.method==='Online'?'active':''}">▥ Online / UPI</button></div></div><div class="field span-2"><span class="field-label">Payment Status</span><div class="segmented"><button data-action="status" data-val="Paid" class="segment ${d.status==='Paid'?'active':''}">✓ Paid</button><button data-action="status" data-val="Pending" class="segment ${d.status==='Pending'?'active':''}">◷ Pending</button></div></div></div></div><div class="panel"><div class="panel-head"><h2>3. Employee Assignment</h2><span class="panel-sub">Select everyone who worked on this car</span></div><div class="staff-checks">${db.employees.filter(e=>e.active||(d.staff||[]).includes(e.id)).map(e=>{const selected=(d.staff||[]).includes(e.id),allowed=isAssignmentAllowed(e,d.date),historical=selected&&assignedEarlier(e,d.date,d.id),locked=!allowed;const status=attendanceStatus(e.id,d.date);return `<button type="button" class="staff-chip ${selected?'active':''} ${locked?'staff-chip-disabled':''}" data-action="staff" data-id="${esc(e.id)}" ${locked?'disabled':''} title="${locked?(historical?'Previously assigned; kept for this old record. Change attendance to edit.':status==='Not Marked'?'Not marked':status):status}"><span class="tick">${selected?'✓':''}</span><span>${esc(e.name)}<small class="staff-meta">${locked?(historical?'Earlier assigned · '+esc(status):esc(status)):status==='Half Day'?'Half Day':status==='Not Marked'?'Attendance not marked':'Present'}</small></span></button>`;}).join('')}</div><p class="faq">Absent / Paid Leave workers cannot be newly assigned. Half Day workers can be assigned. Not Marked workers are allowed with a warning. Previously saved assignments are preserved even if attendance changes later.</p>${db.employees.some(e=>e.active&&attendanceStatus(e.id,d.date)==='Not Marked')?'<p class="notice" style="margin-top:8px">Some employees have no attendance marked for this date. Check Attendance before assigning them.</p>':''}<div class="field"><label for="washNotes">Notes (optional)</label><textarea id="washNotes" data-draft="notes" placeholder="Special service, customer request...">${esc(d.notes)}</textarea></div>${formError?`<p class="message" role="alert">${esc(formError)}</p>`:''}<div class="form-actions"><button class="btn" data-action="clear-draft">Clear</button><button class="btn btn-primary" data-action="save-wash">✓ ${d.id?'Update':'Save'} Wash Record</button></div></div></div><div><div class="panel"><h2>Entry Summary</h2><div class="price-row"><span>Vehicle</span><strong style="font-size:14px">${esc(CATS[d.category])}</strong></div><div class="price-row"><span>Customer</span><span style="font-size:12px;font-weight:650">${esc(d.customerName||'Optional')}</span></div><div class="price-row"><span>Service</span><span style="font-size:12px;font-weight:650">${esc(d.service)}</span></div><div class="price-row"><span>Payment</span><span style="font-size:12px;font-weight:700">${esc(d.method)} · ${esc(d.status)}</span></div><div class="price-row"><span>Assigned workers</span><span style="font-weight:800">${d.staff.length}</span></div><div class="top-kpi" style="margin-top:13px"><div><div class="panel-sub">Total price</div><div class="amount">${d.membershipId?'₹0 (Prepaid)':money(Math.max(0,(Number(d.price)||0)+(Number(d.extra)||0)-(Number(d.discount)||0)))}</div></div></div></div><div class="tip"><b>Pricing set as requested</b><br>Small ₹249 · Medium ₹299 · Large ₹399 · Custom: manual price.<br><br>Cash and online collections are counted only when marked Paid.</div></div></div>`;}
 function records(){let rs=[...db.records];if(filter.search.trim()){let q=filter.search.trim().toUpperCase(),normalized=q.replace(/\s/g,'');rs=rs.filter(r=>r.carNo.replace(/\s/g,'').includes(normalized)||String(r.customerName||'').toUpperCase().includes(q));}if(filter.date)rs=rs.filter(r=>r.date===filter.date);if(filter.method!=='all')rs=rs.filter(r=>r.method===filter.method||r.status===filter.method);rs.sort((a,b)=>b.date.localeCompare(a.date)||b.time.localeCompare(a.time)||b.created-a.created);const sum=rs.filter(r=>r.status==='Paid').reduce((s,r)=>s+r.price,0);return heading('Wash Records','Search, edit, print receipts and export your entries.',`<button class="btn" data-action="show-incentives">₹ Daily Incentives ↓</button><button class="btn" data-action="export-csv">↓ Export CSV</button><button class="btn btn-primary" data-nav="wash">＋ New Wash</button>`)+`<section class="panel"><div class="filters"><input class="search-input" data-filter="search" value="${esc(filter.search)}" placeholder="Search car number or customer name..." aria-label="Search car number or customer name"><input class="search-input" type="date" data-filter="date" value="${esc(filter.date)}" aria-label="Filter date"><select class="search-input" data-filter="method"><option value="all">All payments</option>${['Cash','Online','Paid','Pending'].map(o=>`<option value="${o}" ${filter.method===o?'selected':''}>${o}</option>`).join('')}</select></div><div class="panel-head"><span class="panel-sub">${rs.length} wash records · Paid total ${money(sum)}</span><button class="textlink" data-action="reset-filters">Clear filters</button></div>${rs.length?table(rs):empty('No matching wash records','Adjust filters or add a new vehicle.')}</section>${dailyIncentiveRegister()}`;}
 function dailyIncentiveRegister(){
   const dates=incentiveDates(),workers=incentiveWorkers(dates),totalByWorker=Object.fromEntries(workers.map(e=>[e.id,0]));
@@ -317,15 +1575,127 @@ function saveIncentiveAdjustments(form){
   persist();$('#modalRoot').innerHTML='';render();toast(`Saved ${pending.length} worker incentive change(s).`);
 }
 function employees(){return heading('Employees','Manage worker profiles and salary components.',`<button class="btn" data-nav="attendance">▣ Attendance</button><button class="btn btn-primary" data-action="add-employee">＋ Add Employee</button>`)+`<div class="employee-grid">${db.employees.map(e=>{const count=db.records.filter(r=>(r.staff||[]).includes(e.id)&&r.date.startsWith(dateLocal().slice(0,7))).length;return `<div class="employee-card"><div class="avatar">${esc(e.name.slice(0,1).toUpperCase())}</div><div class="name">${esc(e.name)}</div><div class="summary">${e.active?'Active worker':'Inactive'} · ${esc(e.phone||'No mobile added')}</div><div class="metadata"><span>Base salary</span><strong>${money(e.salary)}</strong></div><div class="metadata"><span>Attendance bonus</span><strong>${money(e.attendanceBonus)}</strong></div><div class="metadata"><span>Performance bonus</span><strong>${money(e.performanceBonus)}</strong></div><div class="metadata"><span>Assigned washes (month)</span><strong>${count}</strong></div><button class="btn btn-sm" data-action="edit-employee" data-id="${e.id}" style="margin-top:15px;width:100%">Edit Employee</button></div>`}).join('')}</div><div class="tip" style="margin-top:12px">The salary range from your note is ₹5,000–₹6,000 basic, ₹1,000–₹1,500 attendance bonus and ₹1,000–₹1,500 performance bonus. Each employee's amounts are editable.</div>`;}
-function attendance(){let counts={};db.employees.forEach(e=>{const m=Object.entries(db.attendance).filter(([d])=>d.startsWith(attDate.slice(0,7)));counts[e.id]={present:m.filter(([,s])=>s[e.id]==='Present').length,half:m.filter(([,s])=>s[e.id]==='Half Day').length,leave:m.filter(([,s])=>s[e.id]==='Paid Leave').length,absent:m.filter(([,s])=>s[e.id]==='Absent').length};});return heading('Employee Attendance','Attendance controls who can be assigned on each wash date.',`<button class="btn" data-nav="payroll">View Payroll →</button>`)+`<section class="panel"><div class="field" style="max-width:270px"><label for="attDate">Attendance date</label><input id="attDate" type="date" value="${esc(attDate)}" data-action-change="attendance-date"></div><div class="attendance-grid" style="margin-top:20px">${db.employees.filter(e=>e.active).map(e=>{const status=attendanceStatus(e.id,attDate),c=counts[e.id],blocked=['Absent','Paid Leave'].includes(status);return `<div class="attendance-box"><div class="avatar">${esc(e.name[0]||'E')}</div><strong>${esc(e.name)}</strong><select data-action-change="attendance-status" data-id="${esc(e.id)}">${['Not Marked','Present','Half Day','Paid Leave','Absent'].map(x=>`<option ${status===x?'selected':''}>${x}</option>`).join('')}</select><p class="panel-sub">This month: ${c.present} present · ${c.half} half-day · ${c.leave} paid leave · ${c.absent} absent</p><span class="tag ${blocked?'tag-pending':'tag-paid'}">${blocked?'Assignment disabled':status==='Not Marked'?'Assignment allowed · Not marked':'Assignment enabled'}</span>${c.leave>4?'<span class="tag tag-pending">Over 4 paid leaves</span>':''}</div>`}).join('')}</div></section><div class="tip"><b>Assignment rules:</b> Absent/Paid Leave = disabled for new wash assignments; Present/Half Day = enabled; Not Marked = selectable with warning. Existing saved assignments are never silently deleted after changing attendance.<br><br><b>Paid leave:</b> 4 paid leaves per worker per month. Half-day pay and salary deductions are not calculated automatically; update Payroll if needed.</div>`;}
+function attendanceLegacy(){let counts={};db.employees.forEach(e=>{const m=Object.entries(db.attendance).filter(([d])=>d.startsWith(attDate.slice(0,7)));counts[e.id]={present:m.filter(([,s])=>s[e.id]==='Present').length,half:m.filter(([,s])=>s[e.id]==='Half Day').length,leave:m.filter(([,s])=>s[e.id]==='Paid Leave').length,absent:m.filter(([,s])=>s[e.id]==='Absent').length};});return heading('Employee Attendance','Attendance controls who can be assigned on each wash date.',`<button class="btn" data-nav="payroll">View Payroll →</button>`)+`<section class="panel"><div class="field" style="max-width:270px"><label for="attDate">Attendance date</label><input id="attDate" type="date" value="${esc(attDate)}" data-action-change="attendance-date"></div><div class="attendance-grid" style="margin-top:20px">${db.employees.filter(e=>e.active).map(e=>{const status=attendanceStatus(e.id,attDate),c=counts[e.id],blocked=['Absent','Paid Leave'].includes(status);return `<div class="attendance-box"><div class="avatar">${esc(e.name[0]||'E')}</div><strong>${esc(e.name)}</strong><select data-action-change="attendance-status" data-id="${esc(e.id)}">${['Not Marked','Present','Half Day','Paid Leave','Absent'].map(x=>`<option ${status===x?'selected':''}>${x}</option>`).join('')}</select><p class="panel-sub">This month: ${c.present} present · ${c.half} half-day · ${c.leave} paid leave · ${c.absent} absent</p><span class="tag ${blocked?'tag-pending':'tag-paid'}">${blocked?'Assignment disabled':status==='Not Marked'?'Assignment allowed · Not marked':'Assignment enabled'}</span>${c.leave>4?'<span class="tag tag-pending">Over 4 paid leaves</span>':''}</div>`}).join('')}</div></section><div class="tip"><b>Assignment rules:</b> Absent/Paid Leave = disabled for new wash assignments; Present/Half Day = enabled; Not Marked = selectable with warning. Existing saved assignments are never silently deleted after changing attendance.<br><br><b>Paid leave:</b> 4 paid leaves per worker per month. Half-day pay and salary deductions are not calculated automatically; update Payroll if needed.</div>`;}
 function payrollData(e){const k=payMonth+'|'+e.id;const p=db.payroll[k]||{attendance:false,performance:false,deduction:0};const inc=monthlyIncentives(payMonth)[e.id]||0;const total=Number(e.salary)+(p.attendance?Number(e.attendanceBonus):0)+(p.performance?Number(e.performanceBonus):0)+inc-(Number(p.deduction)||0);return{p,inc,total};}
-function payroll(){const totals=db.employees.map(e=>payrollData(e).total).reduce((s,n)=>s+n,0);return heading('Salary & Incentives','Monthly payout calculation based on saved wash assignments.',`<button class="btn" data-nav="attendance">▣ Mark Attendance</button>`)+`<div class="panel"><div class="panel-head"><div class="field"><label>Salary month</label><input type="month" id="payMonth" value="${esc(payMonth)}" data-action-change="payroll-month"></div><div><span class="panel-sub">Total estimated payouts</span><div class="stat-value" style="font-size:28px">${money(totals)}</div></div></div><div class="payroll-list">${db.employees.map(e=>{const {p,inc,total}=payrollData(e);const attendance=Object.entries(db.attendance).filter(([d])=>d.startsWith(payMonth)),paidLeave=attendance.filter(([,v])=>v[e.id]==='Paid Leave').length,absent=attendance.filter(([,v])=>v[e.id]==='Absent').length,halfDays=attendance.filter(([,v])=>v[e.id]==='Half Day').length;return `<div class="payroll-card"><div class="payroll-top"><div><div style="font-weight:850;font-size:17px">${esc(e.name)}</div><div class="panel-sub">Base ${money(e.salary)} + Incentives ${money(inc)} · Paid leaves ${paidLeave}/4 · Half days ${halfDays} · Absences ${absent}</div></div><div class="payroll-amount">${money(total)}</div></div><div class="payroll-controls"><label class="checkline"><input type="checkbox" data-payfield="attendance" data-id="${e.id}" ${p.attendance?'checked':''}> Attendance bonus ${money(e.attendanceBonus)}</label><label class="checkline"><input type="checkbox" data-payfield="performance" data-id="${e.id}" ${p.performance?'checked':''}> Performance bonus ${money(e.performanceBonus)}</label><div class="field"><label>Other deduction (₹)</label><input type="number" min="0" step="1" value="${esc(p.deduction||0)}" data-payfield="deduction" data-id="${e.id}"></div></div></div>`}).join('')}</div></div><section class="panel"><div class="panel-head"><h2>Daily incentive slabs</h2></div><div class="table-scroll"><table class="data-table"><thead><tr><th>Wash number (per day)</th><th>Incentive per assigned employee</th></tr></thead><tbody>${[['1–10','₹0'],['11–15','₹5 each'],['16–20','₹10 each'],['21–25','₹15 each'],['26–30','₹20 each'],['31–35','₹25 each']].map(x=>`<tr><td>${x[0]}</td><td><b>${x[1]}</b></td></tr>`).join('')}</tbody></table></div><p class="faq">Example: on 20 washes, one employee assigned to all 20 gets 5×₹5 + 5×₹10 = ₹75. Staff incentives accrue on completed washes even if customer payment is pending.</p></section><div class="tip">Attendance and performance bonuses are approved manually in this preview. No automatic bonus eligibility or salary deduction is assumed. You can record leave and deductions separately.</div>`;}
-function business(){return heading('Services & Business Information','Quick access to your approved pricing, directions and customer sharing.')+`<div class="content-grid"><section class="panel"><div class="panel-head"><h2>Our Pricing</h2></div>${Object.entries(CATS).map(([k,v])=>`<div class="price-row"><span class="service-name">${esc(v)}</span><strong>${PRICES[k]===null?'Ask Price':money(PRICES[k])}</strong></div>`).join('')}<p class="faq">Complete car wash includes exterior foam washing, interior vacuum/dashboard cleaning and tyre polish.</p><button class="btn btn-primary" data-nav="wash">＋ Record a wash</button></section><section class="panel"><h2>Location & Customer Links</h2><p><b>Radhika Washing Center</b><br><span class="muted">Murlipur, Garh Road, Meerut, Uttar Pradesh</span></p><div class="shortcuts"><a class="shortcut" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/ZRC5NJkP7nG2o6RE8">📍 Google Maps</a><a class="shortcut" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=Radhika%20Washing%20Center%2C%20Murlipur%2C%20Garh%20Road%2C%20Meerut.%20Complete%20car%20wash%20starts%20at%20Rs%20249.">🟢 Share via WhatsApp</a></div><p class="faq">Customer reviews are not fabricated in the demo. Connect a verified Google Business Profile to show genuine reviews in a production app.</p></section></div>`;}
-function settings(){return heading('Google Drive & Phone Backup','Offline-first • automatic Drive backup after Google sign-in.')+cloudSettingsPanel()+`<div class="content-grid"><section class="panel"><h2>Device Storage & Backups</h2><p class="faq"><b>Storage:</b> <span id="storageStatus">${window.AndroidStorage?'Android SQLite local database':storageReady?'IndexedDB local database':'Local browser storage fallback'}</span>. Records do not need internet. Google Drive backup requires setup and an active Google session. Chrome/app data clearing, browser changes, or app uninstall may erase these records. Export a separate JSON backup regularly until Google Drive status confirms Successful Sync, and before major upgrades.</p><div class="tip"><b>Important:</b> Backups may include customer phone numbers and employee details. Store them privately. Use only on your own trusted phone.</div><div style="display:flex;gap:9px;flex-wrap:wrap;margin:14px 0"><button class="btn btn-primary" data-action="export-json">↓ Full JSON Backup</button><button class="btn" data-action="restore-json">↑ Restore Backup</button><button class="btn" data-action="export-csv">↓ Wash Records CSV</button></div><input id="restoreInput" type="file" accept="application/json,.json" style="display:none" aria-label="Select backup JSON file"><p class="faq">A restore replaces the current dataset after confirmation. Export the current backup before restoring older data.</p><div style="display:flex;gap:9px;flex-wrap:wrap"><button class="btn btn-red" data-action="clear-all">Clear All Washes</button><button class="btn" data-action="load-demo">Load Sample Data</button></div></section><section class="panel"><h2>Incentive Rules</h2><p class="faq">1–10 washes ₹0; 11–15 ₹5; 16–20 ₹10; 21–25 ₹15; 26–30 ₹20 per assigned employee per wash. Subsequent 5-wash slabs increase by ₹5. Counting restarts each day. Final worker incentives may be manually edited under Records → Daily Incentive Register and are included in Payroll.</p><div class="field"><label>Working-day reference</label><input type="number" min="1" max="31" id="workDays" value="${esc(db.settings.workingDays||26)}" data-action-change="work-days"></div><p class="faq">4 paid leaves each month; attendance and performance bonuses are approved manually in Payroll. Monthly base salary is editable per employee.</p></section></div>`;}
+function payrollLegacy(){const totals=db.employees.map(e=>payrollData(e).total).reduce((s,n)=>s+n,0);return heading('Salary & Incentives','Monthly payout calculation based on saved wash assignments.',`<button class="btn" data-nav="attendance">▣ Mark Attendance</button>`)+`<div class="panel"><div class="panel-head"><div class="field"><label>Salary month</label><input type="month" id="payMonth" value="${esc(payMonth)}" data-action-change="payroll-month"></div><div><span class="panel-sub">Total estimated payouts</span><div class="stat-value" style="font-size:28px">${money(totals)}</div></div></div><div class="payroll-list">${db.employees.map(e=>{const {p,inc,total}=payrollData(e);const attendance=Object.entries(db.attendance).filter(([d])=>d.startsWith(payMonth)),paidLeave=attendance.filter(([,v])=>v[e.id]==='Paid Leave').length,absent=attendance.filter(([,v])=>v[e.id]==='Absent').length,halfDays=attendance.filter(([,v])=>v[e.id]==='Half Day').length;return `<div class="payroll-card"><div class="payroll-top"><div><div style="font-weight:850;font-size:17px">${esc(e.name)}</div><div class="panel-sub">Base ${money(e.salary)} + Incentives ${money(inc)} · Paid leaves ${paidLeave}/4 · Half days ${halfDays} · Absences ${absent}</div></div><div class="payroll-amount">${money(total)}</div></div><div class="payroll-controls"><label class="checkline"><input type="checkbox" data-payfield="attendance" data-id="${e.id}" ${p.attendance?'checked':''}> Attendance bonus ${money(e.attendanceBonus)}</label><label class="checkline"><input type="checkbox" data-payfield="performance" data-id="${e.id}" ${p.performance?'checked':''}> Performance bonus ${money(e.performanceBonus)}</label><div class="field"><label>Other deduction (₹)</label><input type="number" min="0" step="1" value="${esc(p.deduction||0)}" data-payfield="deduction" data-id="${e.id}"></div></div></div>`}).join('')}</div></div><section class="panel"><div class="panel-head"><h2>Daily incentive slabs</h2></div><div class="table-scroll"><table class="data-table"><thead><tr><th>Wash number (per day)</th><th>Incentive per assigned employee</th></tr></thead><tbody>${[['1–10','₹0'],['11–15','₹5 each'],['16–20','₹10 each'],['21–25','₹15 each'],['26–30','₹20 each'],['31–35','₹25 each']].map(x=>`<tr><td>${x[0]}</td><td><b>${x[1]}</b></td></tr>`).join('')}</tbody></table></div><p class="faq">Example: on 20 washes, one employee assigned to all 20 gets 5×₹5 + 5×₹10 = ₹75. Staff incentives accrue on completed washes even if customer payment is pending.</p></section><div class="tip">Attendance and performance bonuses are approved manually in this preview. No automatic bonus eligibility or salary deduction is assumed. You can record leave and deductions separately.</div>`;}
+function businessLegacy(){return heading('Services & Business Information','Quick access to your approved pricing, directions and customer sharing.')+`<div class="content-grid"><section class="panel"><div class="panel-head"><h2>Our Pricing</h2></div>${Object.entries(CATS).map(([k,v])=>`<div class="price-row"><span class="service-name">${esc(v)}</span><strong>${PRICES[k]===null?'Ask Price':money(PRICES[k])}</strong></div>`).join('')}<p class="faq">Complete car wash includes exterior foam washing, interior vacuum/dashboard cleaning and tyre polish.</p><button class="btn btn-primary" data-nav="wash">＋ Record a wash</button></section><section class="panel"><h2>Location & Customer Links</h2><p><b>Radhika Washing Center</b><br><span class="muted">Murlipur, Garh Road, Meerut, Uttar Pradesh</span></p><div class="shortcuts"><a class="shortcut" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/ZRC5NJkP7nG2o6RE8">📍 Google Maps</a><a class="shortcut" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=Radhika%20Washing%20Center%2C%20Murlipur%2C%20Garh%20Road%2C%20Meerut.%20Complete%20car%20wash%20starts%20at%20Rs%20249.">🟢 Share via WhatsApp</a></div><p class="faq">Customer reviews are not fabricated in the demo. Connect a verified Google Business Profile to show genuine reviews in a production app.</p></section></div>`;}
+function settingsLegacy(){return heading('Google Drive & Phone Backup','Offline-first • automatic Drive backup after Google sign-in.')+cloudSettingsPanel()+`<div class="content-grid"><section class="panel"><h2>Device Storage & Backups</h2><p class="faq"><b>Storage:</b> <span id="storageStatus">${window.AndroidStorage?'Android SQLite local database':storageReady?'IndexedDB local database':'Local browser storage fallback'}</span>. Records do not need internet. Google Drive backup requires setup and an active Google session. Chrome/app data clearing, browser changes, or app uninstall may erase these records. Export a separate JSON backup regularly until Google Drive status confirms Successful Sync, and before major upgrades.</p><div class="tip"><b>Important:</b> Backups may include customer phone numbers and employee details. Store them privately. Use only on your own trusted phone.</div><div style="display:flex;gap:9px;flex-wrap:wrap;margin:14px 0"><button class="btn btn-primary" data-action="export-json">↓ Full JSON Backup</button><button class="btn" data-action="restore-json">↑ Restore Backup</button><button class="btn" data-action="export-csv">↓ Wash Records CSV</button></div><input id="restoreInput" type="file" accept="application/json,.json" style="display:none" aria-label="Select backup JSON file"><p class="faq">A restore replaces the current dataset after confirmation. Export the current backup before restoring older data.</p><div style="display:flex;gap:9px;flex-wrap:wrap"><button class="btn btn-red" data-action="clear-all">Clear All Washes</button><button class="btn" data-action="load-demo">Load Sample Data</button></div></section><section class="panel"><h2>Incentive Rules</h2><p class="faq">1–10 washes ₹0; 11–15 ₹5; 16–20 ₹10; 21–25 ₹15; 26–30 ₹20 per assigned employee per wash. Subsequent 5-wash slabs increase by ₹5. Counting restarts each day. Final worker incentives may be manually edited under Records → Daily Incentive Register and are included in Payroll.</p><div class="field"><label>Working-day reference</label><input type="number" min="1" max="31" id="workDays" value="${esc(db.settings.workingDays||26)}" data-action-change="work-days"></div><p class="faq">4 paid leaves each month; attendance and performance bonuses are approved manually in Payroll. Monthly base salary is editable per employee.</p></section></div>`;}
 
-function render(){updateCloudBadge();const navFn={dashboard,wash,records,employees,attendance,payroll,business,settings};$('#sideNav').innerHTML=navButtons();$('#mobileNav').innerHTML=mobileButtons();$('#view').innerHTML=(navFn[view]||dashboard)();}
-function validation(){const no=draft.carNo.replace(/\s+/g,'').toUpperCase();if(!no)return'Please enter car registration number.';if(!(/^[A-Z]{2}\d{1,2}[A-Z]{1,3}\d{1,4}$/.test(no)||/^\d{2}BH\d{4}[A-Z]{1,2}$/.test(no)))return'Check registration number. Example: UP15 AB 1234 or 22 BH 1234 AA.';if(!draft.date||!draft.time)return'Select wash date and time.';if(!Number.isFinite(Number(draft.price))||Number(draft.price)<=0)return draft.category==='custom'?'Please enter custom vehicle price.':'Please enter a valid price above ₹0.';if(db.employees.some(e=>e.active)&&!(draft.staff||[]).length)return'Select at least one employee for the wash record.';for(const id of draft.staff||[]){const e=db.employees.find(x=>x.id===id);if(!isAssignmentAllowed(e,draft.date)&&!assignedEarlier(e,draft.date,draft.id))return 'Employee unavailable on wash date. Check Attendance and assignments.';}if(draft.phone.trim()&&!/^\d{10}$/.test(draft.phone.replace(/\D/g,'')))return'Customer mobile should contain 10 digits, or leave it blank.';return'';}
-function saveWash(){formError=validation();if(formError){render();$('#carNo')?.focus();return;}const no=draft.carNo.toUpperCase().replace(/\s+/g,'');const isEdit=!!draft.id;const duplicate=db.records.some(r=>r.id!==draft.id&&r.date===draft.date&&r.carNo.replace(/\s+/g,'')===no);if(duplicate&&!confirm('This vehicle already has a wash entry today. Add another entry anyway?'))return;let rec={...draft,customerName:String(draft.customerName||'').trim(),carNo:no,price:Number(draft.price),phone:draft.phone.replace(/\D/g,''),created:Date.now(),id:draft.id||uid(),demo:false};if(isEdit){const old=db.records.find(r=>r.id===rec.id);if(old){rec.created=old.created;rec.receiptNo=old.receiptNo;}db.records=db.records.map(r=>r.id===rec.id?rec:r);}else {ensureReceiptNumbers(db);rec.receiptNo=db.settings.nextReceiptNo++;db.records.unshift(rec);}persist();draft=null;filter={search:'',date:'',method:'all'};view='records';render();toast(isEdit?'Wash record updated.':'Wash record saved.');}
+// ----- Radhika Wash Manager v3.0: additive, backward-compatible modules -----
+const v3num=v=>Math.max(0,Number(v)||0);
+const v3month=()=>dateLocal().slice(0,7);
+const v3norm=s=>String(s||'').toUpperCase().replace(/\s+/g,'');
+const v3date=s=>String(s||'').slice(0,10);
+const v3ISO=()=>new Date().toISOString();
+let v3query='',v3monthFilter=v3month(),v3dayFilter=dateLocal(),v3stockEdit='',v3pinUnlocked=false,v3loginError='';
+function v3sync(){db.settings.v3LastEdited=v3ISO();persist();}
+function v3log(action,detail){db.activityLog.unshift({id:uid(),at:v3ISO(),action,detail:String(detail||'')});db.activityLog=db.activityLog.slice(0,800);}
+function v3field(label,name,type='text',required=false,value='',more=''){return `<div class="v3-field"><label>${esc(label)}</label><input name="${esc(name)}" type="${type}" ${required?'required':''} value="${esc(value)}" ${more}></div>`;}
+function v3select(label,name,options){return `<div class="v3-field"><label>${esc(label)}</label><select name="${esc(name)}">${options.map(x=>{const [value,label]=Array.isArray(x)?x:[x,x];return `<option value="${esc(value)}">${esc(label)}</option>`;}).join('')}</select></div>`;}
+function v3section(title,content,sub=''){return `<section class="panel"><div class="panel-head"><div><h2>${esc(title)}</h2>${sub?`<p class="panel-sub">${esc(sub)}</p>`:''}</div></div>${content}</section>`;}
+function v3KPIs(items){return `<div class="v3-grid" style="margin-bottom:16px">${items.map(([label,value,foot])=>`<div class="v3-card"><div class="v3-muted">${esc(label)}</div><div class="v3-kpi">${esc(value)}</div>${foot?`<div class="v3-muted">${esc(foot)}</div>`:''}</div>`).join('')}</div>`;}
+function v3amount(method,status,date,month){return db.records.filter(r=>(!month||r.date.startsWith(month))&&(!date||r.date===date)&&r.status==='Paid'&&(!method||r.method===method)).reduce((sum,r)=>sum+v3num(r.price),0);}
+function v3ExtrasRevenue(month,date,method){return db.otherIncome.filter(x=>(!month||x.date.startsWith(month))&&(!date||x.date===date)&&(!method||x.method===method)).reduce((s,x)=>s+v3num(x.amount),0);}
+function v3expenseTotal(month,date,method){return db.expenses.filter(x=>(!month||x.date.startsWith(month))&&(!date||x.date===date)&&(!method||x.method===method)).reduce((s,x)=>s+v3num(x.amount),0);}
+function v3Advance(eid,month){return db.advances.filter(a=>a.employeeId===eid&&a.date.startsWith(month)).reduce((s,a)=>s+v3num(a.amount),0);}
+function v3MonthlySalary(e,month){const p=db.payroll[month+'|'+e.id]||{attendance:false,performance:false,deduction:0};const inc=monthlyIncentives(month)[e.id]||0;const gross=v3num(e.salary)+(p.attendance?v3num(e.attendanceBonus):0)+(p.performance?v3num(e.performanceBonus):0)+inc-v3num(p.deduction);const advanced=v3Advance(e.id,month);return{gross,advanced,due:Math.max(0,gross-advanced),inc,p};}
+function v3salaryCost(month){return db.employees.filter(e=>(!e.joined||e.joined.slice(0,7)<=month)).reduce((s,e)=>s+v3MonthlySalary(e,month).gross,0);}
+function v3LoyaltyEligible(carNo){const no=v3norm(carNo);const threshold=Math.max(1,Number(db.settings.loyaltyWashes)||5),visits=db.records.filter(r=>v3norm(r.carNo)===no&&!r.membershipId).length,claims=db.loyaltyClaims.filter(x=>v3norm(x.carNo)===no).length;return visits-claims*threshold>=threshold;}
+function v3ClientRecords(carNo){return db.records.filter(r=>v3norm(r.carNo)===v3norm(carNo)).sort((a,b)=>b.date.localeCompare(a.date)||b.time.localeCompare(a.time));}
+function v3Clients(){const map=new Map();for(const r of db.records){let no=v3norm(r.carNo),entry=map.get(no)||{no,records:[],name:'',phone:'',category:r.category};entry.records.push(r);if(!entry.name&&r.customerName)entry.name=r.customerName;if(!entry.phone&&r.phone)entry.phone=r.phone;map.set(no,entry);}return[...map.values()].map(e=>{e.records.sort((a,b)=>b.date.localeCompare(a.date)||b.time.localeCompare(a.time));e.name=e.records.find(r=>r.customerName)?.customerName||'';e.phone=e.records.find(r=>r.phone)?.phone||'';e.category=e.records[0]?.category;e.paid=e.records.filter(r=>r.status==='Paid').reduce((s,r)=>s+v3num(r.price),0);return e;}).sort((a,b)=>(b.records[0]?.date||'').localeCompare(a.records[0]?.date||''));}
+function v3wa(phone,message){const n=String(phone||'').replace(/\D/g,'').slice(-10);const url='https://wa.me/'+(n?'91'+n:'')+'?text='+encodeURIComponent(message);window.open(url,'_blank','noopener,noreferrer');}
+function v3CustomerCard(p){return `<div class="v3-card"><div class="v3-actions" style="justify-content:space-between"><strong>${esc(p.no)}</strong><span class="v3-tag">${p.records.length} visits</span></div><div>${esc(p.name||'Walk-in Customer')}</div><div class="v3-muted">${esc(p.phone||'No phone')} · Last wash ${esc(p.records[0]?.date||'—')}</div><div class="v3-muted">Collected ${money(p.paid)}</div><div class="v3-actions" style="margin-top:10px"><button class="btn btn-sm" data-v3="customer-history" data-id="${esc(p.no)}">History</button><button class="btn btn-sm" data-v3="repeat-wash" data-id="${esc(p.no)}">＋ Repeat</button>${p.phone?`<button class="btn btn-sm" data-v3="customer-remind" data-id="${esc(p.no)}">WhatsApp</button>${db.settings.reviewUrl?`<button class="btn btn-sm" data-v3="review-request" data-id="${esc(p.no)}">Review</button>`:''}`:''}</div></div>`;}
+function customers(){const profiles=v3Clients().filter(c=>!v3query||[c.no,c.name,c.phone].some(x=>String(x||'').toLowerCase().includes(v3query.toLowerCase())));const repeat=profiles.filter(p=>p.records.length>1).length;return heading('Customers & Vehicle History','Car number → previous visits, auto-fill, repeat customer follow-up.')+v3KPIs([['Vehicles',v3Clients().length],['Repeat customers',v3Clients().filter(p=>p.records.length>1).length],['Visits',db.records.length],['Collected',money(db.records.filter(r=>r.status==='Paid').reduce((s,r)=>s+v3num(r.price),0))]])+`<section class="panel"><div class="v3-filter"><input class="search-input" id="v3ClientSearch" placeholder="Search vehicle / name / phone" value="${esc(v3query)}"><button class="btn" data-v3="export-customers">↓ Customers CSV</button></div><div class="v3-grid">${profiles.map(v3CustomerCard).join('')||empty('No customers found','Record a wash or clear the search.')}</div></section>`;}
+function v3CustomerModal(no){const p=v3Clients().find(x=>x.no===no);if(!p)return;const rev=db.settings.reviewUrl||'';$('#modalRoot').innerHTML=`<div class="dialog-backdrop"><div class="dialog"><div class="dialog-top"><h2>${esc(p.no)} · Vehicle History</h2><button class="close-btn" data-action="close-modal">×</button></div><p>${esc(p.name||'Walk-in')} · ${esc(p.phone||'No mobile')}</p><p class="faq">${p.records.length} washes · Collected ${money(p.paid)}</p><div style="max-height:40vh;overflow-y:auto">${p.records.map(r=>`<div class="v3-item"><strong>Receipt #${esc(r.receiptNo)}</strong> · ${esc(r.date)} · ${money(r.price)}<br><span class="v3-muted">${esc(r.service)} · ${esc(r.stage||'Delivered')}</span><div class="v3-actions"><button class="btn btn-sm" data-action="receipt" data-id="${esc(r.id)}">Receipt</button></div></div>`).join('')}</div><div class="v3-actions" style="margin-top:14px"><button class="btn btn-primary" data-v3="repeat-wash" data-id="${esc(no)}">＋ New Wash</button>${p.phone?`<button class="btn" data-v3="customer-remind" data-id="${esc(no)}">WhatsApp Reminder</button>`:''}</div></div></div>`;}
+function v3repeat(no){const p=v3Clients().find(x=>x.no===no);if(!p)return;const recent=p.records[0];draft=newDraft();draft.carNo=p.no;draft.customerName=p.name;draft.phone=p.phone;draft.category=recent.category;draft.price=String(PRICES[recent.category]??recent.basePrice??recent.price);draft.service=recent.service;$('#modalRoot').innerHTML='';nav('wash');toast('Previous customer details filled in.');}
+function v3AutoFill(){if(!draft||draft.id)return;const no=v3norm(draft.carNo);if(no.length<6)return;const p=v3Clients().find(x=>x.no===no);const area=$('#v3CustomerHint');if(p){if(!draft.customerName)draft.customerName=p.name;if(!draft.phone)draft.phone=p.phone;if(area)area.innerHTML=`<div class="v3-okay">Returning customer · ${p.records.length} previous wash(es) · Last ${esc(p.records[0].date)}. Name/phone auto-filled.</div>`;const inp=$('#customerName'),ph=$('#phone');if(inp)inp.value=draft.customerName;if(ph)ph.value=draft.phone;const reward=$('#v3RewardHint');if(reward&&!draft.membershipId)reward.innerHTML=v3LoyaltyEligible(no)?`<div class="v3-okay">Loyalty reward available (${money(db.settings.loyaltyDiscount||50)} discount). <button class="btn btn-sm" data-v3="apply-loyalty">Apply Reward</button></div>`:'';}else if(area)area.innerHTML='<span class="v3-muted">New vehicle — no earlier visit found.</span>';}
+function wash(){let out=washLegacy();const insert=`<div id="v3CustomerHint" style="margin:10px 0"></div><div id="v3RewardHint" style="margin-bottom:8px"></div><div class="v3-actions" style="margin:8px 0"><button class="btn btn-sm" type="button" data-v3="scan-plate">📷 Capture Vehicle Plate (optional)</button><button class="btn btn-sm" data-v3="quick-customer">↻ Find Previous Customer</button></div><input type="file" id="plateCapture" accept="image/*" capture="environment" hidden><p class="faq">Camera scan is experimental: always verify and type the registration number manually if needed.</p>`;out=out.replace('<span class="field-help">Indian number format,',insert+'<span class="field-help">Indian number format,');const mem=draft?.membershipId?db.memberships.find(x=>x.id===draft.membershipId):null;if(mem)out=out.replace('<div class="panel"><div class="panel-head"><h2>2. Payment Details</h2>',`<div class="v3-okay" style="margin:0 0 12px">Membership: ${esc(mem.plan)} · Prepaid wash · Remaining before this visit ${mem.remaining}</div><div class="panel"><div class="panel-head"><h2>2. Payment Details</h2>`);return out;}
+function dashboard(){const m=v3month(),gross=v3amount(null,null,m)+v3ExtrasRevenue(m),expenses=v3expenseTotal(m),salary=v3salaryCost(m),net=gross-expenses-salary,repeat=v3Clients().filter(p=>p.records.length>1).length,low=db.stock.filter(x=>v3num(x.qty)<=v3num(x.min));const extra=v3KPIs([['This month collected',money(gross),'Washes + membership sales'],['Other expenses',money(expenses),'Consumables, power, repairs etc.'],['Estimated payroll',money(salary),'Salary + approved bonuses + incentives'],['Estimated profit',money(net),'Collection − expenses − payroll']]);return heading('Business Overview · v3.0','Your complete washing center in one screen.')+extra+`<div class="v3-grid" style="margin-bottom:18px">${[['finance','₹ Expenses & Profit'],['closing','▣ Daily Cash Closing'],['customers','♧ Customers'],['operations','☰ Wash Queue'],['inventory','▤ Stock'],['marketing','✦ Memberships'],['reports','▥ Reports']].map(x=>`<button class="v3-feature-link" data-nav="${x[0]}">${x[1]}</button>`).join('')}</div>`+(low.length?`<div class="v3-warn" style="margin-bottom:15px">Low-stock alert: ${low.map(x=>esc(x.name)).join(', ')}</div>`:'')+dashboardLegacy().replace(heading('Business Overview','Your car wash operations at a glance.',`<button class="btn btn-primary" data-nav="wash">＋ Record a Wash</button>`),'');}
+function v3Profits(month){const revenue=v3amount(null,null,month)+v3ExtrasRevenue(month),expenses=v3expenseTotal(month),salary=v3salaryCost(month);return{revenue,expenses,salary,profit:revenue-expenses-salary};}
+function finance(){const m=v3monthFilter,{revenue,expenses,salary,profit}=v3Profits(m);const list=db.expenses.filter(x=>x.date.startsWith(m)).sort((a,b)=>b.date.localeCompare(a.date)||b.at.localeCompare(a.at));return heading('Expenses & Profit','Track money spent and actual collection; salary is a monthly estimate.')+`<div class="v3-filter"><label>Month <input type="month" data-v3-change="month" value="${esc(m)}"></label><button class="btn" data-v3="expense-csv">↓ Expense CSV</button></div>`+v3KPIs([['Paid revenue',money(revenue)],['Other expenses',money(expenses)],['Estimated payroll',money(salary)],['Estimated profit',money(profit),profit<0?'Loss at current collections':'Before tax, depreciation and unpaid bills']])+v3section('Add Expense',`<form id="v3Expense" class="v3-form">${v3field('Date','date','date',true,dateLocal())}${v3select('Category','category',['Electricity','Water','Chemicals','Wages','Repairs','Rent','Fuel','Marketing','Equipment','Other'])}${v3field('Amount (₹)','amount','number',true,'','min="0.01" step="0.01"')}${v3select('Paid using','method',['Cash','Online'])}${v3field('Description','note','text',false,'','maxlength="180"')}<button class="btn btn-primary" type="submit">＋ Save Expense</button></form>`,'Stock purchase entries may create expense records automatically; do not enter them twice.')+v3section('Expense Register',`<div class="table-scroll"><table class="v3-tbl"><thead><tr><th>Date</th><th>Category</th><th>Details</th><th>Method</th><th>Amount</th><th></th></tr></thead><tbody>${list.map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(x.category)}</td><td>${esc(x.note||'—')}</td><td>${esc(x.method)}</td><td><strong>${money(x.amount)}</strong></td><td><button class="btn btn-sm btn-red" data-v3="delete-expense" data-id="${esc(x.id)}">Delete</button></td></tr>`).join('')||'<tr><td colspan="6">No expenses this month.</td></tr>'}</tbody></table></div>`)+`<div class="tip"><b>Accounting:</b> Revenue counts only Paid wash entries plus separately received membership sales. Payroll is an estimate until salaries are settled. A stock purchase is counted as expense when paid, not again when consumed.</div>`;}
+function closing(){const d=v3dayFilter,record=db.closings.find(x=>x.date===d),cash=v3amount('Cash',null,d)+v3ExtrasRevenue(null,d,'Cash'),online=v3amount('Online',null,d)+v3ExtrasRevenue(null,d,'Online'),expensesCash=v3expenseTotal(null,d,'Cash'),adv=db.advances.filter(x=>x.date===d&&x.method==='Cash').reduce((s,x)=>s+v3num(x.amount),0),opening=v3num(record?.opening),expected=opening+cash-expensesCash-adv,counted=Number(record?.countedCash)||0,difference=counted-expected;return heading('Daily Cash Closing','Check how much cash should be in the drawer at the end of the day.')+`<div class="v3-filter"><label>Date <input type="date" data-v3-change="day" value="${esc(d)}"></label></div>`+v3KPIs([['Cash collected',money(cash)],['UPI collected',money(online)],['Cash expenses',money(expensesCash)],['Cash salary advances',money(adv)]])+v3section('Close the Day',`<form id="v3Closing" class="v3-form">${v3field('Opening cash','opening','number',true,record?.opening||0,'min="0" step="0.01"')}${v3field('Cash counted','countedCash','number',true,record?.countedCash??0,'min="0" step="0.01"')}${v3field('Notes','note','text',false,record?.note||'')}<button class="btn btn-primary" type="submit">✓ Save Closing</button></form><p class="faq">Expected Cash = Opening + Cash Collection − Cash Expenses − Cash Salary Advances. UPI is kept separate.</p><p class="v3-okay">${record?`Saved closing. Expected cash ${money(expected)} · Counted ${money(counted)} · Difference <b>${money(difference)}</b>`:`Enter opening cash and counted cash to reconcile ${esc(d)}.`}</p>`)+v3section('Recent Closings',`<div class="table-scroll"><table class="v3-tbl"><tr><th>Date</th><th>Opening</th><th>Counted</th><th>Expected</th><th>Difference</th></tr>${db.closings.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,25).map(x=>{const c=v3amount('Cash',x.date)+v3ExtrasRevenue(null,x.date,'Cash'),e=v3expenseTotal(null,x.date,'Cash'),adv=db.advances.filter(z=>z.date===x.date&&z.method==='Cash').reduce((s,z)=>s+v3num(z.amount),0);const exp=v3num(x.opening)+c-e-adv;return `<tr><td>${esc(x.date)}</td><td>${money(x.opening)}</td><td>${money(x.countedCash)}</td><td>${money(exp)}</td><td>${money(v3num(x.countedCash)-exp)}</td></tr>`;}).join('')||'<tr><td colspan="5">No closing records.</td></tr>'}</table></div>`);}
+function inventory(){const stock=db.stock,low=stock.filter(x=>v3num(x.qty)<=v3num(x.min));return heading('Inventory & Consumables','Track shampoo, polish, consumables and stock purchases.')+v3KPIs([['Products',stock.length],['Low-stock items',low.length],['Stock cost basis',money(stock.reduce((s,x)=>s+v3num(x.qty)*v3num(x.unitCost),0))],['Transactions',db.stockMoves.length]])+v3section('Add Stock Product',`<form id="v3Stock" class="v3-form">${v3field('Product','name','text',true,'','maxlength="65"')}${v3field('Unit (L, kg, pcs)','unit','text',true,'L','maxlength="12"')}${v3field('Starting quantity','qty','number',true,0,'min="0" step="0.01"')}${v3field('Low stock alert at','min','number',true,2,'min="0" step="0.01"')}${v3field('Cost per unit (₹)','unitCost','number',true,0,'min="0" step="0.01"')}<button class="btn btn-primary" type="submit">＋ Add Product</button></form>`,'Starting inventory quantity is not booked as a new purchase expense.')+v3section('Current Stock',`<div class="v3-grid">${stock.map(x=>`<div class="v3-card"><div class="v3-actions" style="justify-content:space-between"><strong>${esc(x.name)}</strong><span class="v3-tag ${v3num(x.qty)<=v3num(x.min)?'v3-badge-danger':''}">${v3num(x.qty)<=v3num(x.min)?'LOW STOCK':'OK'}</span></div><div class="v3-kpi">${v3num(x.qty)} <span class="v3-muted">${esc(x.unit)}</span></div><div class="v3-muted">Alert ≤ ${x.min} ${esc(x.unit)} · ${money(x.unitCost)}/${esc(x.unit)}</div><div class="v3-actions" style="margin-top:10px"><button class="btn btn-sm" data-v3="stock-in" data-id="${esc(x.id)}">＋ Buy</button><button class="btn btn-sm" data-v3="stock-out" data-id="${esc(x.id)}">− Use</button><button class="btn btn-sm btn-red" data-v3="stock-delete" data-id="${esc(x.id)}">Delete</button></div></div>`).join('')||empty('No products','Add shampoo, tyre polish and cleaning supplies.')}</div>`)+v3section('Last Stock Transactions',`<div class="table-scroll"><table class="v3-tbl"><thead><tr><th>Date</th><th>Item</th><th>Type</th><th>Quantity</th><th>Value</th></tr></thead><tbody>${db.stockMoves.slice(-30).reverse().map(m=>`<tr><td>${esc(m.date)}</td><td>${esc(m.name)}</td><td>${esc(m.type)}</td><td>${m.qty} ${esc(m.unit)}</td><td>${money(m.amount)}</td></tr>`).join('')||'<tr><td colspan="5">No stock movements.</td></tr>'}</tbody></table></div>`);}
+function v3StockDialog(id,type){const item=db.stock.find(s=>s.id===id);if(!item)return;$('#modalRoot').innerHTML=`<div class="dialog-backdrop"><div class="dialog"><div class="dialog-top"><h2>${type==='IN'?'Buy / Receive':'Use'} ${esc(item.name)}</h2><button class="close-btn" data-action="close-modal">×</button></div><form id="v3StockMove" class="v3-form" style="margin-top:18px"><input type="hidden" name="id" value="${esc(id)}"><input type="hidden" name="type" value="${esc(type)}">${v3field('Date','date','date',true,dateLocal())}${v3field('Quantity ('+item.unit+')','qty','number',true,1,'min="0.01" step="0.01"')}${type==='IN'?v3field('Purchase cost total (₹)','amount','number',true,0,'min="0" step="0.01"')+v3select('Paid via','method',['Cash','Online']):''}${v3field('Notes','note','text',false,'')}<button class="btn btn-primary" type="submit">Save ${type==='IN'?'Purchase':'Consumption'}</button></form><p class="faq">${type==='IN'?'Stock purchase will automatically create an expense.':'Usage reduces quantity; it is not counted as an expense again.'}</p></div></div>`;}
+function v3membershipActive(m){return m.remaining>0&&(!m.expiry||m.expiry>=dateLocal());}
+function marketing(){const active=db.memberships.filter(v3membershipActive);const p=v3Clients();const due=p.filter(x=>{const d=x.records[0]?.date||'';return d&&Math.floor((Date.now()-new Date(d+'T00:00').getTime())/86400000)>=(Number(db.settings.reminderDays)||20)&&x.phone;});return heading('Marketing, Loyalty & Memberships','Return visits, one-tap WhatsApp messages and prepaid wash plans.')+v3KPIs([['Returning customers',p.filter(x=>x.records.length>1).length],['Reminder candidates',due.length,'20+ days since last wash'],['Active memberships',active.length],['Membership sales',money(db.otherIncome.filter(x=>x.category==='Membership').reduce((s,x)=>s+v3num(x.amount),0))]])+v3section('Customer Follow-ups',`<div class="v3-grid">${due.slice(0,45).map(x=>`<div class="v3-card"><strong>${esc(x.no)}</strong><div>${esc(x.name||'Customer')}</div><div class="v3-muted">Last ${esc(x.records[0].date)} · ${x.records.length} visits</div><button class="btn btn-sm" data-v3="customer-remind" data-id="${esc(x.no)}">Open WhatsApp Reminder</button></div>`).join('')||'<p class="v3-muted">No customers due with saved mobile numbers.</p>'}</div>`,`Messages open in WhatsApp only when you tap; no unauthorized automatic messaging.`)+v3section('Create Prepaid Wash Membership',`<form id="v3Membership" class="v3-form">${v3field('Vehicle No.','carNo','text',true,'','maxlength="16"')}${v3field('Customer name','name','text',false,'')}${v3field('Phone','phone','tel',false,'','maxlength="10"')}${v3field('Plan name','plan','text',true,'5 Wash Package')}${v3field('Number of washes','washes','number',true,5,'min="1" max="100"')}${v3field('Total package payment (₹)','price','number',true,1000,'min="0" step="0.01"')}${v3field('Purchase date','date','date',true,dateLocal())}${v3field('Expiry date','expiry','date',false,'')}${v3select('Payment method','method',['Cash','Online'])}<button class="btn btn-primary" type="submit">＋ Save Plan</button></form><p class="faq">Plan sales are counted as revenue when payment is recorded. Redeeming a prepaid wash makes a ₹0 wash receipt, preventing double-counting of revenue.</p>`)+v3section('Membership Register',`<div class="v3-grid">${db.memberships.slice().reverse().map(m=>`<div class="v3-card"><div class="v3-actions" style="justify-content:space-between"><strong>${esc(m.carNo)}</strong><span class="v3-tag">${v3membershipActive(m)?'ACTIVE':'EXPIRED / USED'}</span></div><div>${esc(m.name||'Customer')} · ${esc(m.plan)}</div><div class="v3-kpi">${m.remaining}/${m.washes} <span class="v3-muted">washes left</span></div><div class="v3-muted">Bought ${esc(m.date)} · Expiry ${esc(m.expiry||'None')} · ${money(m.price)}</div><div class="v3-actions" style="margin-top:10px"><button class="btn btn-sm btn-primary" data-v3="redeem-membership" data-id="${esc(m.id)}" ${!v3membershipActive(m)?'disabled':''}>Redeem Wash</button><button class="btn btn-sm" data-v3="membership-history" data-id="${esc(m.id)}">History</button></div></div>`).join('')||empty('No active plans','Create a prepaid membership above.')}</div>`)+v3section('Marketing Settings',`<form id="v3MarketingSettings" class="v3-form">${v3field('Google Review link','reviewUrl','url',false,db.settings.reviewUrl||'','placeholder="https://g.page/r/..."')}${v3field('Eligible after washes','loyaltyWashes','number',true,db.settings.loyaltyWashes||5,'min="1" max="100"')}${v3field('Reward discount (₹)','loyaltyDiscount','number',true,db.settings.loyaltyDiscount||50,'min="0" step="1"')}${v3field('Reminder after days','reminderDays','number',true,db.settings.reminderDays||20,'min="1" max="365"')}${v3field('Referral / loyalty note','loyaltyNote','text',false,db.settings.loyaltyNote||'5 washes → ₹50 discount','maxlength="140"')}<button class="btn btn-primary" type="submit">Save Settings</button></form><p class="faq">Review requests are only sent when you choose to share the link. Loyalty rules are a note; discounts are applied explicitly in New Wash, never silently.</p>`);}
+function operations(){const statuses=['Waiting','Washing','Completed','Delivered'];const today=db.records.filter(r=>r.date===dateLocal()).sort((a,b)=>a.time.localeCompare(b.time));return heading('Wash Queue & Operations','Track vehicles from Waiting → Washing → Completed → Delivered.')+v3KPIs(statuses.map(st=>[st,today.filter(r=>(r.stage||'Delivered')===st).length]))+v3section('Today’s Wash Queue',`<div class="v3-grid">${today.map(r=>`<div class="v3-card"><strong>${esc(r.carNo)}</strong><div class="v3-muted">Receipt #${esc(r.receiptNo)} · ${esc(r.time)} · ${money(r.price)}</div><div class="v3-field"><label>Current stage</label><select data-v3-change="stage" data-id="${esc(r.id)}">${statuses.map(st=>`<option ${st===(r.stage||'Delivered')?'selected':''}>${st}</option>`).join('')}</select></div><div class="v3-actions" style="margin-top:10px"><button class="btn btn-sm" data-action="receipt" data-id="${esc(r.id)}">Receipt</button><button class="btn btn-sm" data-action="edit-record" data-id="${esc(r.id)}">Edit</button></div></div>`).join('')||empty('No washes today','New entries start in Waiting status.')}</div>`);}
+function v3ReportCsv(){const data=[['Date','Receipt','Car No','Customer','Phone','Service','Stage','Gross Price','Extras','Discount','Collected','Method','Status','Workers']];db.records.forEach(r=>data.push([r.date,r.receiptNo,r.carNo,r.customerName||'',r.phone||'',r.service,r.stage||'Delivered',r.basePrice??r.price,r.extras||0,r.discount||0,r.status==='Paid'?r.price:0,r.method,r.status,(r.staff||[]).map(id=>db.employees.find(e=>e.id===id)?.name||id).join(' / ')]));return data;}
+function v3CSVdownload(name,rows){const csv='\ufeff'+rows.map(r=>r.map(csvValue).join(',')).join('\r\n');download(name,csv,'text/csv;charset=utf-8');}
+function reports(){let month=v3monthFilter;const d=v3Profits(month),rows=[];for(let day=1;day<=31;day++){let date=month+'-'+String(day).padStart(2,'0');let rs=db.records.filter(r=>r.date===date);if(!rs.length&&!db.expenses.some(x=>x.date===date))continue;rows.push({date,cars:rs.length,paid:rs.filter(r=>r.status==='Paid').reduce((s,r)=>s+v3num(r.price),0)+v3ExtrasRevenue(null,date),expenses:v3expenseTotal(null,date)});}const max=Math.max(...rows.map(x=>x.paid),1);return heading('Reports & Analytics','Export for Excel, print PDF, and review business performance.')+`<div class="v3-filter"><label>Month <input type="month" data-v3-change="month" value="${esc(month)}"></label><button class="btn" data-v3="report-csv">↓ Full Wash CSV</button><button class="btn" data-v3="expense-csv">↓ Expenses CSV</button><button class="btn" data-v3="salary-csv">↓ Salary CSV</button><button class="btn btn-primary" data-v3="report-print">🖨 Print / Save PDF</button></div>`+v3KPIs([['Paid sales',money(d.revenue)],['Expense',money(d.expenses)],['Payroll estimate',money(d.salary)],['Estimated profit',money(d.profit)]])+v3section('Daily Revenue Trend',`<div style="display:flex;align-items:end;gap:5px;min-height:170px;overflow-x:auto">${rows.map(x=>`<div style="min-width:24px;flex:1;text-align:center" title="${esc(x.date)} · ${money(x.paid)}"><div style="height:${Math.max(3,x.paid/max*145)}px;background:#FFD21A;border-radius:5px 5px 0 0"></div><span class="v3-muted">${Number(x.date.slice(-2))}</span></div>`).join('')||'<p class="v3-muted">No records for this month.</p>'}</div>`)+v3section('Day-by-day Summary',`<div class="table-scroll"><table class="v3-tbl"><thead><tr><th>Date</th><th>Cars</th><th>Paid receipts</th><th>Expenses</th><th>Before payroll</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${x.date}</td><td>${x.cars}</td><td>${money(x.paid)}</td><td>${money(x.expenses)}</td><td>${money(x.paid-x.expenses)}</td></tr>`).join('')||'<tr><td colspan="5">No activity.</td></tr>'}</tbody></table></div>`)+v3section('Recent Changes',`<div class="v3-list">${db.activityLog.slice(0,25).map(x=>`<div class="v3-item"><strong>${esc(x.action)}</strong> · ${esc(x.detail)}<div class="v3-muted">${esc(new Date(x.at).toLocaleString('en-IN'))}</div></div>`).join('')||'<p class="v3-muted">No logged v3 changes yet.</p>'}</div>`)+`<div class="tip">CSV opens in Excel or Google Sheets. Use Print / Save PDF to create an offline PDF summary. Receipt QR codes encode receipt details, not a live public webpage.</div>`;}
+function attendance(){let out=attendanceLegacy();let m=attDate.slice(0,7);const days=new Date(Number(m.slice(0,4)),Number(m.slice(5,7)),0).getDate();const calendar=v3section('Monthly Attendance Calendar',`<div class="table-scroll"><table class="v3-tbl"><thead><tr><th>Employee</th>${Array.from({length:days},(_,i)=>`<th>${i+1}</th>`).join('')}<th>Leave</th></tr></thead><tbody>${db.employees.filter(e=>e.active).map(e=>{const leave=Object.entries(db.attendance).filter(([d,v])=>d.startsWith(m)&&v[e.id]==='Paid Leave').length;return `<tr><td><strong>${esc(e.name)}</strong></td>${Array.from({length:days},(_,i)=>{const d=m+'-'+String(i+1).padStart(2,'0'),st=attendanceStatus(e.id,d);const symbol={'Present':'P','Absent':'A','Half Day':'H','Paid Leave':'L','Not Marked':'·'}[st];return `<td title="${esc(d+' '+st)}">${symbol}</td>`;}).join('')}<td>${leave}/4</td></tr>`;}).join('')}</tbody></table></div><p class="v3-muted">P Present · A Absent · H Half Day · L Paid Leave · · Not Marked. Choose any date above to edit it.</p>`);return out+calendar;}
+function payroll(){let old=payrollLegacy();let advances=v3section('Employee Salary Advances',`<form id="v3Advance" class="v3-form">${v3field('Date','date','date',true,dateLocal())}${v3select('Worker','employeeId',db.employees.map(e=>[e.id,e.name]))}${v3field('Advance paid (₹)','amount','number',true,0,'min="0.01" step="0.01"')}${v3select('Payment method','method',['Cash','Online'])}${v3field('Note','note','text',false,'')}<button class="btn btn-primary" type="submit">＋ Save Advance</button></form><div class="table-scroll" style="margin-top:14px"><table class="v3-tbl"><tr><th>Date</th><th>Worker</th><th>Amount</th><th>Method</th><th></th></tr>${db.advances.filter(x=>x.date.startsWith(payMonth)).slice().reverse().map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(db.employees.find(e=>e.id===x.employeeId)?.name||'Former worker')}</td><td>${money(x.amount)}</td><td>${esc(x.method)}</td><td><button class="btn btn-sm btn-red" data-v3="advance-delete" data-id="${esc(x.id)}">Delete</button></td></tr>`).join('')}</table></div>`);let slips=v3section('Salary Slips & Final Payable',`<div class="v3-grid">${db.employees.map(e=>{const s=v3MonthlySalary(e,payMonth);return `<div class="v3-card"><strong>${esc(e.name)}</strong><p class="v3-muted">Gross salary ${money(s.gross)}<br>Less advance ${money(s.advanced)}</p><div class="v3-kpi">${money(s.due)}</div><div class="v3-muted">Remaining payable</div><button class="btn btn-sm" data-v3="salary-slip" data-id="${esc(e.id)}">Print Salary Slip</button></div>`;}).join('')}</div>`);return old+advances+slips;}
+function settings(){let out=settingsLegacy();const safety=`<div class="tip"><b>v3.0 Backup Protection:</b> Full JSON and Google Drive now include Expenses, Closing, Inventory, Memberships, Salary Advances, Activity Log and Business Settings. Keep older backup copies. Automatic Drive sync only runs while the app is open and Google sign-in is active.</div>`;return out+v3section('Privacy, Security & App Updates',`<div class="v3-form"><div class="v3-field"><label>Set / change App PIN (4–8 digits)</label><input id="v3PIN" type="password" minlength="4" maxlength="8" inputmode="numeric" placeholder="Enter new PIN"></div><button class="btn btn-primary" data-v3="set-pin">Set PIN Lock</button><button class="btn" data-v3="remove-pin">Remove PIN</button><button class="btn" data-v3="lock-now">Lock Now</button></div><p class="faq">PIN is a local screen lock to discourage casual access, not encryption. Anyone with access to browser storage or full JSON backup may still read business data. Do not store highly sensitive information in the app.</p><p class="faq">Camera plate reading is experimental; manual review required. GitHub Pages updates replace app code, not Google Drive backup records.</p>${safety}`);}
+function business(){return businessLegacy()+v3section('Operating Cost Reference',`<form id="v3UnitCosts" class="v3-form">${v3field('Water used per wash (litres)','waterL','number',true,db.settings.waterL||60,'min="0" step="0.1"')}${v3field('Water cost per 1,000 L (₹)','waterCost','number',true,db.settings.waterCost||80,'min="0" step="0.01"')}${v3field('Power consumed per wash (kWh)','powerKwh','number',true,db.settings.powerKwh||1,'min="0" step="0.01"')}${v3field('Electricity cost per kWh (₹)','powerRate','number',true,db.settings.powerRate||9,'min="0" step="0.01"')}<button class="btn btn-primary" type="submit">Save Cost Reference</button></form><p class="faq">Indicative utility cost per wash = ${money(v3num(db.settings.waterL||60)*v3num(db.settings.waterCost||80)/1000+v3num(db.settings.powerKwh||1)*v3num(db.settings.powerRate||9))}. These are estimates, NOT actual expenses; record real paid electricity/water bills in Expenses to avoid double counting.</p>`);}
+function confirmDelete(id){const r=db.records.find(x=>x.id===id);if(!r)return;const member=r.membershipId?db.memberships.find(m=>m.id===r.membershipId):null;if(!member){if(!r.loyaltyClaim)return confirmDeleteLegacy(id);if(!confirm('Delete this wash and restore its loyalty reward availability?'))return;db.loyaltyClaims=db.loyaltyClaims.filter(x=>x.recordId!==id);db.records=db.records.filter(x=>x.id!==id);v3log('Loyalty wash deleted',r.carNo);v3sync();render();return;}if(!confirm(`Delete receipt #${r.receiptNo}? This will restore one redeemed wash to membership ${member.plan}.`))return;member.remaining=Math.min(member.washes,member.remaining+1);member.redeemed=(member.redeemed||[]).filter(x=>x.recordId!==r.id);db.records=db.records.filter(x=>x.id!==id);v3log('Membership wash deleted',r.carNo+' #'+r.receiptNo);v3sync();render();toast('Record removed and prepaid wash credited back.');}
+function v3SavePayrollAdvance(form){const f=new FormData(form),id=f.get('employeeId'),amount=Number(f.get('amount'));if(!db.employees.some(x=>x.id===id)||!(amount>0))return toast('Select employee and amount.');const rec={id:uid(),date:String(f.get('date')),employeeId:id,amount,method:String(f.get('method')),note:String(f.get('note')||'')};db.advances.push(rec);v3log('Salary advance',`${rec.employeeId} ${money(amount)}`);v3sync();render();toast('Advance saved and deducted from final payable.');}
+function v3FormSubmit(e){const form=e.target;if(!String(form.getAttribute('id')||'').startsWith('v3'))return;e.preventDefault();if(!form.reportValidity())return;const f=new FormData(form);let res;
+switch(form.getAttribute('id')){
+case'v3Expense':{let amount=Number(f.get('amount'));if(!(amount>0))return toast('Enter expense amount.');const v={id:uid(),date:String(f.get('date')),category:String(f.get('category')),amount,method:String(f.get('method')),note:String(f.get('note')||''),at:v3ISO()};db.expenses.push(v);v3log('Expense',v.category+' '+money(amount));break;}
+case'v3Closing':{const date=v3dayFilter,rec={date,opening:v3num(f.get('opening')),countedCash:v3num(f.get('countedCash')),note:String(f.get('note')||''),at:v3ISO()};let i=db.closings.findIndex(x=>x.date===date);if(i>=0&&!confirm('Overwrite saved closing for '+date+'?'))return;i>=0?db.closings.splice(i,1,rec):db.closings.push(rec);v3log('Cash closing',date);break;}
+case'v3Stock':{const name=String(f.get('name')).trim();if(db.stock.some(x=>x.name.toLowerCase()===name.toLowerCase()))return toast('This product already exists.');db.stock.push({id:uid(),name,unit:String(f.get('unit')),qty:v3num(f.get('qty')),min:v3num(f.get('min')),unitCost:v3num(f.get('unitCost'))});v3log('New stock item',name);break;}
+case'v3StockMove':{const item=db.stock.find(x=>x.id===f.get('id'));if(!item)return toast('Stock item not found.');const qty=Number(f.get('qty')),type=String(f.get('type'));if(!(qty>0))return toast('Enter quantity > 0.');if(type==='OUT'&&qty>v3num(item.qty))return toast('Insufficient stock — do not allow negative quantities.');const v={id:uid(),stockId:item.id,name:item.name,date:String(f.get('date')),qty,unit:item.unit,type,amount:type==='IN'?v3num(f.get('amount')):0,note:String(f.get('note')||''),at:v3ISO()};item.qty=Math.round((v3num(item.qty)+(type==='IN'?qty:-qty))*1000)/1000;db.stockMoves.push(v);if(type==='IN'&&v.amount>0){db.expenses.push({id:uid(),date:v.date,category:'Chemicals',amount:v.amount,method:String(f.get('method')),note:'Inventory purchase: '+item.name,stockMoveId:v.id,at:v3ISO()});item.unitCost=Math.round((v.amount/qty)*100)/100;}v3log('Stock '+type,item.name+' '+qty);$('#modalRoot').innerHTML='';break;}
+case'v3Membership':{const carNo=v3norm(f.get('carNo')),washes=Number(f.get('washes')),price=Number(f.get('price')),date=String(f.get('date')),expiry=String(f.get('expiry')||'');if(carNo.length<6||!(washes>=1&&washes<=100)||price<0||(expiry&&expiry<date))return toast('Check vehicle, washes and expiry.');if(!confirm('Record membership sale for '+carNo+' at '+money(price)+'?'))return;const m={id:uid(),carNo,name:String(f.get('name')||''),phone:String(f.get('phone')||'').replace(/\D/g,''),plan:String(f.get('plan')),washes,remaining:washes,price,date,expiry,redeemed:[],at:v3ISO()};if(m.phone&&m.phone.length!==10)return toast('Customer phone must be 10 digits.');db.memberships.push(m);if(price>0)db.otherIncome.push({id:uid(),membershipId:m.id,date,category:'Membership',method:String(f.get('method')),amount:price,at:v3ISO()});v3log('Membership sold',carNo+' '+money(price));break;}
+case'v3MarketingSettings':{const url=String(f.get('reviewUrl')||'').trim();if(url&&!/^https:\/\//i.test(url))return toast('Review URL must start with https://');db.settings.reviewUrl=url;db.settings.loyaltyNote=String(f.get('loyaltyNote')||'');db.settings.loyaltyWashes=Math.max(1,Number(f.get('loyaltyWashes'))||5);db.settings.loyaltyDiscount=v3num(f.get('loyaltyDiscount'));db.settings.reminderDays=Math.max(1,Number(f.get('reminderDays'))||20);v3log('Marketing settings','Updated review / loyalty');break;}
+case'v3UnitCosts':{for(const k of ['waterL','waterCost','powerKwh','powerRate'])db.settings[k]=v3num(f.get(k));v3log('Unit cost reference','Updated');break;}
+case'v3Advance':return v3SavePayrollAdvance(form);
+default:return;}
+v3sync();render();toast('Saved successfully.');}
+function v3Submit(e){if(String(e.target?.getAttribute?.('id')||'').startsWith('v3'))v3FormSubmit(e);}
+function v3Change(e){const d=e.target.dataset;
+if(d.v3Change==='month'){v3monthFilter=e.target.value||v3month();render();}
+else if(d.v3Change==='day'){v3dayFilter=e.target.value||dateLocal();render();}
+else if(d.v3Change==='stage'){const r=db.records.find(x=>x.id===d.id);if(r&&['Waiting','Washing','Completed','Delivered'].includes(e.target.value)){r.stage=e.target.value;v3log('Wash stage',r.carNo+' '+r.stage);v3sync();render();}}
+else if(e.target.id==='plateCapture'){v3ReadPlate(e.target);}}
+function v3Input(e){if(e.target.id==='v3ClientSearch'){v3query=e.target.value;const sel=e.target.selectionStart;render();let input=$('#v3ClientSearch');if(input){input.focus();input.setSelectionRange(sel,sel);}return;}if(e.target.id==='carNo'){if(draft)draft.carNo=e.target.value;v3AutoFill();}}
+async function v3ReadPlate(input){const file=input.files?.[0];if(!file)return;const url=URL.createObjectURL(file);let img;try{img=await createImageBitmap(file);if('TextDetector' in window){const detector=new TextDetector();const items=await detector.detect(img);const found=items.map(x=>v3norm(x.rawValue)).find(x=>/^[A-Z]{2}\d{1,2}[A-Z]{1,3}\d{1,4}$/.test(x));if(found){if(confirm('Plate read: '+found+'. Is this correct?')){draft.carNo=found;render();v3AutoFill();}else toast('Please enter number manually.');}else toast('Could not confidently read the plate. Please type it manually.');}else toast('Camera image captured but this browser does not support text recognition. Enter car number manually.');}catch(err){toast('Plate capture unavailable. Type the number manually.');}finally{URL.revokeObjectURL(url);if(img?.close)img.close();input.value='';}}
+function v3SalarySlip(id){const e=db.employees.find(x=>x.id===id);if(!e)return;const s=v3MonthlySalary(e,payMonth);const body=`<h1>RADHIKA WASHING CENTER</h1><p>Murlipur, Garh Road, Meerut</p><h2>Salary Statement — ${esc(payMonth)}</h2><p>Employee: ${esc(e.name)}</p><hr><p>Basic Salary: ${money(e.salary)}</p><p>Attendance Bonus: ${money(s.p.attendance?e.attendanceBonus:0)}</p><p>Performance Bonus: ${money(s.p.performance?e.performanceBonus:0)}</p><p>Incentives: ${money(s.inc)}</p><p>Other Deduction: ${money(s.p.deduction||0)}</p><h3>Gross Pay: ${money(s.gross)}</h3><p>Advance Paid: ${money(s.advanced)}</p><h2>Balance Payable: ${money(s.due)}</h2><p>Generated ${new Date().toLocaleString('en-IN')}</p>`;v3Print(body,'Salary Statement');}
+function v3Print(html,title){const w=window.open('','_blank');if(!w)return toast('Allow pop-ups to print.');w.document.write('<!doctype html><html><head><title>'+esc(title)+'</title><meta charset="utf-8"><style>body{font:15px Arial;padding:25px;max-width:800px;margin:auto;color:#111}h1{font-size:23px}h2{font-size:18px}hr{border:0;border-top:1px solid #bbb}</style></head><body>'+html+'<script>window.onload=function(){window.print()}<\/script></body></html>');w.document.close();}
+function v3ReportPrint(){const d=v3Profits(v3monthFilter);v3Print(`<h1>RADHIKA WASHING CENTER</h1><h2>Monthly Business Summary — ${esc(v3monthFilter)}</h2><hr><p>Paid Revenue: ${money(d.revenue)}</p><p>Other Expenses: ${money(d.expenses)}</p><p>Estimated Salary Cost: ${money(d.salary)}</p><h2>Estimated Profit: ${money(d.profit)}</h2><p>Wash entries: ${db.records.filter(x=>x.date.startsWith(v3monthFilter)).length}</p><p>These are management estimates, not tax accounts.</p>`,'Monthly Report');}
+function v3ReceiptQR(id){const r=db.records.find(x=>x.id===id)||lastReceipt;if(!r)return toast('Receipt not found.');if(typeof QRCode==='undefined')return toast('QR component not available in this build.');const payload=`RADHIKA WASHING CENTER\nReceipt #${r.receiptNo}\n${r.date} ${r.time}\nVehicle ${r.carNo}\nService ${r.service}\nAmount INR ${r.price}\n${r.method} ${r.status}`;try{const q=new QRCode(-1,1);q.addData(payload);q.make();const n=q.getModuleCount();const canvas=document.createElement('canvas');canvas.width=canvas.height=440;const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,440,440);let cell=Math.floor(400/n),pad=Math.floor((440-cell*n)/2);ctx.fillStyle='#000';for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(q.isDark(y,x))ctx.fillRect(pad+x*cell,pad+y*cell,cell,cell);canvas.toBlob(blob=>{if(!blob)return toast('QR generation failed.');const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Radhika_Receipt_QR_'+r.receiptNo+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);toast('Receipt QR downloaded. Scan displays receipt details, not a webpage.');},'image/png');}catch(err){toast('QR could not be generated.');}}
+function v3Click(e){const el=e.target.closest('[data-v3]');if(!el)return;const action=el.dataset.v3,id=el.dataset.id;
+switch(action){
+case'customer-history':v3CustomerModal(id);break;
+case'repeat-wash':v3repeat(id);break;
+case'quick-customer':v3AutoFill();break;
+case'apply-loyalty':{if(!draft||!v3LoyaltyEligible(draft.carNo)||draft.membershipId)return toast('No eligible reward.');draft.discount=String(v3num(db.settings.loyaltyDiscount||50));draft.loyaltyClaim=true;render();toast('Loyalty reward applied.');break;}
+case'review-request':{const p=v3Clients().find(x=>x.no===id);if(p?.phone&&db.settings.reviewUrl)v3wa(p.phone,`Thank you for visiting Radhika Washing Center! If you liked our car wash, please share your genuine Google review here: ${db.settings.reviewUrl}`);break;}
+case'scan-plate':$('#plateCapture')?.click();break;
+case'customer-remind':{let p=v3Clients().find(x=>x.no===id);if(p?.phone)v3wa(p.phone,`Namaste ${p.name||''}, Radhika Washing Center, Murlipur Garh Road Meerut se. Aapki car ${p.no} ki next wash ke liye aapka swagat hai. Small ₹249 / Medium ₹299 / Large ₹399. Thank you!`);break;}
+case'export-customers':v3CSVdownload('Radhika_Customers.csv',[['Vehicle','Name','Mobile','Visits','Last Date','Paid Total'],...v3Clients().map(p=>[p.no,p.name,p.phone,p.records.length,p.records[0]?.date,p.paid])]);break;
+case'expense-csv':v3CSVdownload('Radhika_Expenses.csv',[['Date','Category','Amount','Method','Details'],...db.expenses.map(x=>[x.date,x.category,x.amount,x.method,x.note])]);break;
+case'report-csv':v3CSVdownload('Radhika_Full_Washes.csv',v3ReportCsv());break;
+case'salary-csv':v3CSVdownload('Radhika_Salary_'+v3monthFilter+'.csv',[['Employee','Month','Gross','Advance','Payable'],...db.employees.map(e=>{const x=v3MonthlySalary(e,v3monthFilter);return[e.name,v3monthFilter,x.gross,x.advanced,x.due];})]);break;
+case'report-print':v3ReportPrint();break;
+case'delete-expense':{const x=db.expenses.find(v=>v.id===id);if(!x||!confirm('Delete this expense?'))return;if(x.stockMoveId){const m=db.stockMoves.find(x=>x.id===x.stockMoveId);if(m&&m.type==='IN')return toast('Stock purchase expenses cannot be deleted separately. Keep purchase history consistent.');}db.expenses=db.expenses.filter(v=>v.id!==id);v3log('Expense deleted',x.category+' '+money(x.amount));v3sync();render();break;}
+case'stock-in':v3StockDialog(id,'IN');break;
+case'stock-out':v3StockDialog(id,'OUT');break;
+case'stock-delete':{const x=db.stock.find(x=>x.id===id);if(!x||!confirm('Remove product '+x.name+'? Historical stock moves will be retained.'))return;db.stock=db.stock.filter(x=>x.id!==id);v3log('Stock product removed',x.name);v3sync();render();break;}
+case'redeem-membership':{const m=db.memberships.find(x=>x.id===id);if(!m||!v3membershipActive(m))return toast('Membership not active.');if(!confirm('Start a prepaid wash entry for '+m.carNo+'? One use will be deducted when the wash is saved.'))return;draft=newDraft();draft.membershipId=m.id;draft.carNo=m.carNo;draft.customerName=m.name;draft.phone=m.phone;draft.method='Membership';draft.status='Paid';const prev=v3ClientRecords(m.carNo)[0];if(prev){draft.category=prev.category;draft.price=String(PRICES[prev.category]??prev.basePrice??prev.price);draft.service=prev.service;}nav('wash');break;}
+case'membership-history':{const m=db.memberships.find(x=>x.id===id);if(!m)return;$('#modalRoot').innerHTML=`<div class="dialog-backdrop"><div class="dialog"><div class="dialog-top"><h2>${esc(m.plan)} · ${esc(m.carNo)}</h2><button class="close-btn" data-action="close-modal">×</button></div><p>${m.remaining}/${m.washes} washes remaining</p><p>Paid: ${money(m.price)} · Expiry: ${esc(m.expiry||'None')}</p>${(m.redeemed||[]).map(x=>`<p class="v3-item">Used ${esc(x.date)} · Record ${esc(x.recordId)}</p>`).join('')||'<p>No redemptions.</p>'}</div></div>`;break;}
+case'advance-delete':{if(!confirm('Delete employee advance? Salary payable will increase.'))return;db.advances=db.advances.filter(x=>x.id!==id);v3log('Salary advance deleted',id);v3sync();render();break;}
+case'salary-slip':v3SalarySlip(id);break;
+case'qr-receipt':v3ReceiptQR(id);break;
+case'set-pin':v3SetPIN();break;
+case'remove-pin':v3RemovePIN();break;
+case'lock-now':v3Lock(true);break;
+}}
+async function v3HashPIN(pin){const data=new TextEncoder().encode('radhika-manager-v3-pin:'+pin);const d=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(d),x=>x.toString(16).padStart(2,'0')).join('');}
+async function v3SetPIN(){const pin=$('#v3PIN')?.value||'';if(!/^\d{4,8}$/.test(pin))return toast('PIN must be 4–8 digits.');if(!window.crypto?.subtle)return toast('PIN requires HTTPS.');db.settings.pinHash=await v3HashPIN(pin);v3sync();toast('PIN saved. It activates next time you open the app.');}
+async function v3RemovePIN(){if(!db.settings.pinHash)return toast('No PIN set.');const v=prompt('Enter current PIN to remove lock:');if(v===null)return;if(await v3HashPIN(v)!==db.settings.pinHash)return toast('Incorrect PIN.');delete db.settings.pinHash;v3sync();toast('PIN removed.');}
+function v3Lock(force=false){if(!db.settings.pinHash)return;if(v3pinUnlocked&&!force)return;v3pinUnlocked=false;let root=$('#v3Lock');if(!root){root=document.createElement('div');root.id='v3Lock';document.body.appendChild(root);}root.innerHTML=`<div style="position:fixed;inset:0;z-index:999999;background:#161b24;display:grid;place-items:center;padding:20px"><div style="background:#fff;border-radius:18px;padding:25px;width:min(100%,380px);text-align:center"><div style="background:#FFD21A;border-radius:13px;padding:14px;display:inline-block;font-size:28px;font-weight:900">R</div><h2>Radhika Wash Manager</h2><p>Enter your App PIN to unlock.</p><form id="v3UnlockForm"><input type="password" name="pin" inputmode="numeric" minlength="4" maxlength="8" required placeholder="App PIN" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:10px"><button class="btn btn-primary" style="width:100%;margin-top:12px">Unlock</button></form><p class="v3-muted">PIN is a local screen lock, not encryption.</p></div></div>`;root.querySelector('form').addEventListener('submit',async ev=>{ev.preventDefault();const pin=new FormData(ev.target).get('pin');if(await v3HashPIN(pin)===db.settings.pinHash){v3pinUnlocked=true;root.remove();toast('Unlocked.');}else{toast('Incorrect PIN.');ev.target.reset();}});}
+// Enhance existing receipt modal with offline QR download; do not promise a public hosted receipt URL.
+const v3OldReceipt=printReceipt;
+printReceipt=function(id){v3OldReceipt(id);const r=db.records.find(x=>x.id===id);const target=$('#modalRoot .dialog');if(r&&target){const div=document.createElement('div');div.className='v3-actions';div.innerHTML=`<button class="btn" data-v3="qr-receipt" data-id="${esc(id)}">▦ Download Receipt QR</button>`;target.appendChild(div);}};
+// Data-loaded PIN protection starts only after IndexedDB boot, preserving local storage migration.
+const v3InitLock=setInterval(()=>{if(bootDone){clearInterval(v3InitLock);if(db.settings.pinHash)v3Lock();}},150);
+
+function render(){updateCloudBadge();const navFn={dashboard,wash,records,customers,closing,finance,employees,attendance,payroll,inventory,marketing,operations,reports,business,settings};$('#sideNav').innerHTML=navButtons();$('#mobileNav').innerHTML=mobileButtons();$('#view').innerHTML=(navFn[view]||dashboard)();}
+function validation(){const no=draft.carNo.replace(/\s+/g,'').toUpperCase();if(!no)return'Please enter car registration number.';if(!(/^[A-Z]{2}\d{1,2}[A-Z]{1,3}\d{1,4}$/.test(no)||/^\d{2}BH\d{4}[A-Z]{1,2}$/.test(no)))return'Check registration number. Example: UP15 AB 1234 or 22 BH 1234 AA.';if(!draft.date||!draft.time)return'Select wash date and time.';if(!Number.isFinite(Number(draft.price))||Number(draft.price)<=0)return draft.category==='custom'?'Please enter custom vehicle price.':'Please enter a valid base price above ₹0.';
+ if(!Number.isFinite(Number(draft.extra))||Number(draft.extra)<0||!Number.isFinite(Number(draft.discount))||Number(draft.discount)<0)return 'Extra charges and discount must be 0 or more.';
+ if(!draft.membershipId&&Number(draft.price)+Number(draft.extra)-Number(draft.discount)<0)return 'Discount cannot exceed the amount.';
+ if(!draft.id && draft.loyaltyClaim && (!v3LoyaltyEligible(draft.carNo)||draft.membershipId))return 'Loyalty reward is no longer available for this car.';
+ if(draft.membershipId&&!db.memberships.some(m=>m.id===draft.membershipId&&m.remaining>0&&m.carNo===draft.carNo.toUpperCase().replace(/\s+/g,'')&&(!m.expiry||m.expiry>=draft.date)))return 'Membership has expired or has no washes remaining.';if(db.employees.some(e=>e.active)&&!(draft.staff||[]).length)return'Select at least one employee for the wash record.';for(const id of draft.staff||[]){const e=db.employees.find(x=>x.id===id);if(!isAssignmentAllowed(e,draft.date)&&!assignedEarlier(e,draft.date,draft.id))return 'Employee unavailable on wash date. Check Attendance and assignments.';}if(draft.phone.trim()&&!/^\d{10}$/.test(draft.phone.replace(/\D/g,'')))return'Customer mobile should contain 10 digits, or leave it blank.';return'';}
+function saveWash(){formError=validation();if(formError){render();$('#carNo')?.focus();return;}const no=draft.carNo.toUpperCase().replace(/\s+/g,'');const isEdit=!!draft.id;const duplicate=db.records.some(r=>r.id!==draft.id&&r.date===draft.date&&r.carNo.replace(/\s+/g,'')===no);if(duplicate&&!confirm('This vehicle already has a wash entry today. Add another entry anyway?'))return;let rec={...draft,customerName:String(draft.customerName||'').trim(),carNo:no,price:draft.membershipId?0:Math.max(0,Number(draft.price)+Number(draft.extra||0)-Number(draft.discount||0)),basePrice:Number(draft.price),extras:Number(draft.extra||0),discount:Number(draft.discount||0),stage:draft.stage||'Waiting',method:draft.membershipId?'Membership':draft.method,status:draft.membershipId?'Paid':draft.status,phone:draft.phone.replace(/\D/g,''),created:Date.now(),id:draft.id||uid(),demo:false};if(isEdit){const old=db.records.find(r=>r.id===rec.id);if(old){rec.created=old.created;rec.receiptNo=old.receiptNo;}db.records=db.records.map(r=>r.id===rec.id?rec:r);}else {ensureReceiptNumbers(db);rec.receiptNo=db.settings.nextReceiptNo++;db.records.unshift(rec);if(rec.loyaltyClaim){db.loyaltyClaims.push({id:uid(),recordId:rec.id,carNo:rec.carNo,amount:rec.discount,date:rec.date});}if(rec.membershipId){const m=db.memberships.find(x=>x.id===rec.membershipId);if(m){m.remaining=Math.max(0,m.remaining-1);m.redeemed=(m.redeemed||[]).concat([{recordId:rec.id,date:rec.date}]);}}}persist();draft=null;filter={search:'',date:'',method:'all'};view='records';render();toast(isEdit?'Wash record updated.':'Wash record saved.');}
 function download(name,content,type){if(window.AndroidStorage){AndroidStorage.saveFile(name,content,type);return;}const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);}
 function csvValue(v){let s=String(v==null?'':v);if(/^[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
 function exportCSV(){const columns=['Receipt No.','Date','Time','Registration','Customer Name','Category','Service','Price','Payment Method','Payment Status','Employees','Customer Mobile','Notes'];const data=db.records.map(r=>[r.receiptNo||'',r.date,r.time,r.carNo,r.customerName||'',CATS[r.category],r.service,r.price,r.method,r.status,(r.staff||[]).map(id=>db.employees.find(e=>e.id===id)?.name||'Former Employee').join('; '),r.phone||'',r.notes||'']);download('radhika_wash_records_'+dateLocal()+'.csv',[columns,...data].map(row=>row.map(csvValue).join(',')).join('\r\n'),'text/csv;charset=utf-8');toast('CSV exported.');}
@@ -411,9 +1781,9 @@ function downloadReceipt(){
   }
   const a=document.createElement('a');a.href=png;a.download=filename;document.body.appendChild(a);a.click();a.remove();
 }
-function confirmDelete(id){const r=db.records.find(x=>x.id===id);if(!r||!confirm(`Delete wash record for ${r.carNo}? This changes the day's incentives.`))return;db.records=db.records.filter(x=>x.id!==id);persist();render();toast('Wash record deleted.');}
+function confirmDeleteLegacy(id){const r=db.records.find(x=>x.id===id);if(!r||!confirm(`Delete wash record for ${r.carNo}? This changes the day's incentives.`))return;db.records=db.records.filter(x=>x.id!==id);persist();render();toast('Wash record deleted.');}
 function handleClick(e){const navEl=e.target.closest('[data-nav]');if(navEl){nav(navEl.dataset.nav);return;}const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset.action,id=el.dataset.id,val=el.dataset.val;
-switch(a){case'cloud-restore':prepareDriveRestore();break;case'cloud-restore-confirm':confirmDriveRestore();break;case'cloud-restore-local':restorePhoneSafetyCopy();break;case'cloud-save-client':saveCloudClient();break;case'cloud-connect':connectGoogleDrive();break;case'cloud-sync':syncCloud(true);break;case'cloud-disconnect':disconnectCloud();break;case'cloud-conflict-phone':resolveCloudConflict('phone');break;case'cloud-conflict-drive':resolveCloudConflict('drive');break;case'edit-incentive':openIncentiveEditor(el.dataset.date);break;case'reset-incentive-worker':{const input=[...document.querySelectorAll('#incentiveForm [data-incentive-worker]')].find(x=>x.dataset.incentiveWorker===id);if(input){input.value=input.dataset.auto;updateIncentiveEditorTotal();}break;}case'incentive-all-months':incMonth='';render();break;case'category':draft.category=val;draft.price=PRICES[val]===null?'':String(PRICES[val]);formError='';render();break;case'method':case'status':draft[a]=val;render();break;case'staff':{const e=db.employees.find(x=>x.id===id);if(!isAssignmentAllowed(e,draft.date))return toast('Employee is unavailable on this date. Change attendance first.');draft.staff=draft.staff.includes(id)?draft.staff.filter(x=>x!==id):[...draft.staff,id];render();break;}case'clear-draft':draft=newDraft();formError='';render();break;case'save-wash':saveWash();break;case'edit-record':{const r=db.records.find(x=>x.id===id);if(r){draft={...r,price:String(r.price)};nav('wash');}break;}case'delete-record':confirmDelete(id);break;case'receipt':printReceipt(id);break;case'print-receipt':if(window.AndroidStorage){AndroidStorage.printPage();}else{window.print();}break;case'share-receipt':shareReceipt();break;case'download-receipt':downloadReceipt();break;case'close-modal':$('#modalRoot').innerHTML='';break;case'add-employee':openEmployee();break;case'edit-employee':openEmployee(id);break;case'export-csv':exportCSV();break;case'export-incentive-csv':exportIncentiveCSV();break;case'show-incentives':$('#daily-incentive-register')?.scrollIntoView({behavior:'smooth',block:'start'});break;case'export-json':download('Radhika_Full_Backup_'+dateLocal()+'.json',JSON.stringify({...db,backupVersion:3,backupCreated:new Date().toISOString()},null,2),'application/json');toast('Full backup exported to Downloads.');break;case'restore-json':$('#restoreInput')?.click();break;case'reset-filters':filter={search:'',date:'',method:'all'};render();break;case'clear-all':if(confirm('Clear ALL wash records from this browser? This cannot be undone unless you exported a backup.')){db.records=[];db.attendance={};db.payroll={};db.incentiveOverrides={};db.incentiveHistory=[];db.demo=false;persist();render();toast('Wash records cleared.');}break;case'load-demo':if(confirm('Replace current demo records, employees and attendance with sample data? Export a backup first if needed.')){db=ensureReceiptNumbers(sample());persist();render();toast('Demo data loaded.');}break;case'more':$('#modalRoot').innerHTML=`<div class="dialog-backdrop"><div class="dialog"><div class="dialog-top"><h2 style="margin:0">More Pages</h2><button class="close-btn" data-action="close-modal">×</button></div><div class="nav-group" style="margin-top:15px">${NAV.map(([v,ic,t])=>`<button class="nav-button" data-nav="${v}">${ic} &nbsp; ${esc(t)}</button>`).join('')}</div></div></div>`;break;}}
+switch(a){case'cloud-restore':prepareDriveRestore();break;case'cloud-restore-confirm':confirmDriveRestore();break;case'cloud-restore-local':restorePhoneSafetyCopy();break;case'cloud-save-client':saveCloudClient();break;case'cloud-connect':connectGoogleDrive();break;case'cloud-sync':syncCloud(true);break;case'cloud-disconnect':disconnectCloud();break;case'cloud-conflict-phone':resolveCloudConflict('phone');break;case'cloud-conflict-drive':resolveCloudConflict('drive');break;case'edit-incentive':openIncentiveEditor(el.dataset.date);break;case'reset-incentive-worker':{const input=[...document.querySelectorAll('#incentiveForm [data-incentive-worker]')].find(x=>x.dataset.incentiveWorker===id);if(input){input.value=input.dataset.auto;updateIncentiveEditorTotal();}break;}case'incentive-all-months':incMonth='';render();break;case'category':draft.category=val;draft.price=PRICES[val]===null?'':String(PRICES[val]);formError='';render();break;case'method':case'status':draft[a]=val;render();break;case'staff':{const e=db.employees.find(x=>x.id===id);if(!isAssignmentAllowed(e,draft.date))return toast('Employee is unavailable on this date. Change attendance first.');draft.staff=draft.staff.includes(id)?draft.staff.filter(x=>x!==id):[...draft.staff,id];render();break;}case'clear-draft':draft=newDraft();formError='';render();break;case'save-wash':saveWash();break;case'edit-record':{const r=db.records.find(x=>x.id===id);if(r){draft={...r,price:String(r.basePrice??(Number(r.price)+Number(r.discount||0)-Number(r.extras||0))),extra:String(r.extras||0),discount:String(r.discount||0),stage:r.stage||'Delivered'};nav('wash');}break;}case'delete-record':confirmDelete(id);break;case'receipt':printReceipt(id);break;case'print-receipt':if(window.AndroidStorage){AndroidStorage.printPage();}else{window.print();}break;case'share-receipt':shareReceipt();break;case'download-receipt':downloadReceipt();break;case'close-modal':$('#modalRoot').innerHTML='';break;case'add-employee':openEmployee();break;case'edit-employee':openEmployee(id);break;case'export-csv':exportCSV();break;case'export-incentive-csv':exportIncentiveCSV();break;case'show-incentives':$('#daily-incentive-register')?.scrollIntoView({behavior:'smooth',block:'start'});break;case'export-json':download('Radhika_Full_Backup_'+dateLocal()+'.json',JSON.stringify({...db,backupVersion:4,backupCreated:new Date().toISOString()},null,2),'application/json');toast('Full backup exported to Downloads.');break;case'restore-json':$('#restoreInput')?.click();break;case'reset-filters':filter={search:'',date:'',method:'all'};render();break;case'clear-all':if(confirm('Clear ALL wash records, attendance, salary adjustments and incentive history? Customer/finance data remains. Download Full JSON Backup FIRST.')){db.records=[];db.attendance={};db.payroll={};db.incentiveOverrides={};db.incentiveHistory=[];db.demo=false;persist();render();toast('Wash records cleared.');}break;case'load-demo':if(confirm('DANGER: This replaces ALL app data, including washes, employees, expenses, inventory, memberships, advances and closings. Download Full JSON Backup FIRST. Continue with demo?')){db=ensureReceiptNumbers(sample());persist();render();toast('Demo data loaded.');}break;case'more':$('#modalRoot').innerHTML=`<div class="dialog-backdrop"><div class="dialog"><div class="dialog-top"><h2 style="margin:0">More Pages</h2><button class="close-btn" data-action="close-modal">×</button></div><div class="nav-group" style="margin-top:15px">${NAV.map(([v,ic,t])=>`<button class="nav-button" data-nav="${v}">${ic} &nbsp; ${esc(t)}</button>`).join('')}</div></div></div>`;break;}}
 function handleInput(e){const d=e.target.dataset;if(d.draft&&draft){draft[d.draft]=e.target.value;formError='';if(d.draft==='date'){draft.staff=(draft.staff||[]).filter(id=>{const employee=db.employees.find(x=>x.id===id);return isAssignmentAllowed(employee,draft.date)||assignedEarlier(employee,draft.date,draft.id);});render();}}if(e.target.dataset.incentiveWorker)updateIncentiveEditorTotal();if(d.filter){filter[d.filter]=e.target.value;const active=document.activeElement;const sel=active?.selectionStart;render();const i=$(`[data-filter="${d.filter}"]`);if(i){i.focus();if(d.filter==='search'&&typeof sel==='number')i.setSelectionRange(sel,sel);}}}
 function handleChange(e){const d=e.target.dataset;if(d.actionChange==='attendance-date'){attDate=e.target.value;render();}else if(d.actionChange==='attendance-status'){
   const old=attendanceStatus(d.id,attDate),value=e.target.value,affected=db.records.filter(r=>r.date===attDate&&(r.staff||[]).includes(d.id)).length;
@@ -424,8 +1794,8 @@ else if(d.actionChange==='payroll-month'){payMonth=e.target.value;render();}
 else if(d.actionChange==='work-days'){db.settings.workingDays=Number(e.target.value)||26;persist();toast('Reference updated.');}
 else if(d.payfield){const k=payMonth+'|'+d.id;db.payroll[k]=db.payroll[k]||{attendance:false,performance:false,deduction:0};db.payroll[k][d.payfield]=e.target.type==='checkbox'?e.target.checked:Math.max(0,Number(e.target.value)||0);persist();render();}
 else if(d.filter&&e.target.tagName==='SELECT'){filter[d.filter]=e.target.value;render();}}
-document.addEventListener('click',handleClick);document.addEventListener('input',handleInput);document.addEventListener('change',handleChange);document.addEventListener('submit',e=>{if(e.target.id==='employeeForm'){e.preventDefault();saveEmployee(e.target);}else if(e.target.id==='incentiveForm'){e.preventDefault();saveIncentiveAdjustments(e.target);}});document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#modalRoot').innerHTML='';});
-document.addEventListener('change',async e=>{if(e.target.id!=='restoreInput')return;const f=e.target.files?.[0];if(!f)return;e.target.value='';if(f.size>15*1024*1024)return toast('Backup is too large (max 15 MB).');try{const data=JSON.parse(await f.text());if(!isValidState(data))throw new Error('Invalid data structure');if(!confirm('Restore full backup? This will REPLACE current washes, employees, attendance, incentives and salaries. Export a backup of current records first.'))return;db=ensureReceiptNumbers({employees:data.employees,records:data.records,attendance:data.attendance,payroll:data.payroll,incentiveOverrides:data.incentiveOverrides||{},incentiveHistory:data.incentiveHistory||[],settings:{workingDays:26,...data.settings},demo:!!data.demo});persist();draft=null;view='dashboard';render();await writeQueue;toast('Backup restored. Verify your records.');}catch(error){toast('Could not restore this JSON backup.');console.error(error);}});
+document.addEventListener('click',v3Click);document.addEventListener('click',handleClick);document.addEventListener('input',v3Input);document.addEventListener('input',handleInput);document.addEventListener('change',v3Change);document.addEventListener('change',handleChange);document.addEventListener('submit',v3Submit);document.addEventListener('submit',e=>{if(e.target.id==='employeeForm'){e.preventDefault();saveEmployee(e.target);}else if(e.target.id==='incentiveForm'){e.preventDefault();saveIncentiveAdjustments(e.target);}});document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#modalRoot').innerHTML='';});
+document.addEventListener('change',async e=>{if(e.target.id!=='restoreInput')return;const f=e.target.files?.[0];if(!f)return;e.target.value='';if(f.size>15*1024*1024)return toast('Backup is too large (max 15 MB).');try{const data=JSON.parse(await f.text());if(!isValidState(data))throw new Error('Invalid data structure');if(!confirm('Restore full backup? This will REPLACE current washes, employees, attendance, incentives and salaries. Export a backup of current records first.'))return;db=ensureReceiptNumbers(data);persist();draft=null;view='dashboard';render();await writeQueue;toast('Backup restored. Verify your records.');}catch(error){toast('Could not restore this JSON backup.');console.error(error);}});
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 render();boot();
 })();

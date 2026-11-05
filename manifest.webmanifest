@@ -1,12 +1,13 @@
 {
-  "name": "Radhika Wash Manager v2.2",
+  "id": "./",
+  "name": "Radhika Wash Manager",
   "short_name": "Radhika Wash",
-  "description": "Offline car wash manager with Google Drive backup, attendance-based assignments and editable incentives",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f6f7fa",
-  "theme_color": "#ffd21a",
+  "theme_color": "#FFD21A",
+  "description": "Radhika Washing Center v3 complete business manager \u2014 offline-first, Google Drive backup",
   "icons": [
     {
       "src": "icon-192.png",
