@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.1 — Google login fixes + guarded employee deletion with recovery copies and protected business history",
+  "description": "Radhika Wash Manager v3.3.2 \u2014 safe dummy-only receipt counter reset with recovery and Google Drive review",
   "icons": [
     {
       "src": "icon-192.png",
