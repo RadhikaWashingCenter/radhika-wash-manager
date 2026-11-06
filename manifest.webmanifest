@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3 — Guarded employee deletion with recovery copies and protected business history",
+  "description": "Radhika Wash Manager v3.3.1 — Google login fixes + guarded employee deletion with recovery copies and protected business history",
   "icons": [
     {
       "src": "icon-192.png",
