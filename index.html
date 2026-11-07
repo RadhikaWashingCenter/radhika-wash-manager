@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffd21a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Offline-first car wash, staff and salary manager with optional Google Drive sync for Radhika Washing Center"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="icon-192.png">
-<title>Radhika Washing Center | Business Manager v3.3.3 · Daily Incentive Payments</title>
+<title>Radhika Washing Center | Business Manager v3.3.4 · Date-wise Worker Incentive Register</title>
 <style>
 :root{--yellow:#ffd21a;--ink:#171b23;--muted:#707888;--border:#e6e9ee;--bg:#f6f7fa;--surface:#fff;--green:#168554;--red:#c53f41;--blue:#386fd5;--radius:16px;--shadow:0 8px 28px #1c273009}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}a{color:inherit;text-decoration:none}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #e2aa00;outline-offset:2px}
 .app{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--border);position:sticky;top:0;height:100vh;padding:24px 14px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;gap:10px;align-items:center;padding:0 10px}.brand-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:var(--yellow);font-size:27px;font-weight:900;letter-spacing:-2px}.brand-name{font-weight:900;font-size:16px;letter-spacing:-.5px;line-height:1.13}.brand-name span{display:block;color:#d52c25;font-size:12px;letter-spacing:.8px;margin-top:4px}.small-label{font-size:10px;font-weight:800;color:#9ba1ab;letter-spacing:1.6px;text-transform:uppercase;padding:0 12px}.nav-group{display:grid;gap:4px}.nav-button{background:transparent;border:0;text-align:left;padding:11px 13px;display:flex;align-items:center;gap:12px;color:#4c5564;border-radius:10px;font-weight:650}.nav-button:hover{background:#f6f7fa}.nav-button.active{background:#fff0a5;color:#111827}.nav-icon{font-size:19px;width:23px;text-align:center}.side-bottom{margin-top:auto;border-radius:14px;background:#fff9db;padding:14px;color:#6b5b24;font-size:12px}.side-bottom strong{display:block;color:#343023;font-size:13px;margin-bottom:4px}
@@ -42,12 +42,28 @@
 .inc-worker-totals{margin:14px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:9px}.inc-worker-totals .v3-card{padding:12px}.inc-worker-numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:12px}.inc-worker-numbers span{font-size:10px;color:#606c78}.inc-worker-numbers b{display:block;font-size:14px;color:#222c39;margin-top:5px}.inc-payment-note{background:#fff8dc;border-left:3px solid #e9b700;padding:12px;border-radius:8px;margin-top:14px}
 .inc-pay-modal-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:17px 0}.inc-pay-modal-summary div{background:#f7f8fb;border:1px solid #e8ebf0;border-radius:9px;padding:10px;font-size:11px;color:#717b8a}.inc-pay-modal-summary strong{display:block;font-size:18px;color:#1a2430;margin-top:4px}.inc-pay-form{display:grid;gap:13px}.inc-pay-actions{display:flex;justify-content:flex-end;gap:10px}.inc-pay-actions .btn{min-height:41px}
 @media(max-width:700px){.inc-payment-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.inc-worker-numbers b{font-size:12px}.inc-pay-modal-summary strong{font-size:15px}.inc-pay-actions .btn{flex:1}}
+
+/* v3.3.4: one date row, dynamic employee earnings columns; the first column stays visible on phones. */
+.inc-matrix-help{margin:5px 0 12px;color:#5e6877;font-size:12px;line-height:1.55}
+.inc-matrix-scroll{max-width:100%;border:1px solid #eaedf2;border-radius:11px;overscroll-behavior-x:contain}
+.inc-daily-matrix{min-width:max-content}
+.inc-daily-matrix th,.inc-daily-matrix td{min-width:98px}
+.inc-daily-matrix th.inc-worker-head{min-width:116px;max-width:200px;white-space:normal;line-height:1.3;text-align:right;overflow-wrap:anywhere}
+.inc-daily-matrix td.inc-worker-earning{font-weight:700;color:#253143}
+.inc-daily-matrix th:first-child{position:sticky;left:0;z-index:3;background:#fafbfc;box-shadow:2px 0 5px #1018280a;min-width:117px}
+.inc-daily-matrix td.inc-date{position:sticky;left:0;z-index:2;background:#fff;box-shadow:2px 0 5px #1018280a;min-width:117px}
+.inc-daily-matrix .inc-grand td.inc-date{background:#fff7c6!important}
+.inc-date-edit{display:block;margin-top:4px;padding:1px 0;border:0;background:transparent;color:#2b5caa;font-size:11px;font-weight:750}
+.inc-date-edit:hover{text-decoration:underline}
+.inc-scroll-hint{font-size:11px;color:#7a8390;margin:8px 0 12px}
+.inc-daily-matrix .inc-summary-head{background:#fff8df;color:#504119}
+@media(min-width:1050px){.inc-scroll-hint{display:none}}
 </style>
 </head>
 <body>
 <div class="app">
 <aside class="sidebar"><div class="brand"><div class="brand-mark">R</div><div class="brand-name">Radhika<span>WASHING CENTER</span></div></div><div><div class="small-label">OPERATIONS</div><nav class="nav-group" id="sideNav"></nav></div><div class="side-bottom"><strong>📍 Murlipur, Garh Road</strong>Meerut, Uttar Pradesh<br><br>Offline local app. Records stay on this phone. Export a backup regularly.</div></aside>
-<section class="workspace"><header class="topbar"><div><div class="top-title">Radhika <span style="color:#d52c25">Washing Center</span></div><div class="top-sub">Business Manager v3.3.3 · Meerut</div></div><div class="top-actions"><button class="pill" id="cloudPill" data-nav="settings" type="button">● PHONE STORAGE</button><button class="btn btn-primary" data-nav="wash">＋ New Wash</button><button class="btn mobile-only" data-action="more">☰</button></div></header><main class="main" id="view"></main></section>
+<section class="workspace"><header class="topbar"><div><div class="top-title">Radhika <span style="color:#d52c25">Washing Center</span></div><div class="top-sub">Business Manager v3.3.4 · Meerut</div></div><div class="top-actions"><button class="pill" id="cloudPill" data-nav="settings" type="button">● PHONE STORAGE</button><button class="btn btn-primary" data-nav="wash">＋ New Wash</button><button class="btn mobile-only" data-action="more">☰</button></div></header><main class="main" id="view"></main></section>
 </div><nav class="mobile-nav" id="mobileNav"></nav><div id="modalRoot"></div><div id="toastRoot"></div><div id="receiptPrint" class="receipt"></div>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
@@ -1889,7 +1905,8 @@ function dailyIncentiveRegister(){
     }
     totals.earned+=dayEarned;totals.paid+=dayPaid;totals.pending+=dayPending;
     const edited=workers.filter(e=>data.adjusted[e.id]).length;
-    rows.push(`<tr><td class="inc-date"><strong>${esc(date)}</strong>${edited?`<span class="inc-edited">${edited} edited</span>`:''}</td><td class="num">${cars}</td><td class="num">${money(dayEarned)}</td><td class="num inc-paid">${money(dayPaid)}</td><td class="num inc-pending"><strong>${money(dayPending)}</strong></td><td><button class="btn btn-sm" data-action="edit-incentive" data-date="${esc(date)}">✎ Edit</button></td></tr>`);
+    const earningsByWorker=workers.map(e=>`<td class="num inc-worker-earning" title="${esc(e.name)} · ${esc(date)} earned">${money(Number(data.totals[e.id]||0))}</td>`).join('');
+    rows.push(`<tr><td class="inc-date"><strong>${esc(date)}</strong>${edited?`<span class="inc-edited">${edited} edited</span>`:''}<button class="inc-date-edit" data-action="edit-incentive" data-date="${esc(date)}" aria-label="Edit incentive for ${esc(date)}">✎ Edit</button></td><td class="num">${cars}</td>${earningsByWorker}<td class="num inc-total">${money(dayEarned)}</td><td class="num inc-paid">${money(dayPaid)}</td><td class="num inc-pending"><strong>${money(dayPending)}</strong></td></tr>`);
   }
   const history=(db.incentiveHistory||[]).filter(h=>(!filter.date||h.date===filter.date)&&(!incMonth||h.date.startsWith(incMonth))).slice(-6).reverse();
   const paymentHistory=(db.incentivePayments||[]).filter(p=>(!filter.date||p.earnedDate===filter.date)&&(!incMonth||p.earnedDate.startsWith(incMonth))).slice().sort((a,b)=>String(b.at||'').localeCompare(String(a.at||'')));
@@ -1897,7 +1914,8 @@ function dailyIncentiveRegister(){
   return `<section class="panel" id="daily-incentive-register"><div class="panel-head"><div><h2>Daily Incentive & Payment Register</h2><p class="panel-sub">Earned, Paid, Pending — worker-wise daily settlements and payment history.</p></div><button class="btn" data-action="export-incentive-csv" ${!dates.length?'disabled':''}>↓ Incentive CSV</button></div>
   <div class="inc-toolbar"><div class="field"><label>Earned month (optional)</label><input class="search-input" type="month" data-action-change="incentive-month" value="${esc(incMonth)}"></div><button class="btn" data-action="incentive-all-months">All Months</button><span class="panel-sub">${dates.length} days · ${esc(incMonth||'All earned months')}${filter.date?' · Wash date filter active':''}</span></div>
   <div class="inc-summary inc-payment-summary"><div><small>Washes</small><strong>${totals.cars}</strong></div><div><small>Earned</small><strong>${money(totals.earned)}</strong></div><div><small>Paid</small><strong class="inc-paid">${money(totals.paid)}</strong></div><div><small>Pending</small><strong class="inc-pending">${money(totals.pending)}</strong></div></div>
-  ${dates.length?`<div class="table-scroll"><table class="data-table incentive-table"><thead><tr><th>Date</th><th class="num">Cars</th><th class="num">Earned</th><th class="num">Paid</th><th class="num">Pending</th><th>Adjust</th></tr></thead><tbody>${rows.join('')}<tr class="inc-grand"><td>Total</td><td class="num">${totals.cars}</td><td class="num">${money(totals.earned)}</td><td class="num">${money(totals.paid)}</td><td class="num">${money(totals.pending)}</td><td></td></tr></tbody></table></div>`:empty('No incentive records for this period','Save wash entries or choose another month.')}
+  <p class="inc-matrix-help">One row per date. Each worker column shows <b>incentive earned on that date</b>. Paid and Pending are totals for that earning date (payment can happen later). Tap Edit under a date to adjust amounts.</p>
+  ${dates.length?`<div class="table-scroll inc-matrix-scroll" role="region" aria-label="Daily incentive register with worker columns" tabindex="0"><table class="data-table incentive-table inc-daily-matrix"><thead><tr><th scope="col">Date</th><th class="num" scope="col">Total Cars</th>${workers.map(e=>`<th class="num inc-worker-head" scope="col" title="${esc(e.name)} — incentive earned per date">${esc(e.name)}</th>`).join('')}<th class="num inc-summary-head" scope="col">Earned</th><th class="num inc-summary-head" scope="col">Paid</th><th class="num inc-summary-head" scope="col">Pending</th></tr></thead><tbody>${rows.join('')}<tr class="inc-grand"><td class="inc-date">Total</td><td class="num">${totals.cars}</td>${workers.map(e=>`<td class="num">${money(byWorker[e.id].earned)}</td>`).join('')}<td class="num">${money(totals.earned)}</td><td class="num inc-paid">${money(totals.paid)}</td><td class="num inc-pending">${money(totals.pending)}</td></tr></tbody></table></div><p class="inc-scroll-hint">↔ On mobile, swipe the register left/right to see every worker and total.</p>`:empty('No incentive records for this period','Save wash entries or choose another month.')}
   <h3 class="inc-section-head">Worker-wise Incentive · Pay Now / Pay Later</h3>
   <p class="faq">Select <b>₹ Pay</b> to record full or partial payment. Pay Later requires no entry: the balance stays pending. Payment dates may differ from earned dates.</p>
   ${workerRows.length?`<div class="table-scroll"><table class="data-table inc-worker-table"><thead><tr><th>Earned Date</th><th>Worker</th><th class="num">Earned</th><th class="num">Paid</th><th class="num">Balance</th><th>Status</th><th>Action</th></tr></thead><tbody>${workerRows.join('')}</tbody></table></div>`:empty('No worker incentive due','After wash 10, assigned workers earn an incentive.')}
@@ -1908,7 +1926,27 @@ function dailyIncentiveRegister(){
   ${history.length?`<details class="inc-history"><summary>Incentive amount edit history (${(db.incentiveHistory||[]).length} total)</summary>${history.map(h=>`<div class="inc-history-row"><b>${esc(h.date)}</b> · ${esc(h.workerName||'Worker')} · ${money(h.from)} → ${money(h.to)}<span class="muted">${esc(h.reason||'Adjustment')} · ${esc(String(h.updatedAt||'').slice(0,16))}</span></div>`).join('')}</details>`:''}
   </section>`;
 }
-function exportIncentiveCSV(){const dates=incentiveDates().slice().sort(),workers=incentiveWorkers(dates),rows=[['Earned Date','Cars','Worker','Earned (INR)','Paid (INR)','Pending (INR)','Preference']];for(const date of dates){const data=finalDailyIncentives(date);for(const e of workers){const earned=Number(data.totals[e.id]||0),paid=incentivePaidFor(date,e.id);if(earned||paid)rows.push([date,db.records.filter(r=>r.date===date).length,e.name,earned,paid,Math.max(0,earned-paid),e.incentivePayout||'Monthly']);}}rows.push([]);rows.push(['PAYMENT HISTORY']);rows.push(['Payment Date','Earned Date','Worker','Amount','Method','Status','Note','Reversal Reason']);for(const p of db.incentivePayments||[])rows.push([p.date,p.earnedDate,p.workerName||p.employeeId,p.amount,p.method,p.reversedAt?'Reversed':'Paid',p.note||'',p.reversalReason||'']);download('Radhika_Incentives_Payments_'+dateLocal()+'.csv','\ufeff'+rows.map(r=>r.map(csvValue).join(',')).join('\r\n'),'text/csv;charset=utf-8');toast('Incentive and payment CSV exported.');}
+function exportIncentiveCSV(){
+ const dates=incentiveDates().slice().sort(),workers=incentiveWorkers(dates);
+ // The first CSV table mirrors the on-screen register: one date per row, one column per worker.
+ const rows=[['Date','Total Cars',...workers.map(e=>e.name),'Earned (INR)','Paid (INR)','Pending (INR)']];
+ const workerTotals=Object.fromEntries(workers.map(e=>[e.id,0]));
+ let allCars=0,allEarned=0,allPaid=0,allPending=0;
+ for(const date of dates){
+   const data=finalDailyIncentives(date),cars=db.records.filter(r=>r.date===date).length;
+   const earnedCells=workers.map(e=>{const n=Number(data.totals[e.id]||0);workerTotals[e.id]+=n;return n;});
+   const earned=earnedCells.reduce((a,b)=>a+b,0),paid=workers.reduce((a,e)=>a+incentivePaidFor(date,e.id),0),pending=Math.max(0,Math.round((earned-paid)*100)/100);
+   rows.push([date,cars,...earnedCells,earned,paid,pending]);
+   allCars+=cars;allEarned+=earned;allPaid+=paid;allPending+=pending;
+ }
+ rows.push(['TOTAL',allCars,...workers.map(e=>workerTotals[e.id]),allEarned,allPaid,allPending]);
+ rows.push([]);rows.push(['WORKER DATE-WISE PAYMENT DETAILS']);
+ rows.push(['Earned Date','Cars','Worker','Earned (INR)','Paid (INR)','Pending (INR)','Preference']);
+ for(const date of dates){const data=finalDailyIncentives(date);for(const e of workers){const earned=Number(data.totals[e.id]||0),paid=incentivePaidFor(date,e.id);if(earned||paid)rows.push([date,db.records.filter(r=>r.date===date).length,e.name,earned,paid,Math.max(0,earned-paid),e.incentivePayout||'Monthly']);}}
+ rows.push([]);rows.push(['PAYMENT HISTORY']);rows.push(['Payment Date','Earned Date','Worker','Amount','Method','Status','Note','Reversal Reason']);
+ for(const p of db.incentivePayments||[])rows.push([p.date,p.earnedDate,p.workerName||p.employeeId,p.amount,p.method,p.reversedAt?'Reversed':'Paid',p.note||'',p.reversalReason||'']);
+ download('Radhika_Incentives_Payments_'+dateLocal()+'.csv','\ufeff'+rows.map(r=>r.map(csvValue).join(',')).join('\r\n'),'text/csv;charset=utf-8');toast('Date-wise worker incentive CSV exported.');
+}
 function openIncentiveEditor(date){
   if(!/^\d{4}-\d{2}-\d{2}$/.test(date))return;
   const workers=incentiveWorkers([date]),calc=finalDailyIncentives(date),overrides=db.incentiveOverrides?.[date]||{};

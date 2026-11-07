@@ -1,16 +1,25 @@
-Radhika Wash Manager v3.3.3 — DAILY INCENTIVE PAYMENTS
+Radhika Wash Manager v3.3.4 — DATE-WISE WORKER INCENTIVE REGISTER
 
-IMPORTANT: Save Full JSON Backup in your current app BEFORE upgrading.
-Publish the FIVE files (index.html, manifest.webmanifest, sw.js, icon-192.png, icon-512.png) to your existing GitHub Pages repository, in the same folder. Do not erase Chrome site data, and do not change the installed PWA origin or path.
+BEFORE UPDATING: Download a Full JSON Backup from the currently installed app.
 
-WHAT CHANGED
-- Records > Daily Incentive & Payment Register now has earned / paid / pending and Pay buttons for each worker + earned date, with partial payments and Pay Later.
-- A payment stores its actual payment date, payment method, earned date, employee, note and audit entry. An incorrect entry can be reversed (never silently deleted).
-- Worker profiles have Daily / Weekly / Monthly payout preference (informational).
-- Monthly salary payable subtracts already-paid incentives. Payroll cost/profit still use earned incentives, preventing double counting.
-- Daily Cash Closing deducts actual cash incentive payouts on the payment date. UPI payments stay separate.
-- Incentive CSV exports earned, paid, pending and payment history.
-- Guards block reducing incentives below amounts already paid via editing/deleting washes or manual overrides.
-- All v3.3.2 receipt reset protection and Google sign-in changes are retained.
+UPGRADE EXISTING GITHUB PAGES PWA:
+- Unzip and upload the FIVE files (index.html, manifest.webmanifest, sw.js, icon-192.png, icon-512.png) to the existing repository and SAME folder.
+- Commit Changes. Reopen your existing app URL and refresh; confirm the top shows v3.3.4.
+- Do NOT clear Chrome site data/storage. Do NOT change the installed PWA origin or path.
+- When possible, verify Google Drive backup/restore independently before trusting cloud sync.
 
-The app RECORDS payments; it does not transfer money or automatically send UPI. Local/Google Drive data is device- and login-dependent and live cloud sync is not independently verified.
+WHAT CHANGED IN v3.3.4:
+- Daily Incentive & Payment Register now shows ONE ROW PER DATE:
+  Date | Total Cars | <each real employee name> | Earned | Paid | Pending
+- Each worker column shows that worker's earned incentive for the date, including approved manual adjustment.
+- Dates with payments remain visible, even when the earning amount was zero.
+- The Total row adds each worker's earnings and all payments/pending for the selected dates.
+- Horizontal scroll on mobiles, with sticky date column; Edit remains available under each date.
+- Incentive CSV starts with the same date-wise register and includes worker payment details and payment history after it.
+
+UNCHANGED:
+- Pay Now/Pay Later, partial payments, date-linked pending, reversals, worker payment history.
+- Payroll, salary slips, daily cash closing, receipt reset safety, Drive features and existing database schema.
+- Paid is allocated to EARNING DATE, not necessarily actual payment date. Cash Closing uses actual payment date.
+
+The app does NOT transfer money. Offline/Drive integration should be tested on your own phone.

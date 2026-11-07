@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.3 — daily, partial and pending worker incentive payment tracking with cash closing and payroll reconciliation.",
+  "description": "Radhika Wash Manager v3.3.4 — date-wise worker earning columns, total cars, earned, paid and pending; daily incentive settlement and cash closing.",
   "icons": [
     {
       "src": "icon-192.png",
