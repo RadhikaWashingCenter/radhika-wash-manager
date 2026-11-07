@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.2 \u2014 safe dummy-only receipt counter reset with recovery and Google Drive review",
+  "description": "Radhika Wash Manager v3.3.3 — daily, partial and pending worker incentive payment tracking with cash closing and payroll reconciliation.",
   "icons": [
     {
       "src": "icon-192.png",
