@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.8 — fully isolated Live and Test modes. Test data and receipt numbers separate; Drive disabled in Test Mode.",
+  "description": "Radhika Wash Manager v3.3.9 — Live/Test isolated; date-based wash payment ledger and partial receipts/refunds, member edit fixes, pro-rata salaries, safe restore and cash closing review. Manual attendance unchanged.",
   "icons": [
     {
       "src": "icon-192.png",
