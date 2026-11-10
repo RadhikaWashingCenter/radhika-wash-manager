@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.10: one worker full/partial monthly incentive batch payment, one transaction history with per-day allocations; previous live/test and accounting safety features retained.",
+  "description": "Radhika Wash Manager v3.3.12: unregistered vehicles receive a permanent RWC-V Vehicle ID, searchable by ID/name/phone/description; repeat washes reuse Vehicle ID and issue new receipts. Custom vehicle worker incentives, payment ledgers, Live/Test Mode and manual attendance retained.",
   "icons": [
     {
       "src": "icon-192.png",
