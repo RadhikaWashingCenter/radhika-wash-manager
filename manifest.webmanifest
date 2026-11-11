@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.12: unregistered vehicles receive a permanent RWC-V Vehicle ID, searchable by ID/name/phone/description; repeat washes reuse Vehicle ID and issue new receipts. Custom vehicle worker incentives, payment ledgers, Live/Test Mode and manual attendance retained.",
+  "description": "Radhika Wash Manager v3.3.13: Google Drive backup integrity and read-only restore readiness check; searchable paginated customer outstanding; compact Test Mode banner; vehicle-wise monthly report with CSV export. Live/Test isolation, custom vehicle incentives and manual attendance preserved.",
   "icons": [
     {
       "src": "icon-192.png",
