@@ -1,21 +1,17 @@
-Radhika Wash Manager v3.3.13 — Four Selected Updates Only
+Radhika Wash Manager v3.3.14 — Editable Daily Incentive Slabs
 
-UPGRADE (EXISTING LIVE APP)
-1. FIRST: from the CURRENT Live app, download Settings > Full JSON Backup and keep it separately.
-2. Extract this ZIP and replace the 6 files in the SAME GitHub Pages repository/path.
-3. Commit, reopen the SAME website URL; allow the service worker update. Do NOT clear Chrome Site Data or uninstall the existing app as a cache-fix.
-4. Test features with ?mode=test first; the Live and Test data stores and receipt sequences remain distinct.
+WHAT'S NEW:
+Salary > Daily Incentive Slabs > Edit Rates.
+Fixed ranges 0–5, 6–10, 11–15, 16–20, 21–25, ...; every rate is editable, including 0–5 and 6–10.
+Use Next 5-Wash Slab for higher ranges; Save Incentive Rates to apply. Reset to Default in editor restores suggested numbers before Save.
+A saved wash receives a permanent incentive-rate snapshot, so previous earned balances do not change when rates are edited (including same-day edits). Custom Vehicles keep their independent per-worker incentives.
+All existing v3.3.13 improvements remain.
 
-ONLY FOUR UPDATED AREAS
-1. Google Drive: Settings > Verify Backup & Restore (read-only integrity and restore-readiness check). Requires real HTTPS Google OAuth connection. The check downloads/validates cloud data without changing phone records. It checks phone-versus-Drive match and previews counts. Real-world Google login, backup upload and actual restore must still be checked on your own device/account.
-2. Customer Outstanding: Expenses & Profit > Customer Outstanding & Payment Register. Search receipt #, vehicle ID, vehicle registration, name, mobile, type. 25 entries/page; all matching pending records searchable, not capped at 100.
-3. Compact Test Banner: one-line fixed banner above bottom mobile menu; Google Drive remains OFF in Test Mode.
-4. Vehicle-wise Business Report: Reports > select month; groups Small/Medium/Large Cars and Custom Vehicle types (Tractor, Bus, Truck, etc.). Shows number of washes, wash sales, received-to-date against those washes, pending; vehicle-wise CSV export. Membership-plan sales excluded; 'received to date' is NOT calendar-month cash collection.
+SAFE UPGRADE:
+1. In the EXISTING Live app, download Settings > Full JSON Backup and store it safely.
+2. Extract ZIP and upload/replace the same SIX files in your current GitHub Pages repo/path, then commit.
+3. Reopen the SAME web address, refresh as necessary and do NOT clear Chrome Site Data or uninstall the PWA.
+4. Test with ?mode=test before recording actual wash data. Test Mode and Live Mode data are separate.
+5. A real account Google Drive backup/restore verification still requires sign-in and on-device testing.
 
-UNCHANGED
-No Attendance Automation. Manual attendance retained. No Wash Stage selector on New Entry. Car prices ₹249/₹299/₹399, custom incentive rules, payment ledgers, receipts and receipt numbering are unchanged.
-
-SAFETY
-- Test Mode Google Drive disabled; never import Test data into Live Mode.
-- Backup/Restore verification is a READ-ONLY rehearsal and cannot guarantee OAuth or actual restore on a different phone.
-- Keep at least one independently stored Full JSON Backup before any upgrade.
+NOTE: Editing any old wash record's date/category may change its own incentive, subject to existing payout safety checks. Editing rate settings alone never changes saved wash incentives.
