@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffd21a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Offline-first car wash, staff and salary manager with optional Google Drive sync for Radhika Washing Center"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="icon-192.png">
-<title>Radhika Washing Center | Business Manager v3.3.14 · Custom Vehicle & Incentives</title>
+<title>Radhika Washing Center | Business Manager v3.3.15 · Custom Vehicle & Incentives</title>
 <style>
 :root{--yellow:#ffd21a;--ink:#171b23;--muted:#707888;--border:#e6e9ee;--bg:#f6f7fa;--surface:#fff;--green:#168554;--red:#c53f41;--blue:#386fd5;--radius:16px;--shadow:0 8px 28px #1c273009}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}a{color:inherit;text-decoration:none}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #e2aa00;outline-offset:2px}
 .app{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--border);position:sticky;top:0;height:100vh;padding:24px 14px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;gap:10px;align-items:center;padding:0 10px}.brand-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:var(--yellow);font-size:27px;font-weight:900;letter-spacing:-2px}.brand-name{font-weight:900;font-size:16px;letter-spacing:-.5px;line-height:1.13}.brand-name span{display:block;color:#d52c25;font-size:12px;letter-spacing:.8px;margin-top:4px}.small-label{font-size:10px;font-weight:800;color:#9ba1ab;letter-spacing:1.6px;text-transform:uppercase;padding:0 12px}.nav-group{display:grid;gap:4px}.nav-button{background:transparent;border:0;text-align:left;padding:11px 13px;display:flex;align-items:center;gap:12px;color:#4c5564;border-radius:10px;font-weight:650}.nav-button:hover{background:#f6f7fa}.nav-button.active{background:#fff0a5;color:#111827}.nav-icon{font-size:19px;width:23px;text-align:center}.side-bottom{margin-top:auto;border-radius:14px;background:#fff9db;padding:14px;color:#6b5b24;font-size:12px}.side-bottom strong{display:block;color:#343023;font-size:13px;margin-bottom:4px}
@@ -88,7 +88,7 @@
 .v312-choice small{display:block;color:#676d76;margin-top:3px;white-space:normal}
 .v312-choice:hover,.v312-choice:focus{border-color:#d2a500;background:#fffbea}
 
-/* v3.3.14: mobile-friendly editable rate slabs */
+/* v3.3.15: mobile-friendly editable rate slabs */
 .v3314-panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .v3314-panel-head h2{margin:0}.v3314-rate-table{width:100%;min-width:0!important}.v3314-rate-table th,.v3314-rate-table td{white-space:normal!important;padding:12px 9px!important}
 .v3314-slab-dialog{max-width:510px}.v3314-slab-scroll{max-height:55vh;overflow-y:auto;border:1px solid #e8ebf0;border-radius:10px;padding:0 12px}
@@ -97,6 +97,21 @@
 .v3314-slab-row input{border:1px solid #dce1e8;border-radius:9px;padding:9px 10px;width:112px;min-height:42px;font-size:16px;color:#161c29}
 .v3314-slab-buttons,.v3314-slab-footer{display:flex;gap:9px;flex-wrap:wrap;justify-content:space-between;margin-top:14px}.v3314-slab-buttons .btn{flex:1;white-space:normal}.v3314-slab-footer .btn{flex:1}
 @media(max-width:420px){.v3314-slab-row input{width:92px}.v3314-slab-dialog{padding:15px!important}}
+
+/* v3.3.15: compact live staff-incentive preview on New Wash */
+.v3315-preview{margin:14px 0 16px;padding:14px;border:1px solid #ebd578;border-radius:13px;background:#fffdf2;min-width:0}
+.v3315-preview-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:9px;margin-bottom:10px}
+.v3315-preview-top h3{font-size:15px;font-weight:850;margin:0 0 3px;color:#1d222d}
+.v3315-preview-top p{font-size:12px;color:#666f7b;margin:0}
+.v3315-rate{border:1px solid #e5dba8;background:#fff;border-radius:8px;padding:6px 9px;font-size:12px;font-weight:850;white-space:normal}
+.v3315-worker-list{border-top:1px solid #eee8c8}
+.v3315-worker{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #eee8c8;padding:8px 0;font-size:13px}
+.v3315-worker span{min-width:0;overflow-wrap:anywhere}.v3315-worker strong{font-weight:800;flex-shrink:0}
+.v3315-total{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:11px;font-size:13px;font-weight:850}
+.v3315-total strong{font-size:21px;color:#21212a;white-space:nowrap}
+.v3315-empty{font-size:12px;color:#717783;margin:9px 0}
+.v3315-note{font-size:11px;color:#70747c;line-height:1.5;margin:10px 0 0}
+@media(max-width:420px){.v3315-preview{padding:12px}.v3315-preview-top h3{font-size:14px}.v3315-total strong{font-size:19px}}
 </style>
 <style>
 .record-filter-toolbar{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:15px}
@@ -141,7 +156,7 @@
 <body>
 <div class="app">
 <aside class="sidebar"><div class="brand"><div class="brand-mark">R</div><div class="brand-name">Radhika<span>WASHING CENTER</span></div></div><div><div class="small-label">OPERATIONS</div><nav class="nav-group" id="sideNav"></nav></div><div class="side-bottom"><strong>📍 Murlipur, Garh Road</strong>Meerut, Uttar Pradesh<br><br>Offline local app. Records stay on this phone. Export a backup regularly.</div></aside>
-<section class="workspace"><header class="topbar"><div><div class="top-title">Radhika <span style="color:#d52c25">Washing Center</span></div><div class="top-sub">Business Manager v3.3.14 · Meerut <span id="v338ModeSub"></span></div></div><div class="top-actions"><a class="v338-switch" href="?mode=test" id="v338Switch">🧪 Test</a><button class="pill" id="cloudPill" data-nav="settings" type="button">● PHONE STORAGE</button><button class="btn btn-primary" data-nav="wash">＋ New Wash</button><button class="btn mobile-only" data-action="more">☰</button></div></header><main class="main" id="view"></main></section>
+<section class="workspace"><header class="topbar"><div><div class="top-title">Radhika <span style="color:#d52c25">Washing Center</span></div><div class="top-sub">Business Manager v3.3.15 · Meerut <span id="v338ModeSub"></span></div></div><div class="top-actions"><a class="v338-switch" href="?mode=test" id="v338Switch">🧪 Test</a><button class="pill" id="cloudPill" data-nav="settings" type="button">● PHONE STORAGE</button><button class="btn btn-primary" data-nav="wash">＋ New Wash</button><button class="btn mobile-only" data-action="more">☰</button></div></header><main class="main" id="view"></main></section>
 </div><nav class="mobile-nav" id="mobileNav"></nav><div id="modalRoot"></div><div id="toastRoot"></div><div id="receiptPrint" class="receipt"></div><div id="v338ModeBanner" aria-live="polite"></div>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
@@ -1482,7 +1497,7 @@ function customIncentivePanel(d){
  ${mode==='equal'?`<div class="field" style="margin-top:13px"><label>Incentive per assigned worker (₹)</label><input type="number" min="0" max="100000" step="0.01" inputmode="decimal" data-draft="customIncentiveEqual" value="${esc(d.customIncentiveEqual??'0')}"></div>`:workers.map(e=>`<div class="field custom-worker-row"><label>${esc(e.name)} (₹)</label><input aria-label="Incentive for ${esc(e.name)}" type="number" min="0" max="100000" step="0.01" inputmode="decimal" data-custom-worker-id="${esc(e.id)}" value="${esc(d.customIncentives?.[e.id]??'0')}"></div>`).join('')}
  <p class="custom-inc-total">${workers.length} assigned workers · Total custom incentive: <strong id="customIncentiveTotal">${money(draftCustomTotal(d))}</strong></p><p class="faq">Custom Vehicle does NOT increase the daily car-slab count. Only assigned workers get their entered custom amount. The approved amount appears in Daily/Monthly Incentives and Salary.</p></section>`;
 }
-function updateCustomIncentivePreview(){if(!draft||draft.category!=='custom')return;const total=$('#customIncentiveTotal');if(total)total.textContent=money(draftCustomTotal(draft));const summary=$('#customSummaryTotal');if(summary)summary.textContent=money(draftCustomTotal(draft));}
+function updateCustomIncentivePreview(){if(!draft||draft.category!=='custom')return;const total=$('#customIncentiveTotal');if(total)total.textContent=money(draftCustomTotal(draft));const summary=$('#customSummaryTotal');if(summary)summary.textContent=money(draftCustomTotal(draft));v3315RefreshPreview();}
 
 const NAV=[['dashboard','▦','Dashboard'],['wash','＋','New Wash'],['records','▤','Wash Records'],['customers','♧','Customers'],['closing','▣','Daily Closing'],['finance','₹','Expenses & Profit'],['employees','♙','Employees'],['attendance','◷','Attendance'],['payroll','₹','Salary & Incentives'],['inventory','▤','Inventory'],['marketing','✦','Marketing & Plans'],['operations','☰','Wash Operations'],['reports','▥','Reports'],['business','⌖','Business Info'],['settings','☁','Drive & Settings']];
 const $=s=>document.querySelector(s);const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -2092,7 +2107,7 @@ function mobileButtons(){return [['dashboard','▦','Home'],['wash','＋','New W
 const heading=(title,description,actions='')=>`<div class="page-heading"><div><h1>${title}</h1><p>${description}</p></div>${actions?`<div class="heading-actions">${actions}</div>`:''}</div>`;
 const empty=(title,desc)=>`<div class="empty"><div class="empty-icon">▤</div><strong>${title}</strong>${desc}</div>`;
 function stats(date){const rs=db.records.filter(r=>r.date===date);return {count:rs.length,cash:v339Collected('Cash',date),online:v339Collected('Online',date),pending:rs.reduce((s,r)=>s+v339WashDue(r),0)};}
-// v3.3.14: Fixed five-wash ranges; all INR values can be edited (including 0–5 and 6–10).
+// v3.3.15: Fixed five-wash ranges; all INR values can be edited (including 0–5 and 6–10).
 // Each completed wash retains its rate snapshot, protecting historical incentive earnings.
 const V3314_START_SLABS=10, V3314_MAX_SLABS=200;
 function v3314DefaultSlabRate(i){return i<2?0:(i-1)*5;}
@@ -2146,6 +2161,36 @@ function v3314SlabPanel(){
  const rows=Array.from({length:max},(_,i)=>`<tr><td>${esc(v3314SlabLabel(i))}</td><td><b>${money(v3314RateForCar(i===0?1:i*5+1))} each</b></td></tr>`).join('');
  return `<section class="panel"><div class="panel-head v3314-panel-head"><h2>Daily incentive slabs</h2><button class="btn btn-primary btn-sm" data-action="v3314-edit-slabs">Edit Rates</button></div><p class="faq">Ranges are fixed (0–5, 6–10, 11–15, and so on). You can edit the ₹ amount for every range.</p><div class="table-scroll"><table class="data-table v3314-rate-table"><thead><tr><th>Daily wash number</th><th>Per assigned worker</th></tr></thead><tbody>${rows}</tbody></table></div><p class="faq">Example: on 20 standard car washes, a worker assigned to all 20 earns ${money(Array.from({length:20},(_,i)=>v3314RateForCar(i+1)).reduce((sum,n)=>sum+n,0))} at the current rates. Earlier saved washes retain their own rates. Custom Vehicle incentives remain separate. Incentives accrue even when customer payment is pending.</p></section>`;
 }
+// v3.3.15: Read-only live incentive preview. Save uses the exact same rate calculation.
+function v3315CarRateDetails(d){
+ const old=d?.id?db.records.find(r=>r.id===d.id):null;
+ const already=db.records.filter(r=>r.id!==d.id&&r.date===d.date&&v3314Eligible(r)&&!customIsNew(r)).length;
+ const keep=!!(old&&old.date===d.date&&old.category===d.category&&Number.isFinite(old.slabIncentiveRate)&&old.slabIncentiveRate>=0);
+ // A saved edit retains its original rate; a new record uses the current slab.
+ const rate=keep?old.slabIncentiveRate:v3314RateForCar(already+1);
+ const savedPosition=keep?dailyIncentives(d.date).details.find(r=>r.id===d.id)?.sequence:null;
+ const sequence=savedPosition>0?savedPosition:already+1;
+ return {rate,sequence,slab:v3314SlabLabel(v3314SlabIndex(sequence)),locked:keep};
+}
+function v3315PreviewBody(d){
+ if(!d)return '';
+ const workers=(d.staff||[]).map(id=>({id,name:db.employees.find(e=>e.id===id)?.name||'Former Employee'}));
+ const custom=d.category==='custom';
+ const breakdown=custom?draftCustomIncentives(d):{};
+ const detail=custom?null:v3315CarRateDetails(d);
+ const rows=workers.map(w=>({name:w.name,rate:custom?(Number(breakdown[w.id])||0):detail.rate}));
+ const total=Math.round(rows.reduce((sum,r)=>sum+r.rate,0)*100)/100;
+ const eyebrow=custom?'Custom Vehicle · Independent rates':`Wash #${detail.sequence} · Slab ${esc(detail.slab)}`;
+ const rateText=custom?(d.customIncentiveMode==='individual'?'Worker-wise':'Equal per worker'):`${money(detail.rate)} / worker`;
+ const dateText=d.date?d.date.split('-').reverse().join('/'):'Selected date';
+ return `<div class="v3315-preview-top"><div><h3>Staff Incentive Preview</h3><p>${eyebrow} · ${esc(dateText)}</p></div><div class="v3315-rate">${rateText}</div></div>
+ <div class="v3315-worker-list">${rows.length?rows.map(w=>`<div class="v3315-worker"><span>${esc(w.name)}</span><strong>${money(w.rate)}</strong></div>`).join(''):'<p class="v3315-empty">Select workers to see their incentive.</p>'}</div>
+ <div class="v3315-total"><span>Total staff incentive</span><strong>${money(total)}</strong></div>
+ <p class="v3315-note">${custom?'Custom vehicle incentives do not affect car wash slabs.':detail.locked?'Editing this saved wash: its original incentive rate is retained.':'Calculated from the selected date and saved car washes.'} Preview only — incentive is recorded when you save the wash.</p>`;
+}
+function v3315IncentivePreview(d){return `<section id="v3315IncentivePreview" class="v3315-preview" aria-label="Staff Incentive Preview" aria-live="polite">${v3315PreviewBody(d)}</section>`;}
+function v3315RefreshPreview(){const el=$('#v3315IncentivePreview');if(el&&draft)el.innerHTML=v3315PreviewBody(draft);}
+
 function dailyIncentives(date){
  // v3.3.12: Custom Vehicles with explicit per-worker incentives do NOT consume car-slab positions.
  // Legacy "custom" entries created before v3.3.12 have no customIncentives field;
@@ -2452,7 +2497,7 @@ function v338RenderModeChrome(){
 }
 function v338ModeSettingsPanel(){
  const modeLabel=TEST_MODE?'TEST MODE — SANDBOX':'LIVE MODE — REAL BUSINESS';
- return `<section class="panel v338-mode-panel"><div class="panel-head"><div><h2>🧪 Developer & Testing · v3.3.14</h2><p class="panel-sub">${modeLabel}</p></div><a class="btn ${TEST_MODE?'btn-dark':'btn-primary'}" href="${V338_MODE_SWITCH}">${TEST_MODE?'↩ Return to Live Mode':'🧪 Enter Test Mode'}</a></div>
+ return `<section class="panel v338-mode-panel"><div class="panel-head"><div><h2>🧪 Developer & Testing · v3.3.15</h2><p class="panel-sub">${modeLabel}</p></div><a class="btn ${TEST_MODE?'btn-dark':'btn-primary'}" href="${V338_MODE_SWITCH}">${TEST_MODE?'↩ Return to Live Mode':'🧪 Enter Test Mode'}</a></div>
  <p class="faq">${TEST_MODE?'Test entries, payments, salaries, membership and receipt numbers are separate from live business data. Google Drive is disabled. You can safely test the same app screens.':'Your real washes, salary, receipts and Google Drive stay here. Enter Test Mode to try features without touching real records.'}</p>
  ${TEST_MODE?`<div class="v338-buttons"><button class="btn btn-primary" data-action="v338-sample">▦ Load October–November Sample Data</button><button class="btn btn-red" data-action="v338-reset">↻ Reset All Test Data</button></div><p class="faq"><b>Load Sample</b> creates fictional washes, 3 workers and incentive payments. <b>Reset All Test Data</b> deletes only Test Mode records and restarts Test Receipt #1. Both require confirmation. Backups created in Test Mode are marked TEST ONLY and cannot be restored into Live Mode.</p>`:'<p class="faq"><b>Safety:</b> Clear All Washes is removed from Live Mode. Use individual corrections plus backup. Test data cannot be synced to Google Drive.</p>'}</section>`;
 }
@@ -2587,9 +2632,9 @@ function receiptEntryBanner(){
   const n=editing?existing.receiptNo:nextReceiptPreview();
   return `<div class="receipt-number-card" role="status" aria-label="${editing?'Existing':'Next'} receipt number ${esc(n)}"><div class="receipt-number-details"><span class="receipt-number-label">${editing?'RECEIPT NUMBER':'NEXT RECEIPT NUMBER'}</span><strong class="receipt-number-value">#${esc(n)}</strong><small>${editing?'Already issued · Same number will be kept after editing':'Auto-generated · Read-only · Confirmed only when you save this wash'}</small></div><div class="receipt-number-icon" aria-hidden="true">▤</div></div>`;
 }
-function wash(){let out=washLegacy();out=out.replace('<div class="content-grid" style=',receiptEntryBanner()+'<div class="content-grid" style=');out=out.replace('<div class="panel"><h2>Entry Summary</h2>',`<div class="panel"><h2>Entry Summary</h2><div class="price-row"><span>Receipt No.</span><strong>#${esc(draft?.id?(db.records.find(r=>r.id===draft.id)?.receiptNo??'—'):nextReceiptPreview())}</strong></div>`);const insert=`<div id="v3CustomerHint" style="margin:10px 0"></div><div id="v3RewardHint" style="margin-bottom:8px"></div><div class="v3-actions" style="margin:8px 0">${!draft?.noRegistration?'<button class="btn btn-sm" type="button" data-v3="scan-plate">📷 Capture Vehicle Plate (optional)</button>':''}<button class="btn btn-sm" data-v3="quick-customer">↻ Find Previous Customer</button></div><input type="file" id="plateCapture" accept="image/*" capture="environment" hidden><p class="faq">Camera scan is experimental: always verify and type the registration number manually if needed.</p>`;out=out.replace('<div class="span-2"><div class="field-label" style="margin-bottom:9px">Vehicle Category *',insert+'<div class="span-2"><div class="field-label" style="margin-bottom:9px">Vehicle Category *');const mem=draft?.membershipId?db.memberships.find(x=>x.id===draft.membershipId):null;if(mem)out=out.replace('<div class="panel"><div class="panel-head"><h2>2. Payment Details</h2>',`<div class="v3-okay" style="margin:0 0 12px">Membership: ${esc(mem.plan)} · Prepaid wash · Remaining before this visit ${mem.remaining}</div><div class="panel"><div class="panel-head"><h2>2. Payment Details</h2>`);if(!draft?.id){out=out.replace('<div class="field span-2"><span class="field-label">Payment Status</span>',`<div class="field span-2"><label>Payment Received Date (if Paid)</label><input type="date" data-draft="paymentDate" value="${esc(draft?.paymentDate||dateLocal())}" ${TEST_MODE?'':`max="${dateLocal()}"`}></div><div class="field span-2"><span class="field-label">Payment Status</span>`);}else{out=out.replace('<div class="field span-2"><span class="field-label">Payment Status</span>',`<div class="field span-2"><span class="field-label">Payment Status</span><p class="faq">To change a saved payment, use Records → Pay / Refund. This entry editor changes vehicle/service only.</p>`);}return out;}
+function wash(){let out=washLegacy();out=out.replace('<div class="content-grid" style=',receiptEntryBanner()+'<div class="content-grid" style=');out=out.replace('<div class="panel"><h2>Entry Summary</h2>',`<div class="panel"><h2>Entry Summary</h2><div class="price-row"><span>Receipt No.</span><strong>#${esc(draft?.id?(db.records.find(r=>r.id===draft.id)?.receiptNo??'—'):nextReceiptPreview())}</strong></div>`);const insert=`<div id="v3CustomerHint" style="margin:10px 0"></div><div id="v3RewardHint" style="margin-bottom:8px"></div><div class="v3-actions" style="margin:8px 0">${!draft?.noRegistration?'<button class="btn btn-sm" type="button" data-v3="scan-plate">📷 Capture Vehicle Plate (optional)</button>':''}<button class="btn btn-sm" data-v3="quick-customer">↻ Find Previous Customer</button></div><input type="file" id="plateCapture" accept="image/*" capture="environment" hidden><p class="faq">Camera scan is experimental: always verify and type the registration number manually if needed.</p>`;out=out.replace('<div class="span-2"><div class="field-label" style="margin-bottom:9px">Vehicle Category *',insert+'<div class="span-2"><div class="field-label" style="margin-bottom:9px">Vehicle Category *');out=out.replace('<p class="faq">Absent / Paid Leave workers',v3315IncentivePreview(draft)+'<p class="faq">Absent / Paid Leave workers');const mem=draft?.membershipId?db.memberships.find(x=>x.id===draft.membershipId):null;if(mem)out=out.replace('<div class="panel"><div class="panel-head"><h2>2. Payment Details</h2>',`<div class="v3-okay" style="margin:0 0 12px">Membership: ${esc(mem.plan)} · Prepaid wash · Remaining before this visit ${mem.remaining}</div><div class="panel"><div class="panel-head"><h2>2. Payment Details</h2>`);if(!draft?.id){out=out.replace('<div class="field span-2"><span class="field-label">Payment Status</span>',`<div class="field span-2"><label>Payment Received Date (if Paid)</label><input type="date" data-draft="paymentDate" value="${esc(draft?.paymentDate||dateLocal())}" ${TEST_MODE?'':`max="${dateLocal()}"`}></div><div class="field span-2"><span class="field-label">Payment Status</span>`);}else{out=out.replace('<div class="field span-2"><span class="field-label">Payment Status</span>',`<div class="field span-2"><span class="field-label">Payment Status</span><p class="faq">To change a saved payment, use Records → Pay / Refund. This entry editor changes vehicle/service only.</p>`);}return out;}
 
-// v3.3.14: Read-only outstanding search and pagination; never truncate accounting data.
+// v3.3.15: Read-only outstanding search and pagination; never truncate accounting data.
 let v3313OutstandingQuery='',v3313OutstandingPage=0;
 const V3313_OUT_PAGE=25;
 function v3313OutstandingMatches(){
@@ -2647,7 +2692,7 @@ function v339ReverseCustomerPayment(id){
  v3log('Customer payment reversed',r.carNo+' '+money(p.amount));v3sync();render();
 }
 
-function dashboard(){const m=v3month(),gross=v3amount(null,null,null,m)+v3ExtrasRevenue(m),expenses=v3expenseTotal(m),salary=v3salaryCost(m),net=v3Profits(m).profit,repeat=v3Clients().filter(p=>p.records.length>1).length,low=db.stock.filter(x=>v3num(x.qty)<=v3num(x.min));const extra=v3KPIs([['This month collected',money(gross),'Actual received payments + membership sales'],['Other expenses',money(expenses),'Consumables, power, repairs etc.'],['Estimated payroll',money(salary),'Salary + approved bonuses + incentives'],['Estimated operating profit',money(net),'Wash sales − expenses − payroll'],['Vehicles washed today',db.records.filter(r=>r.date===dateLocal()).length,'All recorded washes'],['Vehicles washed this month',db.records.filter(r=>r.date.startsWith(m)).length,'Work date'],['Customer payments pending',money(v339Outstanding()),'All unpaid / partial bills'],['Incentives paid this month',money(incentivePayoutByMonth(m)),'Actual payment dates']]);return heading('Business Overview · v3.3.14','Your complete washing center with daily incentive payments.')+(!TEST_MODE&&v339IsDemoBackup(db)?'<div class="v3-warn">WARNING: Demo records detected in LIVE data. Drive sync has been paused. Export a backup and review these entries before further use.</div>':'')+extra+`<div class="v3-grid" style="margin-bottom:18px">${[['finance','₹ Expenses & Profit'],['closing','▣ Daily Cash Closing'],['customers','♧ Customers'],['operations','☰ Wash Queue'],['inventory','▤ Stock'],['marketing','✦ Memberships'],['reports','▥ Reports']].map(x=>`<button class="v3-feature-link" data-nav="${x[0]}">${x[1]}</button>`).join('')}</div>`+(low.length?`<div class="v3-warn" style="margin-bottom:15px">Low-stock alert: ${low.map(x=>esc(x.name)).join(', ')}</div>`:'')+dashboardLegacy().replace(heading('Business Overview','Your car wash operations at a glance.',`<button class="btn btn-primary" data-nav="wash">＋ Record a Wash</button>`),'');}
+function dashboard(){const m=v3month(),gross=v3amount(null,null,null,m)+v3ExtrasRevenue(m),expenses=v3expenseTotal(m),salary=v3salaryCost(m),net=v3Profits(m).profit,repeat=v3Clients().filter(p=>p.records.length>1).length,low=db.stock.filter(x=>v3num(x.qty)<=v3num(x.min));const extra=v3KPIs([['This month collected',money(gross),'Actual received payments + membership sales'],['Other expenses',money(expenses),'Consumables, power, repairs etc.'],['Estimated payroll',money(salary),'Salary + approved bonuses + incentives'],['Estimated operating profit',money(net),'Wash sales − expenses − payroll'],['Vehicles washed today',db.records.filter(r=>r.date===dateLocal()).length,'All recorded washes'],['Vehicles washed this month',db.records.filter(r=>r.date.startsWith(m)).length,'Work date'],['Customer payments pending',money(v339Outstanding()),'All unpaid / partial bills'],['Incentives paid this month',money(incentivePayoutByMonth(m)),'Actual payment dates']]);return heading('Business Overview · v3.3.15','Your complete washing center with daily incentive payments.')+(!TEST_MODE&&v339IsDemoBackup(db)?'<div class="v3-warn">WARNING: Demo records detected in LIVE data. Drive sync has been paused. Export a backup and review these entries before further use.</div>':'')+extra+`<div class="v3-grid" style="margin-bottom:18px">${[['finance','₹ Expenses & Profit'],['closing','▣ Daily Cash Closing'],['customers','♧ Customers'],['operations','☰ Wash Queue'],['inventory','▤ Stock'],['marketing','✦ Memberships'],['reports','▥ Reports']].map(x=>`<button class="v3-feature-link" data-nav="${x[0]}">${x[1]}</button>`).join('')}</div>`+(low.length?`<div class="v3-warn" style="margin-bottom:15px">Low-stock alert: ${low.map(x=>esc(x.name)).join(', ')}</div>`:'')+dashboardLegacy().replace(heading('Business Overview','Your car wash operations at a glance.',`<button class="btn btn-primary" data-nav="wash">＋ Record a Wash</button>`),'');}
 function v3Profits(month){
  const revenue=v339Collected(null,null,month)+v3ExtrasRevenue(month),sales=v339WashSales(month)+v3ExtrasRevenue(month);
  const expenses=v3expenseTotal(month),salary=v3salaryCost(month);
@@ -2662,7 +2707,7 @@ function marketing(){const active=db.memberships.filter(v3membershipActive);cons
 function operations(){const statuses=['Waiting','Washing','Completed','Delivered'];const today=db.records.filter(r=>r.date===dateLocal()).sort((a,b)=>a.time.localeCompare(b.time));return heading('Wash Queue & Operations','Track vehicles from Waiting → Washing → Completed → Delivered.')+v3KPIs(statuses.map(st=>[st,today.filter(r=>(r.stage||'Delivered')===st).length]))+v3section('Today’s Wash Queue',`<div class="v3-grid">${today.map(r=>`<div class="v3-card"><strong>${esc(r.carNo)}</strong><div class="v3-muted">Receipt #${esc(r.receiptNo)} · ${esc(r.time)} · ${money(r.price)}</div><div class="v3-field"><label>Current stage</label><select data-v3-change="stage" data-id="${esc(r.id)}">${statuses.map(st=>`<option ${st===(r.stage||'Delivered')?'selected':''}>${st}</option>`).join('')}</select></div><div class="v3-actions" style="margin-top:10px"><button class="btn btn-sm" data-action="receipt" data-id="${esc(r.id)}">Receipt</button><button class="btn btn-sm" data-action="edit-record" data-id="${esc(r.id)}">Edit</button></div></div>`).join('')||empty('No washes today','New entries start in Waiting status.')}</div>`);}
 function v3ReportCsv(){const data=[['Date','Receipt','Car No','Customer','Phone','Service','Stage','Gross Price','Extras','Discount','Collected To Date','Pending','Method','Status','Workers']];db.records.forEach(r=>data.push([r.date,r.receiptNo,r.carNo,r.customerName||'',r.phone||'',r.service,r.stage||'Delivered',r.basePrice??r.price,r.extras||0,r.discount||0,v339WashCollected(r.id),v339WashDue(r),r.method,r.status,(r.staff||[]).map(id=>db.employees.find(e=>e.id===id)?.name||id).join(' / ')]));return data;}
 function v3CSVdownload(name,rows){const csv='\ufeff'+rows.map(r=>r.map(csvValue).join(',')).join('\r\n');download(name,csv,'text/csv;charset=utf-8');}
-// v3.3.14: Vehicle mix by wash date. Collections are received-to-date AGAINST these washes,
+// v3.3.15: Vehicle mix by wash date. Collections are received-to-date AGAINST these washes,
 // not necessarily cash collected within the selected calendar month.
 function v3313VehicleRows(month){
  const grouped=new Map();
@@ -2924,8 +2969,7 @@ function saveWash(){
  if(rec.membershipId){const m=db.memberships.find(x=>x.id===rec.membershipId);if(!m||v3norm(m.carNo)!==v3norm(rec.carNo))return toast('Choose the correct membership for this car.');if(old?.membershipId!==rec.membershipId&&(!v3membershipActive(m)||m.remaining<1))return toast('No valid membership credits remaining.');}
  // Lock the earned rate on the wash record. Changes in Settings never rewrite old earnings.
  if(customIsNew(rec))delete rec.slabIncentiveRate;
- else if(isEdit&&old?.date===rec.date&&old?.category===rec.category&&Number.isFinite(old.slabIncentiveRate))rec.slabIncentiveRate=old.slabIncentiveRate;
- else {const existingCount=db.records.filter(r=>r.id!==rec.id&&r.date===rec.date&&v3314Eligible(r)&&!customIsNew(r)).length;rec.slabIncentiveRate=v3314RateForCar(existingCount+1);}
+ else rec.slabIncentiveRate=v3315CarRateDetails(rec).rate;
  if(!incentiveRecordChangeAllowed(isEdit?db.records.map(r=>r.id===rec.id?rec:r):[rec,...db.records]))return toast('Wash change blocked: paid worker incentives would exceed earned balance.');
  // Apply related credits only after all checks; rollback on any unexpected error.
  const priorM=JSON.parse(JSON.stringify(db.memberships)),priorL=JSON.parse(JSON.stringify(db.loyaltyClaims));

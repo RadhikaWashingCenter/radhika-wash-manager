@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.13: Google Drive backup integrity and read-only restore readiness check; searchable paginated customer outstanding; compact Test Mode banner; vehicle-wise monthly report with CSV export. Live/Test isolation, custom vehicle incentives and manual attendance preserved.",
+  "description": "Radhika Wash Manager v3.3.15: new wash live staff incentive preview (small, medium, large cars and custom vehicles), worker-wise and total incentives, editable fixed five-wash slabs. Previous safety, payments and reporting features retained.",
   "icons": [
     {
       "src": "icon-192.png",

@@ -1,17 +1,19 @@
-Radhika Wash Manager v3.3.14 — Editable Daily Incentive Slabs
+Radhika Wash Manager v3.3.15 — New Wash Live Staff Incentive Preview
 
 WHAT'S NEW:
-Salary > Daily Incentive Slabs > Edit Rates.
-Fixed ranges 0–5, 6–10, 11–15, 16–20, 21–25, ...; every rate is editable, including 0–5 and 6–10.
-Use Next 5-Wash Slab for higher ranges; Save Incentive Rates to apply. Reset to Default in editor restores suggested numbers before Save.
-A saved wash receives a permanent incentive-rate snapshot, so previous earned balances do not change when rates are edited (including same-day edits). Custom Vehicles keep their independent per-worker incentives.
-All existing v3.3.13 improvements remain.
+In New Wash > Employee Assignment, see Staff Incentive Preview before Save Wash Record.
+For Small / Medium / Large cars, view the selected day's next wash number, configured 5-wash slab, exact per-worker incentive, worker-by-worker values and total payout.
+Changing vehicle category, wash date, or assigned workers updates the preview automatically.
+For Custom Vehicles (Tractor, Truck, Bus, etc), preview shows independent approved per-worker custom incentives, updating as values change.
+Edit existing wash: retains the saved rate if date/category is unchanged. Save and preview share the same rate-calculation function.
+Preview never writes/payments/earns incentive; records are saved only after Save Wash Record.
+
+RETAINED FROM v3.3.14:
+Salary > Daily Incentive Slabs > Edit Rates (including 0–5 and 6–10), previous rates snapshotted, custom vehicle incentive options, backup, finance and reports.
 
 SAFE UPGRADE:
-1. In the EXISTING Live app, download Settings > Full JSON Backup and store it safely.
-2. Extract ZIP and upload/replace the same SIX files in your current GitHub Pages repo/path, then commit.
-3. Reopen the SAME web address, refresh as necessary and do NOT clear Chrome Site Data or uninstall the PWA.
-4. Test with ?mode=test before recording actual wash data. Test Mode and Live Mode data are separate.
-5. A real account Google Drive backup/restore verification still requires sign-in and on-device testing.
-
-NOTE: Editing any old wash record's date/category may change its own incentive, subject to existing payout safety checks. Editing rate settings alone never changes saved wash incentives.
+1. Export Full JSON Backup from your existing LIVE app. Keep it safe.
+2. Unzip and replace ALL six files in the SAME GitHub Pages repository and path; commit.
+3. Reopen same installed app URL and refresh. Do NOT clear Chrome Site Data or uninstall the existing PWA; that might erase offline data.
+4. Test new wash entry and editable slabs in Test Mode before creating Live records.
+5. Google Drive account login/real backup and restore still require user-side verification.
