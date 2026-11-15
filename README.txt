@@ -1,21 +1,21 @@
-Radhika Wash Manager v3.3.16 — Service-wise Staff Incentives
+RADHIKA WASH MANAGER v3.3.18 — Incentive Starting Rules
 
-WHAT'S NEW:
-- Complete Car Wash: fixed five-wash slabs; default Small/Medium per worker: 0-5 ₹0, 6-10 ₹5, 11-15 ₹10, 16-20 ₹15, 21-25 ₹15, 26-30 ₹20, 31-35 ₹25. Explicitly saved prior customized slab rates are preserved.
-- Complete Large Car: +₹5 per worker AFTER the first five washes (editable in Salary / Settings).
-- Exterior Foam Wash: FIXED total ₹5 per worker Small / Medium, ₹10 per worker Large; no slab amount is added. Both values editable.
-- Interior Vacuum & Dashboard: ₹0 by default; optionally turn on/edit worker rates in Service-wise Incentive Settings.
-- Other Service: ₹0 per worker by default; individual wash manual override available.
-- In New Wash > Employee Assignment: optional one-wash manual per-worker override (does not change defaults). The Staff Incentive Preview updates on changes.
-- Custom Vehicles (Tractor, Bus, Truck, etc.) retain independent worker-wise custom rates; they do not count toward daily car slabs.
-- Every standard car service contributes to the daily car-wash sequence. Existing saved washes preserve their own per-worker incentive rate; changing settings never changes earned/paid history.
-- Service-wise Incentive Cost table in Reports, and CSV export.
+NEW:
+- Salary & Incentives and Drive & Settings > Incentive Starting Rules.
+- Edit starting wash numbers separately for Complete, Exterior, Interior (default #6 each).
+- Daily wash number combines Complete + Exterior + Interior STANDARD car washes; custom vehicles do not use this shared count.
+- Complete Wash slabs and large-car bonus remain editable.
+- Exterior has service-wise fixed ₹ rates; Interior stays Off by default unless enabled in Service-wise Incentive Settings.
+- Per-wash manual overrides remain available.
+- Old saved rates and already-paid incentives are not recalculated by settings changes.
+- Records continue to display Complete / Exterior / Interior service tags (from v3.3.17).
 
-SAFE UPGRADE:
-1. Before doing anything, export Full JSON Backup from existing LIVE app and keep a copy.
-2. Unzip all SIX files into the SAME GitHub Pages repository/path; replace existing files and commit.
-3. Keep the same App URL. DO NOT clear browser Site Data or uninstall existing PWA: offline records may be lost.
-4. Try on Test Mode first. Check manual rates, service selection, and salary reports.
-5. Real Google Drive sign-in, backup and restore require account-side verification, not covered by local browser tests.
+INSTALL / UPDATE ON GITHUB PAGES:
+1. First open your existing app and export Full JSON Backup (Settings).
+2. Extract this ZIP. Upload all five files to the existing GitHub Pages repository root, replacing the matching files:
+   index.html, sw.js, manifest.webmanifest, icon-192.png, icon-512.png
+3. In your installed PWA, reload while online to update its cached app shell. If it still shows old version, close and reopen the app or use a browser hard-refresh. Do not clear site data without a verified backup.
+4. Verify page says v3.3.18; visit Salary & Incentives or Drive & Settings > Edit Starting Wash Numbers.
 
-Files: index.html, sw.js, manifest.webmanifest, icon-192.png, icon-512.png, README.txt
+STANDALONE HTML: Provided separately as Radhika_Wash_Manager_v3_3_18_Incentive_Starting_Rules.html.
+Do not overwrite or delete your existing data backups.

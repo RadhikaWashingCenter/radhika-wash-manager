@@ -2,21 +2,22 @@
   "id": "./",
   "name": "Radhika Wash Manager",
   "short_name": "Radhika Wash",
-  "start_url": "./",
+  "description": "Offline-first Radhika Washing Center operations, wages and staff incentives",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.16: service-wise staff incentives, Complete Wash large-car bonus, Exterior Only fixed per-worker incentives, optional Interior Only incentives, manual wash override, safe saved incentive snapshots and service reports.",
+  "orientation": "any",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
