@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f7fa",
   "theme_color": "#FFD21A",
-  "description": "Radhika Wash Manager v3.3.15: new wash live staff incentive preview (small, medium, large cars and custom vehicles), worker-wise and total incentives, editable fixed five-wash slabs. Previous safety, payments and reporting features retained.",
+  "description": "Radhika Wash Manager v3.3.16: service-wise staff incentives, Complete Wash large-car bonus, Exterior Only fixed per-worker incentives, optional Interior Only incentives, manual wash override, safe saved incentive snapshots and service reports.",
   "icons": [
     {
       "src": "icon-192.png",
