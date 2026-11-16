@@ -1,5 +1,5 @@
-/* Radhika Wash Manager v3.3.18 - minimal offline shell cache. */
-const CACHE = 'radhika-wash-manager-shell-v3.3.18';
+/* Radhika Wash Manager v3.3.19 - minimal offline shell cache. */
+const CACHE = 'radhika-wash-manager-shell-v3.3.19';
 const ASSETS = ['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
